@@ -5490,3 +5490,171 @@ body.light-mode .screen-label {
     margin-top: 1rem;
   }
 }
+
+/* ==========================================================================
+   BALANCED MULTI-DEVICE & LARGE SCREEN RESPONSIVE SUITE
+   - Standard MacBooks (13"-16" / up to 1599px): Retains 100% exact original layout & card sizes
+   - Large Desktop & 4K Monitors (1600px+ / 1920px+): Scales up proportionally for balanced impact
+   - Tablets & Mobile: Fluidly scales down
+   ========================================================================== */
+
+/* Large Desktop Monitors (1600px - 1919px Displays) */
+@media (min-width: 1600px) {
+  .hero-section {
+    max-width: 1620px;
+    margin: 0 auto;
+    gap: 4rem;
+    grid-template-columns: minmax(450px, 0.78fr) minmax(880px, 1.22fr);
+    padding: 10rem 4.5rem 7.5rem;
+  }
+
+  .hero-text-container {
+    max-width: 640px;
+  }
+
+  .text-reveal-item {
+    font-size: 3.8rem;
+  }
+
+  .subheadline {
+    font-size: 1.18rem;
+  }
+
+  .parallax-scene-wrapper {
+    width: 100%;
+    max-width: 1040px;
+  }
+
+  .dashboard-3d-container {
+    transform: scale(1.1);
+    transform-origin: right center;
+  }
+
+  .dashboard-mockup {
+    grid-template-columns: 215px 1fr;
+    border-radius: 18px;
+    box-shadow: 0 30px 75px rgba(15, 23, 42, 0.13);
+  }
+
+  .dash-sidebar {
+    padding: 1.8rem 1.3rem;
+  }
+
+  .dash-header {
+    padding: 1.35rem 2rem;
+  }
+
+  .dash-stat-value {
+    font-size: 1.4rem;
+  }
+
+  .chart-canvas {
+    height: 230px;
+  }
+
+  .float-card {
+    width: 195px;
+    padding: 0.8rem 0.95rem;
+  }
+
+  .adoption-grid {
+    max-width: 1560px;
+    gap: 5.5rem;
+  }
+
+  .adoption-laptop {
+    max-width: 1020px;
+  }
+
+  .roadmap-3d-stage {
+    max-width: 1540px;
+  }
+
+  .mandate-grid {
+    max-width: 1540px;
+  }
+}
+
+/* 1920px+ Ultra-Wide & 4K Displays */
+@media (min-width: 1920px) {
+  .hero-section {
+    max-width: 1880px;
+    gap: 5.5rem;
+    grid-template-columns: minmax(500px, 0.75fr) minmax(1040px, 1.25fr);
+    padding: 11rem 6rem 8.5rem;
+  }
+
+  .hero-text-container {
+    max-width: 700px;
+  }
+
+  .text-reveal-item {
+    font-size: 4.2rem;
+  }
+
+  .subheadline {
+    font-size: 1.28rem;
+  }
+
+  .parallax-scene-wrapper {
+    max-width: 1220px;
+  }
+
+  .dashboard-3d-container {
+    transform: scale(1.22);
+    transform-origin: right center;
+  }
+
+  .dashboard-mockup {
+    grid-template-columns: 240px 1fr;
+    border-radius: 22px;
+    box-shadow: 0 36px 90px rgba(15, 23, 42, 0.15);
+  }
+
+  .dash-sidebar {
+    padding: 2rem 1.4rem;
+  }
+
+  .dash-logo-img {
+    height: 26px;
+  }
+
+  .dash-menu-item {
+    font-size: 0.9rem;
+    padding: 0.65rem 0.9rem;
+  }
+
+  .dash-header {
+    padding: 1.5rem 2.2rem;
+  }
+
+  .dash-stat-value {
+    font-size: 1.55rem;
+  }
+
+  .chart-canvas {
+    height: 260px;
+  }
+
+  .float-card {
+    width: 215px;
+    padding: 0.9rem 1.1rem;
+  }
+
+  .card-value {
+    font-size: 0.95rem;
+  }
+
+  .adoption-grid {
+    max-width: 1780px;
+    gap: 6.5rem;
+  }
+
+  .adoption-laptop {
+    max-width: 1180px;
+  }
+
+  .roadmap-3d-stage {
+    max-width: 1760px;
+  }
+}
