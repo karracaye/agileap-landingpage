@@ -935,4 +935,20 @@ window.addEventListener('DOMContentLoaded', () => {
   };
 
   initFloatingAdsCard();
+
+  // Scroll Down Indicator Fade Handler
+  const initScrollDownIndicator = () => {
+    const scrollBtn = document.getElementById('scroll-down-btn');
+    if (!scrollBtn) return;
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 180) {
+        scrollBtn.classList.add('hidden-scroll');
+      } else {
+        scrollBtn.classList.remove('hidden-scroll');
+      }
+    });
+  };
+
+  initScrollDownIndicator();
 });
