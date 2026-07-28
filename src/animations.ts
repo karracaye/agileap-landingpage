@@ -138,13 +138,28 @@ export function initAnimations(threeScene?: any) {
 
   // 4. Pinned Scroll Showcase Parallax (fora.so style)
   const heroDesktop = window.matchMedia('(min-width: 1025px)').matches;
+  const sceneWrapper = document.querySelector('.parallax-scene-wrapper');
+
+  const getCenterDeltaX = () => {
+    if (!sceneWrapper || !heroDesktop) return 0;
+    const heroSec = document.querySelector('#hero');
+    if (!heroSec) return 0;
+    const heroRect = heroSec.getBoundingClientRect();
+    const wrapperRect = sceneWrapper.getBoundingClientRect();
+    // Calculate difference between hero center and wrapper center
+    const heroCenter = heroRect.left + heroRect.width / 2;
+    const wrapperCenter = wrapperRect.left + wrapperRect.width / 2;
+    return heroCenter - wrapperCenter;
+  };
+
   const pinTimeline = gsap.timeline({
     scrollTrigger: {
       trigger: '#hero',
       start: 'top top',
       end: '+=52%',
       pin: true,
-      scrub: 0.5
+      scrub: 0.5,
+      invalidateOnRefresh: true
     }
   });
 
@@ -157,10 +172,10 @@ export function initAnimations(threeScene?: any) {
     ease: 'power1.out'
   }, 0);
 
-  // Move the right-side dashboard into a centered showcase position
+  // Move the right-side dashboard into a DEAD-CENTER showcase position & enlarge it
   pinTimeline.to('.parallax-scene-wrapper', {
-    xPercent: heroDesktop ? -28 : 0,
-    scale: 1,
+    x: () => getCenterDeltaX(),
+    scale: heroDesktop ? 1.15 : 1.05,
     duration: 0.35,
     ease: 'power1.inOut'
   }, 0.04);
@@ -170,29 +185,43 @@ export function initAnimations(threeScene?: any) {
     rotateX: 0,
     rotateY: 0,
     rotateZ: 0,
-    scale: 1,
     y: heroDesktop ? 0 : -8,
     duration: 0.3,
     ease: 'power1.inOut'
   }, 0.05);
 
-  // Flatten floating cards
-  pinTimeline.to('.float-card', {
-    rotateX: 0,
-    rotateY: 0,
-    rotateZ: 0,
-    duration: 0.3,
+  // Reveal & Expand complete dashboard bottom panels on scroll
+  pinTimeline.to('.dash-bottom-row', {
+    opacity: 1,
+    maxHeight: 120,
+    y: 0,
+    duration: 0.35,
     ease: 'power1.inOut'
-  }, 0.05);
+  }, 0.08);
 
-  // Parallax glide floating cards
+  // Reveal Explanation Bar ONLY when scroll parallax happens (Reverses smoothly to 0 on scroll up)
+  pinTimeline.to('.dashboard-explanation-bar', {
+    autoAlpha: 1,
+    maxHeight: 260,
+    marginTop: '2rem',
+    paddingTop: '1.5rem',
+    paddingBottom: '1.5rem',
+    borderWidth: '1px',
+    y: 0,
+    pointerEvents: 'auto',
+    duration: 0.35,
+    ease: 'power1.out'
+  }, 0.1);
+
+  // Parallax glide floating cards to match center showcase view
   floatCards.forEach((card) => {
     const depth = parseFloat((card as HTMLElement).dataset.depth || '0.2');
     pinTimeline.to(card, {
       rotateX: 0,
       rotateY: 0,
       rotateZ: 0,
-      y: -100 * depth,
+      y: -80 * depth,
+      opacity: 1,
       duration: 0.3,
       ease: 'power1.inOut'
     }, 0.05);

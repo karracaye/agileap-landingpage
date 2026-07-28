@@ -15,27 +15,44 @@
     <!-- Three.js Background Canvas -->
     <canvas id="webgl-canvas" class="webgl"></canvas>
 
-    <!-- Background Glow Elements -->
-    <div class="bg-glow glow-1"></div>
-    <div class="bg-glow glow-2"></div>
-    <div class="bg-glow glow-3"></div>
-
     <div id="app-content">
-      <!-- Header -->
+      <!-- Top Promotional Announcement Ads Banner Bar (Upgraded #E55B1B Design) -->
+      <div id="top-ads-bar" class="top-ads-bar">
+        <div class="ads-bar-content">
+          <span class="ads-pill">⚡ SPECIAL GRANT OFFER</span>
+          <span class="ads-text">Claim up to <strong>$1,000 GST Transition Grant</strong> & get started with AgileAP InvoiceNow FOC Package!</span>
+          <a href="#government-funding" class="ads-btn">
+            <span>Claim Grant Now</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <button type="button" class="ads-close-btn" id="close-ads-btn" aria-label="Dismiss banner">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <!-- Header (Exact Match to User Image Upload) -->
       <header id="main-header" class="header">
         <div class="logo">
-          <img src="/logo-full.png" alt="AgileAP Logo" class="logo-img" />
+          <a href="#" aria-label="AgileAP Home">
+            <img src="/logo-full.png" alt="AgileAP Logo" class="logo-img" />
+          </a>
         </div>
-        <nav class="nav-links">
-          <a href="#">Pricing</a>
-          <a href="#">InvoiceNow</a>
-          <a href="#">News</a>
-          <a href="#">GST InvoiceNow FOC Package</a>
-          <a href="#">FAQ</a>
+
+        <nav class="nav-links" id="main-nav">
+          <a href="#adopt-invoicenow">Pricing</a>
+          <a href="#gst-mandate">InvoiceNow</a>
+          <a href="#product-highlights">News</a>
+          <a href="#government-funding">GST InvoiceNow FOC Package</a>
+          <a href="#invoicenow-benefits">FAQ</a>
         </nav>
+
         <div class="cta-actions">
-          <a href="#" class="btn btn-outline-brand">Try for Free</a>
-          <a href="#" class="btn btn-brand">Login Now</a>
+          <a href="#cta-banner" class="btn btn-try-free">Try For Free</a>
+          <a href="#cta-banner" class="btn btn-login-now">Login Now</a>
+          <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+          </button>
         </div>
       </header>
 
@@ -62,32 +79,31 @@
             <p class="subheadline">Empower your business operations with autonomous Accounts Payable and Accounts Receivable workflows. Reconcile invoices instantly and eliminate manual errors.</p>
             
             <div class="hero-ctas">
-              <a href="#" class="btn btn-brand btn-large">
-                Request Demo 
+              <a href="#cta-banner" class="btn btn-brand btn-large hero-primary-btn">
+                Request Demo
                 <span class="btn-arrow-circle">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                     <path d="M7 17L17 7M17 7H7M17 7V17" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                 </span>
               </a>
-              <a href="#" class="btn btn-light-brand btn-large">Sign Up Now</a>
+              <a href="#cta-banner" class="btn btn-light-brand btn-large hero-secondary-btn">Sign Up Now</a>
             </div>
 
             <div class="hero-proof-row" aria-label="AgileAP platform highlights">
-              <div>
+              <div class="proof-card">
                 <strong>96%</strong>
                 <span>On-time payment rate</span>
               </div>
-              <div>
+              <div class="proof-card">
                 <strong>3-way</strong>
                 <span>Invoice matching</span>
               </div>
-              <div>
+              <div class="proof-card">
                 <strong>AP + AR</strong>
                 <span>Unified workflows</span>
               </div>
             </div>
-          
           </div>
 
 
@@ -102,7 +118,7 @@
                 <!-- Sidebar Portion -->
                 <aside class="dash-sidebar">
                   <div class="dash-logo">
-                    <img src="/logo-icon.png" alt="AgileAP Icon" class="logo-icon-img" />
+                    <img src="/logo-full.png" alt="AgileAP Logo" class="dash-logo-img" />
                   </div>
                   <div class="dash-menu-label">Main Menu</div>
                   <div class="dash-menu-item active">
@@ -246,6 +262,24 @@
                       </div>
                     </div>
                   </div>
+
+                  <!-- Bottom Row Summary Panels -->
+                  <div class="dash-bottom-row">
+                    <div class="dash-panel mini-panel">
+                      <div class="mini-panel-header">
+                        <span class="mini-label">Total Income</span>
+                        <span class="mini-trend green">↑ +12.4%</span>
+                      </div>
+                      <strong class="mini-amount">$94,210.00</strong>
+                    </div>
+                    <div class="dash-panel mini-panel">
+                      <div class="mini-panel-header">
+                        <span class="mini-label">Total Expense</span>
+                        <span class="mini-trend red">↓ -4.1%</span>
+                      </div>
+                      <strong class="mini-amount">$26,225.00</strong>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -313,6 +347,18 @@
                   <span class="card-value">SGD 1,627,400.00</span>
                   <span class="card-trend trend-up">
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 15l-6-6-6 6"/></svg>
+                    4.2% vs last month
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Interactive Explanation Banner for Centered Showcase (Reveals on Scroll Parallax) -->
+            <div class="dashboard-explanation-bar">
+              <h3 class="explanation-title">Simplify Your AP and AR Processes</h3>
+              <p class="explanation-desc">
+                At AgileAP, we understand the importance of efficient financial management for your business. Our platform offers a comprehensive suite of tools designed to streamline your accounts payable processes and elevate your financial operations. Here's why our platform is the ideal choice for managing your business finances.
+              </p>
             </div>
           </div>
         </section>
@@ -323,21 +369,21 @@
             <span class="badge-pill">Core Features</span>
             <h2>Product Highlights</h2>
             <p>Save valuable time on payments with AgileAP automation.</p>
+
+            <!-- Centered Main tab switcher row -->
+            <div class="main-tab-row" id="highlights-main-tabs">
+              <!-- Loaded dynamically by main.ts -->
+            </div>
+
+            <!-- Centered Selected main tab summary description -->
+            <p class="main-tab-desc" id="highlights-main-desc">
+              <!-- Loaded dynamically by main.ts -->
+            </p>
           </div>
 
           <div class="highlights-split-grid">
             <!-- Left Column: Controls & Timeline -->
             <div class="highlights-left-col">
-              <!-- Main tab switcher row -->
-              <div class="main-tab-row" id="highlights-main-tabs">
-                <!-- Loaded dynamically by main.ts -->
-              </div>
-
-              <!-- Selected main tab default summary description -->
-              <p class="main-tab-desc" id="highlights-main-desc">
-                <!-- Loaded dynamically by main.ts -->
-              </p>
-
               <!-- Vertical Sub-menu Timeline -->
               <div class="sub-menu-timeline" id="highlights-timeline-menu">
                 <!-- Loaded dynamically by main.ts -->
@@ -355,139 +401,126 @@
           </div>
         </section>
 
-        <!-- GST InvoiceNow Roadmap -->
+        <!-- GST InvoiceNow Roadmap Section (3D Interactive Perspective Roadmap) -->
         <section id="gst-mandate" class="mandate-section">
-          <div class="mandate-grid">
-            <div class="mandate-copy">
-              <span class="badge-pill">Roadmap & Overview</span>
-              <h2>The <span>GST InvoiceNow</span> requirement: what you need to know</h2>
-              <p class="mandate-intro">
-                Singapore is phasing in mandatory e-invoicing under the GST InvoiceNow Requirement, transitioning GST-registered businesses onto the network. InvoiceNow helps transmit invoice data directly to IRAS for smoother tax compliance.
-              </p>
-
-              <div class="mandate-step-list" aria-label="GST InvoiceNow compliance timeline">
-                <button class="mandate-step active" type="button" data-mandate-stage="2025" aria-pressed="true">
-                  <span class="mandate-step-icon" aria-hidden="true">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
-                      <path d="M8 2v4M16 2v4M3 10h18"/>
-                      <rect x="3" y="4" width="18" height="18" rx="3"/>
-                    </svg>
-                  </span>
-                  <span>
-                    <strong>Ongoing since Nov 1, 2025</strong>
-                    <em>Mandatory for new businesses applying for voluntary GST registration.</em>
-                  </span>
-                </button>
-
-                <button class="mandate-step" type="button" data-mandate-stage="2028" aria-pressed="false">
-                  <span class="mandate-step-icon" aria-hidden="true">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
-                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
-                      <circle cx="9" cy="7" r="4"/>
-                      <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
-                      <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                    </svg>
-                  </span>
-                  <span>
-                    <strong>The full rollout (2028-2031)</strong>
-                    <em>Progressive implementation across existing GST-registered businesses.</em>
-                  </span>
-                </button>
-              </div>
-
-              <div class="mandate-actions">
-                <a href="#" class="btn btn-brand btn-roadmap">
-                  View detailed roadmap
-                  <span class="btn-arrow-circle">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                      <path d="M7 17L17 7M17 7H7M17 7V17" stroke-linecap="round" stroke-linejoin="round"/>
+          <div class="mandate-container">
+            <!-- Executive Section Header -->
+            <div class="mandate-header-center">
+              <span class="badge-pill light-pill">Roadmap & Overview</span>
+              <h2>The <span class="text-orange">GST InvoiceNow</span> requirement: what you need to know</h2>
+              <p>Singapore is phasing in mandatory e-invoicing under the GST InvoiceNow Requirement, transitioning GST-registered businesses onto the network. InvoiceNow helps transmit invoice data directly to IRAS for smoother tax compliance.</p>
+              
+              <div class="mandate-cta-wrap">
+                <a href="#government-funding" class="roadmap-cta-pill">
+                  <span>View detailed roadmap</span>
+                  <span class="cta-arrow-circle">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                   </span>
                 </a>
-                <span class="mandate-status" id="mandate-status">Active phase: Nov 2025</span>
               </div>
             </div>
 
+            <!-- 3D Interactive Perspective Roadmap Stage -->
             <div class="mandate-visual" id="mandate-visual" style="--mandate-line-progress: 0.2;">
-              <div class="mandate-visual-top" data-mandate-depth="0.16">
-                <span>Compliance Timeline</span>
-                <strong id="mandate-phase-label">New GST registrants</strong>
-              </div>
+              <div class="roadmap-3d-stage" id="roadmap-3d-stage">
+                <!-- 3D Floor Grid Plane -->
+                <div class="roadmap-3d-grid-floor"></div>
 
-              <div class="roadmap-canvas" data-mandate-depth="0.08">
-                <svg class="roadmap-svg" viewBox="0 0 720 360" aria-hidden="true">
+                <!-- 3D SVG Winding Pathway Line -->
+                <svg class="roadmap-3d-svg-path" viewBox="0 0 900 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M 60 170 Q 250 80 450 150 T 840 70" stroke="#e2e8f0" stroke-width="6" stroke-linecap="round"/>
+                  <path class="roadmap-path-active" d="M 60 170 Q 250 80 450 150 T 840 70" stroke="url(#gradient3dPath)" stroke-width="6" stroke-dasharray="900" stroke-dashoffset="650" stroke-linecap="round"/>
                   <defs>
-                    <linearGradient id="roadmapStroke" x1="112" y1="190" x2="642" y2="68" gradientUnits="userSpaceOnUse">
-                      <stop offset="0%" stop-color="#78bff7"/>
-                      <stop offset="52%" stop-color="#0066ff"/>
-                      <stop offset="100%" stop-color="#0b2a5f"/>
+                    <linearGradient id="gradient3dPath" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#E55B1B"/>
+                      <stop offset="50%" stop-color="#0066ff"/>
+                      <stop offset="100%" stop-color="#10b981"/>
                     </linearGradient>
-                    <filter id="roadmapGlow" x="-20%" y="-80%" width="140%" height="260%">
-                      <feGaussianBlur stdDeviation="5" result="blur"/>
-                      <feMerge>
-                        <feMergeNode in="blur"/>
-                        <feMergeNode in="SourceGraphic"/>
-                      </feMerge>
-                    </filter>
                   </defs>
-                  <polyline class="roadmap-line-base" pathLength="1" points="122,188 288,154 418,126 548,98 626,78"/>
-                  <polyline class="roadmap-line-active" pathLength="1" points="122,188 288,154 418,126 548,98 626,78"/>
-                  <g class="roadmap-arrow-head" transform="translate(646 73) rotate(-14)">
-                    <path d="M0 0 L-36 -14 L-27 0 L-36 14 Z"/>
-                  </g>
                 </svg>
 
-                <button class="roadmap-node roadmap-node-2025 active" type="button" data-mandate-stage="2025" aria-pressed="true">
-                  <span class="node-dot" aria-hidden="true"></span>
-                  <span class="node-stem" aria-hidden="true"></span>
-                  <span class="roadmap-card">
-                    <strong>Nov 2025</strong>
-                    <span>Mandatory for newly registered voluntary GST businesses.</span>
-                  </span>
-                </button>
+                <!-- 3D Milestone Node 1 (2025) -->
+                <div class="roadmap-node-3d node-2025 active" style="left: 8%; top: 48%;" data-mandate-depth="0.12">
+                  <button class="roadmap-pillar-btn roadmap-node-2025 active" type="button" data-mandate-stage="2025" aria-pressed="true">
+                    <div class="pillar-shadow"></div>
+                    <div class="pillar-stem"></div>
+                    <div class="pillar-beacon">
+                      <span class="beacon-ring"></span>
+                      <span class="beacon-dot"></span>
+                    </div>
+                    <div class="roadmap-3d-card">
+                      <div class="card-tag tag-orange">PHASE 01 • ACTIVE NOW</div>
+                      <div class="card-year">Nov 1, 2025</div>
+                      <h4>Voluntary GST Registrants</h4>
+                      <p>Mandatory for new voluntary GST applicants.</p>
+                    </div>
+                  </button>
+                </div>
 
-                <button class="roadmap-node roadmap-node-2028" type="button" data-mandate-stage="2028" aria-pressed="false">
-                  <span class="node-dot" aria-hidden="true"></span>
-                  <span class="node-stem" aria-hidden="true"></span>
-                  <span class="roadmap-card">
-                    <strong>2028-2031</strong>
-                    <span>Progressive implementation for existing GST-registered businesses.</span>
-                  </span>
-                </button>
+                <!-- 3D Milestone Node 2 (2028-2031) -->
+                <div class="roadmap-node-3d node-2028" style="left: 48%; top: 40%;" data-mandate-depth="0.16">
+                  <button class="roadmap-pillar-btn roadmap-node-2028" type="button" data-mandate-stage="2028" aria-pressed="false">
+                    <div class="pillar-shadow"></div>
+                    <div class="pillar-stem"></div>
+                    <div class="pillar-beacon blue">
+                      <span class="beacon-ring"></span>
+                      <span class="beacon-dot"></span>
+                    </div>
+                    <div class="roadmap-3d-card">
+                      <div class="card-tag tag-blue">PHASE 02 • UPCOMING</div>
+                      <div class="card-year">2028 – 2031</div>
+                      <h4>Existing GST Businesses</h4>
+                      <p>Progressive phased rollout for all enterprises.</p>
+                    </div>
+                  </button>
+                </div>
 
-                <button class="roadmap-node roadmap-node-2031" type="button" data-mandate-stage="2031" aria-pressed="false">
-                  <span class="node-dot" aria-hidden="true"></span>
-                  <span class="node-stem" aria-hidden="true"></span>
-                  <span class="roadmap-card roadmap-card-hot">
-                    <strong>2031+</strong>
-                    <span>All businesses are onboarded to the InvoiceNow network.</span>
-                  </span>
-                </button>
+                <!-- 3D Milestone Node 3 (2031+) -->
+                <div class="roadmap-node-3d node-2031" style="left: 86%; top: 12%;" data-mandate-depth="0.2">
+                  <button class="roadmap-pillar-btn roadmap-node-2031" type="button" data-mandate-stage="2031" aria-pressed="false">
+                    <div class="pillar-shadow"></div>
+                    <div class="pillar-stem"></div>
+                    <div class="pillar-beacon green">
+                      <span class="beacon-ring"></span>
+                      <span class="beacon-dot"></span>
+                    </div>
+                    <div class="roadmap-3d-card">
+                      <div class="card-tag tag-green">PHASE 03 • TARGET STATE</div>
+                      <div class="card-year">2031+</div>
+                      <h4>Full Network Adoption</h4>
+                      <p>100% InvoiceNow network coverage.</p>
+                    </div>
+                  </button>
+                </div>
               </div>
 
-              <div class="mandate-insight" data-mandate-depth="0.12">
-                <span id="mandate-insight-kicker">First wave</span>
-                <strong id="mandate-insight-title">New GST registration readiness</strong>
-                <p id="mandate-insight-copy">Prepare invoice data, approval workflows, and Peppol-ready e-invoicing before registration volume grows.</p>
+              <!-- Executive Active Stage Detail Insight Card -->
+              <div class="mandate-insight-box" data-mandate-depth="0.08">
+                <div class="insight-left-info">
+                  <span class="insight-status-tag" id="mandate-status">Active phase: Nov 2025</span>
+                  <span class="insight-phase-pill" id="mandate-phase-label">New GST registrants</span>
+                </div>
+                <div class="insight-main-body">
+                  <span class="insight-kicker" id="mandate-insight-kicker">First wave</span>
+                  <h4 class="insight-title" id="mandate-insight-title">New GST registration readiness</h4>
+                  <p class="insight-copy" id="mandate-insight-copy">Prepare invoice data, approval workflows, and Peppol-ready e-invoicing before registration volume grows.</p>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- InvoiceNow Early Adoption Benefits -->
+        <!-- InvoiceNow Early Adoption Benefits Section -->
         <section id="adopt-invoicenow" class="adoption-section">
           <div class="adoption-grid">
             <div class="adoption-visual" id="adoption-visual" aria-label="InvoiceNow benefits dashboard preview">
-              <span class="adoption-orbit adoption-orbit-blue" data-adopt-depth="0.08" aria-hidden="true"></span>
-              <span class="adoption-orbit adoption-orbit-orange" data-adopt-depth="0.12" aria-hidden="true"></span>
-              <span class="adoption-wave-lines" data-adopt-depth="0.05" aria-hidden="true"></span>
 
               <div class="adoption-float-card adoption-card-costs" data-adopt-depth="0.16">
                 <span class="adoption-card-icon icon-blue" aria-hidden="true">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
-                    <path d="M5 20V11"/>
-                    <path d="M12 20V5"/>
-                    <path d="M19 20v-8"/>
+                    <path d="M5 20V11"/><path d="M12 20V5"/><path d="M19 20v-8"/>
                   </svg>
                 </span>
                 <strong>Lower Costs</strong>
@@ -507,8 +540,7 @@
               <div class="adoption-float-card adoption-card-time" data-adopt-depth="0.2">
                 <span class="adoption-card-icon icon-orange" aria-hidden="true">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
-                    <circle cx="12" cy="12" r="9"/>
-                    <path d="M12 7v5l4 2"/>
+                    <circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/>
                   </svg>
                 </span>
                 <strong>More Time for Growth</strong>
@@ -518,9 +550,7 @@
               <div class="adoption-float-card adoption-card-decisions" data-adopt-depth="0.17">
                 <span class="adoption-card-icon icon-green" aria-hidden="true">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
-                    <path d="M5 20v-5"/>
-                    <path d="M12 20V9"/>
-                    <path d="M19 20V4"/>
+                    <path d="M5 20v-5"/><path d="M12 20V9"/><path d="M19 20V4"/>
                   </svg>
                 </span>
                 <strong>Better Decisions</strong>
@@ -615,26 +645,267 @@
           </div>
         </section>
 
-        <!-- Dynamic Scroll Feature Section -->
-        <section id="processing-pipeline" class="scroll-section">
-          <div class="content-box glass">
-            <span class="badge">AI Reconciliation</span>
-            <h2>Automated 3-Way Matching</h2>
-            <p>Directly sync invoices with Purchase Orders and Goods Received Notes. Discrepancies are highlighted instantly before they hit your ledger, eliminating human error and payment delays.</p>
-            <div class="btn-group">
-              <a href="#" class="btn btn-brand">Learn More</a>
+        <!-- 5 Ways InvoiceNow Empowers Your Business Section (3D Parallax Interactive Layout) -->
+        <section id="invoicenow-benefits" class="modern-benefits-section">
+          <!-- 3D Interactive WebGL Canvas Background -->
+          <canvas id="benefits-3d-canvas" class="benefits-3d-webgl"></canvas>
+
+          <div class="benefits-bento-container">
+            <div class="benefits-header">
+              <span class="badge-pill light-pill">CORE BUSINESS ADVANTAGES</span>
+              <h2><span class="text-orange">5 Ways InvoiceNow</span> Empowers Your Business</h2>
+              <p>Built on the Peppol network standard for friction-free digital accounting.</p>
+            </div>
+
+            <!-- Minimalist Parallax 5-Card Grid -->
+            <div class="minimalist-benefit-grid">
+              <!-- Card 1 -->
+              <div class="minimal-card" data-parallax-depth="0.08">
+                <div class="minimal-card-top">
+                  <div class="minimal-icon-badge icon-orange">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E55B1B" stroke-width="2.2">
+                      <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                    </svg>
+                  </div>
+                  <span class="minimal-stat-pill">90% Time Saved</span>
+                </div>
+                <h3>Reduced Manual Work</h3>
+                <p>Autonomous Peppol recognition extracts invoice items into your ERP ledger instantly.</p>
+                <div class="minimal-metric-foot">
+                  <strong>99.8%</strong>
+                  <span>OCR Accuracy</span>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="minimal-card" data-parallax-depth="0.14">
+                <div class="minimal-card-top">
+                  <div class="minimal-icon-badge icon-blue">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0066ff" stroke-width="2.2">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                      <polyline points="14 2 14 8 20 8"/>
+                      <line x1="16" y1="13" x2="8" y2="13"/>
+                    </svg>
+                  </div>
+                  <span class="minimal-stat-pill blue">Unified Hub</span>
+                </div>
+                <h3>Simplified Invoicing</h3>
+                <p>Centralize commercial and government invoice tracking in a single portal.</p>
+                <div class="minimal-metric-foot">
+                  <strong>1-Click</strong>
+                  <span>Dispatch Rate</span>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="minimal-card" data-parallax-depth="0.18">
+                <div class="minimal-card-top">
+                  <div class="minimal-icon-badge icon-orange">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E55B1B" stroke-width="2.2">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                      <path d="m9 12 2 2 4-4"/>
+                    </svg>
+                  </div>
+                  <span class="minimal-stat-pill">IRAS Approved</span>
+                </div>
+                <h3>Faster GST Audits</h3>
+                <p>Built-in system checks eliminate reporting errors and speed up GST refunds.</p>
+                <div class="minimal-metric-foot">
+                  <strong>3x Faster</strong>
+                  <span>Tax Refunds</span>
+                </div>
+              </div>
+
+              <!-- Card 4 -->
+              <div class="minimal-card" data-parallax-depth="0.12">
+                <div class="minimal-card-top">
+                  <div class="minimal-icon-badge icon-blue">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0066ff" stroke-width="2.2">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                    </svg>
+                  </div>
+                  <span class="minimal-stat-pill blue">ISO 27001</span>
+                </div>
+                <h3>Data Security</h3>
+                <p>AES-256 end-to-end encryption ensures enterprise privacy and reliability.</p>
+                <div class="minimal-metric-foot">
+                  <strong>99.99%</strong>
+                  <span>SLA Uptime</span>
+                </div>
+              </div>
+
+              <!-- Card 5 -->
+              <div class="minimal-card" data-parallax-depth="0.16">
+                <div class="minimal-card-top">
+                  <div class="minimal-icon-badge icon-orange">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E55B1B" stroke-width="2.2">
+                      <circle cx="12" cy="12" r="10"/>
+                      <line x1="2" y1="12" x2="22" y2="12"/>
+                      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                    </svg>
+                  </div>
+                  <span class="minimal-stat-pill">40+ Countries</span>
+                </div>
+                <h3>Global Connectivity</h3>
+                <p>Transmit e-invoices across Singapore, Australia, New Zealand, Japan, and the EU.</p>
+                <div class="minimal-metric-foot">
+                  <strong>Peppol</strong>
+                  <span>Global Access Point</span>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        <!-- CTA & Footer -->
-        <section id="cta" class="scroll-section cta-section">
-          <div class="content-box glass center-aligned">
-            <h2>Ready to transform your financial operations?</h2>
-            <p>Join hundreds of high-growth enterprises who use AgileAP to eliminate human error and save thousands of hours monthly.</p>
-            <div class="btn-group">
-              <a href="#" class="btn btn-brand btn-large">Get Started Now</a>
-              <a href="#" class="btn btn-outline-brand btn-large">Talk to an Expert</a>
+        <!-- Government Grants & Funding Support Section (Executive Row-Card Layout) -->
+        <section id="government-funding" class="funding-grants-section">
+          <div class="funding-header">
+            <span class="badge-pill light-pill">
+              <span class="pill-spark">🏛️</span> GOVERNMENT GRANTS & FUNDING SUPPORT
+            </span>
+            <h2><span class="text-orange">Government Funding</span> to Ease Your Digital Transition</h2>
+            <p>IRAS and IMDA provide dedicated financial support to ensure Singapore businesses adopt e-invoicing seamlessly.</p>
+          </div>
+
+          <div class="funding-rows-container">
+            <!-- SME Grant Row -->
+            <div class="grant-row-card sme-row">
+              <div class="grant-row-accent orange"></div>
+              <div class="grant-row-main">
+                <div class="grant-row-left">
+                  <div class="grant-row-icon orange">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                      <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <span class="grant-track-tag orange">SME Track</span>
+                    <h3 class="grant-row-title">Small & Medium Enterprises</h3>
+                  </div>
+                </div>
+
+                <div class="grant-row-center">
+                  <p class="grant-row-desc">Get started with free-of-charge solution packages available until March 2031. Eligible SMEs receive a <strong>$1,000 GST Transition Grant</strong> (July 2026 – March 2030).</p>
+                </div>
+
+                <div class="grant-row-right">
+                  <div class="grant-row-amount orange">
+                    <span class="amount-label">Financial Support</span>
+                    <span class="amount-val orange">$1,000 Grant</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Enterprise Grant Row -->
+            <div class="grant-row-card enterprise-row">
+              <div class="grant-row-accent blue"></div>
+              <div class="grant-row-main">
+                <div class="grant-row-left">
+                  <div class="grant-row-icon blue">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
+                      <path d="M9 22v-4h6v4"/>
+                      <path d="M8 6h.01M16 6h.01M8 10h.01M16 10h.01M8 14h.01M16 14h.01"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <span class="grant-track-tag blue">Enterprise Track</span>
+                    <h3 class="grant-row-title">Larger Corporations</h3>
+                  </div>
+                </div>
+
+                <div class="grant-row-center">
+                  <p class="grant-row-desc">Access a $5,000 Transition Grant for onboarding costs, plus up to $25,000 under the Queen Bee Grant for custom ERP integrations and network connectivity.</p>
+                </div>
+
+                <div class="grant-row-right">
+                  <div class="grant-row-amount blue">
+                    <span class="amount-label">Total Support</span>
+                    <span class="amount-val blue">Up to $30,000</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Modern Executive CTA Banner Section -->
+        <section id="cta-banner" class="cta-banner-section">
+          <div class="cta-banner-container">
+            <div class="cta-banner-left">
+              <span class="cta-badge">⚡ UNLOCK YOUR POTENTIAL</span>
+              <h2>Experience Efficiency, Elevate Productivity</h2>
+              <p>Transform your accounts payable and accounts receivable processes with AgileAP. Schedule a demo today and take the first step towards unlocking your business's full potential.</p>
+              <div class="cta-btn-wrap">
+                <a href="tel:+6560000000" class="btn btn-cta-white">
+                  <span>Call for a free demo</span>
+                  <span class="btn-arrow-icon">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            <div class="cta-banner-right">
+              <!-- Modern Dashboard Analytics Mockup Card -->
+              <div class="analytics-card-frame">
+                <div class="analytics-header-bar">
+                  <div class="analytics-dots"><span></span><span></span><span></span></div>
+                  <span class="analytics-title">Total By Department</span>
+                  <strong class="analytics-amount">753,068.12</strong>
+                </div>
+
+                <div class="analytics-body-grid">
+                  <!-- Donut Chart Representation -->
+                  <div class="chart-donut-wrap">
+                    <svg class="donut-chart" viewBox="0 0 100 100">
+                      <circle cx="50" cy="50" r="38" fill="none" stroke="#f1f5f9" stroke-width="14" />
+                      <circle cx="50" cy="50" r="38" fill="none" stroke="#E55B1B" stroke-width="14" stroke-dasharray="140 240" stroke-dashoffset="0" />
+                      <circle cx="50" cy="50" r="38" fill="none" stroke="#0066ff" stroke-width="14" stroke-dasharray="60 240" stroke-dashoffset="-140" />
+                      <circle cx="50" cy="50" r="38" fill="none" stroke="#22c55e" stroke-width="14" stroke-dasharray="40 240" stroke-dashoffset="-200" />
+                    </svg>
+                    <div class="donut-center-text">
+                      <span class="donut-label">Total Spend</span>
+                      <strong class="donut-val">$753.0k</strong>
+                    </div>
+                  </div>
+
+                  <!-- Legend List -->
+                  <div class="chart-legend-list">
+                    <div class="legend-item">
+                      <span class="legend-dot orange"></span>
+                      <span class="legend-name">IT Dept</span>
+                      <span class="legend-val">SGD 340.5k</span>
+                    </div>
+                    <div class="legend-item">
+                      <span class="legend-dot blue"></span>
+                      <span class="legend-name">Finance</span>
+                      <span class="legend-val">SGD 220.1k</span>
+                    </div>
+                    <div class="legend-item">
+                      <span class="legend-dot green"></span>
+                      <span class="legend-name">Sales & Admin</span>
+                      <span class="legend-val">SGD 192.4k</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Floating Mini Trend Overlay -->
+                <div class="floating-trend-card">
+                  <div class="trend-top">
+                    <span class="trend-title">Monthly Processing Trend</span>
+                    <span class="trend-tag">+99.8% Accuracy</span>
+                  </div>
+                  <div class="trend-sparkline">
+                    <svg viewBox="0 0 120 30" class="sparkline-svg">
+                      <path d="M0 25 Q 20 20, 40 22 T 80 10 T 120 5" fill="none" stroke="#E55B1B" stroke-width="2.5" opacity="0.9" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -642,13 +913,51 @@
 
       <!-- Footer -->
       <footer id="main-footer" class="footer">
-        <p>&copy; 2026 AgileAP Inc. All rights reserved. Built for modern financial teams.</p>
-        <div class="footer-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Support</a>
+        <div class="footer-container">
+          <div class="footer-col-brand">
+            <img src="/logo-full.png" alt="AgileAP Logo" class="footer-logo" />
+            <p>Autonomous Accounts Payable and Accounts Receivable automation for high-growth enterprises and GST InvoiceNow compliance.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <a href="#adopt-invoicenow">InvoiceNow Mandate</a>
+            <a href="#invoicenow-benefits">Key Benefits</a>
+            <a href="#government-funding">Government Grants</a>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 AgileAP Inc. All rights reserved. Built for modern financial teams.</p>
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
       </footer>
+
+      <!-- Floating Ads Banner Card (Restored Original Screenshot Layout + Modern UI Touches) -->
+      <div id="floating-ads-card" class="floating-ads-card" role="dialog" aria-labelledby="ads-card-title">
+        <button type="button" class="ads-card-close-btn" id="close-floating-ads-btn" aria-label="Close promotion">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
+        </button>
+
+        <div class="ads-card-body">
+          <div class="ads-card-logo">
+            <img src="/logo-icon.png" alt="AgileAP Icon" class="ads-logo-img" />
+          </div>
+
+          <div class="ads-card-main">
+            <h3 id="ads-card-title" class="ads-card-heading">Claim Your InvoiceNow Free Package Today!</h3>
+            <p class="ads-card-text">
+              If your business is GST-registered in Singapore, you're eligible to enjoy the <strong>FOC InvoiceNow Package</strong>, with <strong>FREE access until 31 March 2031</strong>. Register today and start sending and receiving InvoiceNow e-invoices at no cost.
+            </p>
+          </div>
+
+          <div class="ads-card-action">
+            <a href="#government-funding" class="btn-ads-signup">Sign Up</a>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script type="module" src="/src/main.ts"></script>

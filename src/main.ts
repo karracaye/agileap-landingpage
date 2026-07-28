@@ -1,5 +1,6 @@
 import './style.css';
 import { ThreeScene } from './three-scene';
+import { Benefits3D } from './benefits-3d';
 import { initAnimations } from './animations';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -15,6 +16,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Initialize Three.js scene
   const threeScene = new ThreeScene(canvas);
+
+  // Initialize Benefits Section 3D & Parallax Scene
+  const benefitsCanvas = document.querySelector<HTMLCanvasElement>('#benefits-3d-canvas');
+  if (benefitsCanvas) {
+    new Benefits3D(benefitsCanvas);
+  }
 
   // Initialize GSAP & ScrollTrigger Animations
   initAnimations(threeScene);
@@ -111,66 +118,93 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const items = activeMainTab === 'ap' ? apItems : arItems;
     const activeSubIndex = items.findIndex(item => item.id === activeSubId);
+    const activeItem = items[activeSubIndex >= 0 ? activeSubIndex : 0];
 
-    // 1. Render Main Tabs
+    // 1. Render Segmented Main Tabs
     mainTabsContainer.innerHTML = `
-      <button class="main-tab-btn ${activeMainTab === 'ap' ? 'active' : ''}" id="btn-tab-ap">Accounts Payable</button>
-      <button class="main-tab-btn ${activeMainTab === 'ar' ? 'active' : ''}" id="btn-tab-ar">Account Receivables</button>
+      <div class="highlights-pill-switcher">
+        <button class="main-tab-btn ${activeMainTab === 'ap' ? 'active' : ''}" id="btn-tab-ap">
+          <span class="tab-dot orange"></span> Accounts Payable
+        </button>
+        <button class="main-tab-btn ${activeMainTab === 'ar' ? 'active' : ''}" id="btn-tab-ar">
+          <span class="tab-dot blue"></span> Accounts Receivables
+        </button>
+      </div>
     `;
 
     document.getElementById('btn-tab-ap')?.addEventListener('click', () => {
-      activeMainTab = 'ap';
-      activeSubId = 'requisition';
-      renderHighlights();
+      if (activeMainTab !== 'ap') {
+        activeMainTab = 'ap';
+        activeSubId = 'requisition';
+        renderHighlights();
+      }
     });
 
     document.getElementById('btn-tab-ar')?.addEventListener('click', () => {
-      activeMainTab = 'ar';
-      activeSubId = 'invoices';
-      renderHighlights();
+      if (activeMainTab !== 'ar') {
+        activeMainTab = 'ar';
+        activeSubId = 'invoices';
+        renderHighlights();
+      }
     });
 
-    // 2. Render Main description
+    // 2. Render Main Description
     mainDescElement.textContent = activeMainTab === 'ap'
-      ? "Effortlessly schedule payments and streamline your finances with automatic payments, eliminating the need for manual processing."
+      ? "Effortlessly schedule payments and streamline your finances with automatic payments, eliminating manual processing."
       : "Optimize billing timelines, send electronic invoices instantly, and accelerate payment collection via intelligent bank sync matching.";
 
-    // 3. Render Timeline items
+    // 3. Render Numbered Timeline Items
     timelineContainer.innerHTML = '';
-    items.forEach((item) => {
+    items.forEach((item, index) => {
       const isActive = item.id === activeSubId;
       const block = document.createElement('div');
       block.className = `sub-menu-item-block ${isActive ? 'active' : ''}`;
       
-      const titleSpan = document.createElement('span');
-      titleSpan.className = 'sub-menu-title';
-      titleSpan.textContent = item.name;
-      block.appendChild(titleSpan);
-
-      if (isActive) {
-        const descP = document.createElement('p');
-        descP.className = 'sub-menu-desc';
-        descP.textContent = item.description;
-        block.appendChild(descP);
-      }
+      const numStr = (index + 1).toString().padStart(2, '0');
+      
+      block.innerHTML = `
+        <div class="sub-menu-header">
+          <span class="sub-menu-num">${numStr}</span>
+          <span class="sub-menu-title">${item.name}</span>
+        </div>
+        ${isActive ? `<p class="sub-menu-desc">${item.description}</p>` : ''}
+      `;
 
       block.addEventListener('click', () => {
-        activeSubId = item.id;
-        renderHighlights();
+        if (activeSubId !== item.id) {
+          activeSubId = item.id;
+          renderHighlights();
+        }
       });
 
       timelineContainer.appendChild(block);
     });
 
-    // 4. Render selected image
-    cardsStackContainer.innerHTML = '';
-    const activeItem = items[activeSubIndex] ?? items[0];
+    // 4. Render Upgraded Window Screen Frame
     if (activeItem) {
-      const img = document.createElement('img');
-      img.src = activeItem.imagePath;
-      img.alt = activeItem.name;
-      img.className = 'stacked-card-img';
-      cardsStackContainer.appendChild(img);
+      cardsStackContainer.innerHTML = `
+        <div class="highlight-window-frame">
+          <div class="window-topbar">
+            <div class="window-title-badge">
+              <span class="pulse-dot"></span>
+              ${activeMainTab.toUpperCase()} Module: <strong>${activeItem.name}</strong>
+            </div>
+          </div>
+          <div class="window-image-container">
+            <img src="${activeItem.imagePath}" alt="${activeItem.name}" class="stacked-card-img" />
+          </div>
+        </div>
+      `;
+
+      // Smooth GSAP reveal transition
+      const frameEl = cardsStackContainer.querySelector('.highlight-window-frame');
+      if (frameEl) {
+        gsap.fromTo(
+          frameEl,
+          { opacity: 0, y: 12, scale: 0.98 },
+          { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: 'power2.out' }
+        );
+      }
     }
   };
 
@@ -238,7 +272,18 @@ window.addEventListener('DOMContentLoaded', () => {
         const isActive = control.dataset.mandateStage === stageId;
         control.classList.toggle('active', isActive);
         control.setAttribute('aria-pressed', String(isActive));
+        const parentNode = control.closest('.roadmap-node-3d');
+        if (parentNode) {
+          parentNode.classList.toggle('active', isActive);
+        }
       });
+
+      // Animate SVG path dashoffset based on active stage
+      const activePath = document.querySelector<SVGPathElement>('.roadmap-path-active');
+      if (activePath) {
+        const offsetMap: Record<MandateStageId, number> = { '2025': 650, '2028': 320, '2031': 0 };
+        gsap.to(activePath, { strokeDashoffset: offsetMap[stageId], duration: 0.6, ease: 'power2.out' });
+      }
 
       if (status) status.textContent = stage.status;
       if (phaseLabel) phaseLabel.textContent = stage.phaseLabel;
@@ -253,12 +298,27 @@ window.addEventListener('DOMContentLoaded', () => {
         { opacity: 0, y: 10 },
         { opacity: 1, y: 0, duration: 0.35, stagger: 0.04, ease: 'power2.out' }
       );
-
-      const activeCard = document.querySelector(`.roadmap-node[data-mandate-stage="${stageId}"] .roadmap-card`);
-      if (activeCard) {
-        gsap.fromTo(activeCard, { opacity: 0.82 }, { opacity: 1, duration: 0.35, ease: 'power2.out' });
-      }
     };
+
+    // 3D Stage Mouse Tilt Effect
+    const stage3d = document.getElementById('roadmap-3d-stage');
+    if (stage3d && !prefersReducedMotion) {
+      stage3d.addEventListener('mousemove', (e) => {
+        const rect = stage3d.getBoundingClientRect();
+        const mouseX = (e.clientX - rect.left) / rect.width - 0.5;
+        const mouseY = (e.clientY - rect.top) / rect.height - 0.5;
+        gsap.to(stage3d, {
+          rotateY: mouseX * 12,
+          rotateX: -mouseY * 10,
+          duration: 0.5,
+          ease: 'power2.out',
+          overwrite: 'auto'
+        });
+      });
+      stage3d.addEventListener('mouseleave', () => {
+        gsap.to(stage3d, { rotateY: 0, rotateX: 0, duration: 0.7, ease: 'power2.out' });
+      });
+    }
 
     controls.forEach((control) => {
       control.addEventListener('click', () => {
@@ -273,7 +333,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     if (!prefersReducedMotion) {
       gsap.fromTo(
-        '.mandate-copy > *',
+        '.mandate-header-center > *',
         { opacity: 0, y: 26 },
         {
           opacity: 1,
@@ -290,30 +350,13 @@ window.addEventListener('DOMContentLoaded', () => {
       );
 
       gsap.fromTo(
-        '.roadmap-node',
-        { opacity: 0, y: 34 },
+        '#roadmap-3d-stage',
+        { opacity: 0, y: 40, scale: 0.94 },
         {
           opacity: 1,
           y: 0,
+          scale: 1,
           duration: 0.85,
-          stagger: 0.12,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '#gst-mandate',
-            start: 'top 68%',
-            once: true
-          }
-        }
-      );
-
-      gsap.fromTo(
-        '.mandate-insight, .mandate-visual-top',
-        { opacity: 0, y: 18 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.75,
-          stagger: 0.08,
           ease: 'power3.out',
           scrollTrigger: {
             trigger: '#gst-mandate',
@@ -323,41 +366,75 @@ window.addEventListener('DOMContentLoaded', () => {
         }
       );
 
-      const parallaxLayers = Array.from(document.querySelectorAll<HTMLElement>('[data-mandate-depth]'));
+      gsap.fromTo(
+        '.roadmap-node-3d',
+        { opacity: 0, y: 35, scale: 0.85 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: 'back.out(1.5)',
+          scrollTrigger: {
+            trigger: '#gst-mandate',
+            start: 'top 65%',
+            once: true
+          }
+        }
+      );
 
-      visual.addEventListener('mousemove', (event) => {
-        const rect = visual.getBoundingClientRect();
-        const x = (event.clientX - rect.left) / rect.width - 0.5;
-        const y = (event.clientY - rect.top) / rect.height - 0.5;
-
-        parallaxLayers.forEach((layer) => {
-          const depth = Number(layer.dataset.mandateDepth || '0.1');
-          gsap.to(layer, {
-            x: x * 90 * depth,
-            y: y * 70 * depth,
-            rotateX: -y * 4 * depth,
-            rotateY: x * 5 * depth,
-            duration: 0.5,
-            ease: 'power2.out',
-            overwrite: 'auto'
-          });
-        });
-      });
-
-      visual.addEventListener('mouseleave', () => {
-        parallaxLayers.forEach((layer) => {
-          gsap.to(layer, {
-            x: 0,
-            y: 0,
-            rotateX: 0,
-            rotateY: 0,
-            duration: 0.65,
-            ease: 'power2.out',
-            overwrite: 'auto'
-          });
-        });
-      });
+      gsap.fromTo(
+        '.mandate-insight-box',
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.75,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '#gst-mandate',
+            start: 'top 60%',
+            once: true
+          }
+        }
+      );
     }
+
+    const parallaxLayers = Array.from(document.querySelectorAll<HTMLElement>('[data-mandate-depth]'));
+
+    visual.addEventListener('mousemove', (event) => {
+      const rect = visual.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width - 0.5;
+      const y = (event.clientY - rect.top) / rect.height - 0.5;
+
+      parallaxLayers.forEach((layer) => {
+        const depth = Number(layer.dataset.mandateDepth || '0.1');
+        gsap.to(layer, {
+          x: x * 90 * depth,
+          y: y * 70 * depth,
+          rotateX: -y * 4 * depth,
+          rotateY: x * 5 * depth,
+          duration: 0.5,
+          ease: 'power2.out',
+          overwrite: 'auto'
+        });
+      });
+    });
+
+    visual.addEventListener('mouseleave', () => {
+      parallaxLayers.forEach((layer) => {
+        gsap.to(layer, {
+          x: 0,
+          y: 0,
+          rotateX: 0,
+          rotateY: 0,
+          duration: 0.65,
+          ease: 'power2.out',
+          overwrite: 'auto'
+        });
+      });
+    });
   };
 
   initMandateRoadmap();
@@ -472,19 +549,21 @@ window.addEventListener('DOMContentLoaded', () => {
 
     if (prefersReducedMotion) return;
 
-    const usePinnedStory = window.matchMedia('(min-width: 1121px)').matches;
+    const usePinnedStory = window.matchMedia('(min-width: 1024px)').matches;
 
     if (usePinnedStory) {
-      gsap.set('.adoption-copy', { opacity: 0, x: 64 });
-      gsap.set('.adoption-benefit-card', { opacity: 0, y: 24, scale: 0.97 });
-      gsap.set('.adoption-float-card', { opacity: 0, y: 26, scale: 0.9 });
-      gsap.set('.adoption-orbit, .adoption-wave-lines', { opacity: 0, scale: 0.94 });
+      gsap.set('.adoption-copy', { opacity: 0, x: 60 });
+      gsap.set('.adoption-benefit-card', { opacity: 0, y: 24, scale: 0.96 });
+      gsap.set('.adoption-float-card', { opacity: 0, y: 24, scale: 0.9 });
+      
+      // Step 1: Laptop base starts subtle while the graph/analytics screen is centered & BIGGER!
+      gsap.set('.adoption-laptop-base', { opacity: 0, scaleY: 0.2 });
       gsap.set('.adoption-laptop', {
-        opacity: 0,
-        xPercent: 58,
-        y: 16,
-        scale: 1.14,
-        rotateX: 5,
+        opacity: 1,
+        xPercent: 54, // Centered on screen at start!
+        y: 10,
+        scale: 1.35, // BIGGER & PROMINENT in the center!
+        rotateX: 3,
         transformOrigin: 'center center'
       });
 
@@ -492,59 +571,74 @@ window.addEventListener('DOMContentLoaded', () => {
         scrollTrigger: {
           trigger: '#adopt-invoicenow',
           start: 'top top',
-          end: '+=125%',
+          end: '+=160%',
           pin: true,
-          scrub: 0.85,
+          scrub: 0.65,
           anticipatePin: 1
         }
       });
 
       adoptionStory
-        .to('.adoption-laptop', {
-          opacity: 1,
-          y: 0,
-          rotateX: 0,
-          duration: 0.18,
-          ease: 'power2.out'
-        }, 0)
+        // ----------------------------------------------------
+        // STEP 1: Graphs show up first in the center!
+        // ----------------------------------------------------
+        .fromTo(
+          '.adoption-dashboard-main',
+          { opacity: 0, y: 30, scale: 0.92 },
+          { opacity: 1, y: 0, scale: 1, duration: 0.22, ease: 'power2.out' },
+          0
+        )
         .fromTo(
           '.adoption-bars span',
           { height: 0 },
           {
             height: (_, target) => (target as HTMLElement).style.getPropertyValue('--bar-height') || '50%',
-            duration: 0.28,
-            stagger: 0.025,
+            duration: 0.26,
+            stagger: 0.02,
             ease: 'power3.out'
           },
-          0.08
+          0.06
         )
+
+        // ----------------------------------------------------
+        // STEP 2: Scroll again -> Laptop frame forms around graph in center!
+        // ----------------------------------------------------
+        .to('.adoption-laptop-base', {
+          opacity: 1,
+          scaleY: 1,
+          duration: 0.24,
+          ease: 'power2.out'
+        }, 0.22)
+        .to('.adoption-laptop', {
+          rotateX: 0,
+          duration: 0.2,
+          ease: 'power1.out'
+        }, 0.24)
+
+        // ----------------------------------------------------
+        // STEP 3: Scroll again -> Laptop scales down & glides to Left Side + Full Benefits reveal on right!
+        // ----------------------------------------------------
         .to('.adoption-laptop', {
           xPercent: 0,
-          scale: 1,
-          duration: 0.46,
+          y: 0,
+          scale: 1, // Scales smoothly from 1.35 down to 1.0 on the left!
+          duration: 0.44,
           ease: 'power2.inOut'
-        }, 0.22)
-        .to('.adoption-orbit, .adoption-wave-lines', {
-          opacity: 0.72,
-          scale: 1,
-          duration: 0.3,
-          stagger: 0.04,
-          ease: 'power2.out'
-        }, 0.32)
+        }, 0.40)
         .to('.adoption-float-card', {
           opacity: 1,
           y: 0,
           scale: 1,
-          duration: 0.35,
-          stagger: 0.05,
+          duration: 0.32,
+          stagger: 0.04,
           ease: 'back.out(1.5)'
-        }, 0.46)
+        }, 0.62)
         .to('.adoption-copy', {
           opacity: 1,
           x: 0,
           duration: 0.34,
           ease: 'power2.out'
-        }, 0.58)
+        }, 0.68)
         .to('.adoption-benefit-card', {
           opacity: 1,
           y: 0,
@@ -552,7 +646,7 @@ window.addEventListener('DOMContentLoaded', () => {
           duration: 0.34,
           stagger: 0.045,
           ease: 'power2.out'
-        }, 0.66);
+        }, 0.74);
     } else {
       gsap.fromTo(
         '.adoption-copy > *',
@@ -565,7 +659,7 @@ window.addEventListener('DOMContentLoaded', () => {
           ease: 'power3.out',
           scrollTrigger: {
             trigger: '#adopt-invoicenow',
-            start: 'top 76%',
+            start: 'top 80%',
             once: true
           }
         }
@@ -573,16 +667,16 @@ window.addEventListener('DOMContentLoaded', () => {
 
       gsap.fromTo(
         '.adoption-laptop',
-        { opacity: 0, y: 40, rotateX: 4 },
+        { opacity: 0, y: 40, scale: 0.95 },
         {
           opacity: 1,
           y: 0,
-          rotateX: 0,
+          scale: 1,
           duration: 0.9,
           ease: 'power3.out',
           scrollTrigger: {
             trigger: '#adopt-invoicenow',
-            start: 'top 70%',
+            start: 'top 80%',
             once: true
           }
         }
@@ -590,7 +684,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
       gsap.fromTo(
         '.adoption-float-card',
-        { opacity: 0, y: 22, scale: 0.94 },
+        { opacity: 0, y: 24, scale: 0.92 },
         {
           opacity: 1,
           y: 0,
@@ -600,23 +694,7 @@ window.addEventListener('DOMContentLoaded', () => {
           ease: 'back.out(1.5)',
           scrollTrigger: {
             trigger: '#adopt-invoicenow',
-            start: 'top 68%',
-            once: true
-          }
-        }
-      );
-
-      gsap.fromTo(
-        '.adoption-bars span',
-        { height: 0 },
-        {
-          height: (_, target) => (target as HTMLElement).style.getPropertyValue('--bar-height') || '50%',
-          duration: 0.9,
-          stagger: 0.04,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '#adopt-invoicenow',
-            start: 'top 64%',
+            start: 'top 75%',
             once: true
           }
         }
@@ -660,4 +738,201 @@ window.addEventListener('DOMContentLoaded', () => {
   };
 
   initAdoptionBenefits();
+
+  // Next-Gen Interactive Stage Showcase for 5 Ways InvoiceNow Benefits
+  const initFiveBenefitsAnimation = () => {
+    const section = document.getElementById('invoicenow-benefits');
+    const selectorCards = Array.from(document.querySelectorAll<HTMLElement>('.feature-selector-card'));
+    const displayTitle = document.getElementById('feature-display-title');
+    const displayDesc = document.getElementById('feature-display-desc');
+    const displayChips = document.getElementById('feature-display-chips');
+    const displayImg = document.getElementById('feature-display-img') as HTMLImageElement | null;
+    const displayBadge = document.getElementById('feature-display-badge');
+    const displayFrame = document.querySelector<HTMLElement>('.display-screen-frame');
+
+    if (!section || selectorCards.length === 0) return;
+
+    const featureData = [
+      {
+        title: 'Reduced Manual Work',
+        desc: 'Dramatically slashes time spent on repetitive manual data entry and invoice processing. Autonomous Peppol document recognition extracts and validates line items instantly into your ERP ledger.',
+        chips: ['✓ Automated 3-Way Matching', '✓ Instant Discrepancy Alerts', '✓ Zero Manual Entry'],
+        img: '/benefits/reduced-manual-work.jpg',
+        badge: '⚡ 90% Time Saved'
+      },
+      {
+        title: 'Simplified Invoicing',
+        desc: 'Manage all invoicing data—including commercial business partners and government entities—through a single digital solution with centralized visibility and real-time tracking.',
+        chips: ['✓ Single AR/AP Portal', '✓ Real-Time Status Tracking', '✓ Multi-Entity Support'],
+        img: '/benefits/simplified-invoicing.jpg',
+        badge: '✨ Unified Hub'
+      },
+      {
+        title: 'Faster GST Processing',
+        desc: 'Enjoy built-in system checks that reduce reporting errors, leading to significantly faster GST audits and accelerated tax refunds directly from IRAS.',
+        chips: ['✓ IRAS Tax Code Validation', '✓ 3x Faster Audit Refund', '✓ Audit-Proof Trail'],
+        img: '/benefits/faster-gst-processing.jpg',
+        badge: '🛡️ IRAS Approved'
+      },
+      {
+        title: 'Enterprise Data Security',
+        desc: 'Enhanced reliability and enterprise security under the international Peppol network with AES-256 end-to-end encryption and ISO 27001 certification.',
+        chips: ['✓ AES-256 Bit Encryption', '✓ ISO 27001 Certified', '✓ 99.99% Uptime SLA'],
+        img: '/benefits/data-security.jpg',
+        badge: '🔒 ISO 27001'
+      },
+      {
+        title: 'Global Peppol Connectivity',
+        desc: 'Seamlessly connect with thousands of international businesses across markets already on the Peppol network, including SG, AU, JP, NZ, and the European Union.',
+        chips: ['✓ 40+ Peppol Countries', '✓ 500k+ Connected Vendors', '✓ Native BIS Billing 3.0'],
+        img: '/benefits/global-connectivity.jpg',
+        badge: '🌐 40+ Countries'
+      }
+    ];
+
+    selectorCards.forEach((card) => {
+      card.addEventListener('click', () => {
+        const index = parseInt(card.getAttribute('data-feature-index') || '0', 10);
+        const data = featureData[index];
+        if (!data) return;
+
+        selectorCards.forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+
+        if (displayFrame) {
+          gsap.to(displayFrame, {
+            opacity: 0.4,
+            y: 8,
+            duration: 0.15,
+            onComplete: () => {
+              if (displayTitle) displayTitle.textContent = data.title;
+              if (displayDesc) displayDesc.textContent = data.desc;
+              if (displayBadge) displayBadge.textContent = `✓ ${data.badge}`;
+              if (displayImg) displayImg.src = data.img;
+              if (displayChips) {
+                displayChips.innerHTML = data.chips.map(c => `<span class="chip">${c}</span>`).join('');
+              }
+
+              gsap.to(displayFrame, {
+                opacity: 1,
+                y: 0,
+                duration: 0.25,
+                ease: 'power2.out'
+              });
+            }
+          });
+        }
+      });
+    });
+  };
+
+  initFiveBenefitsAnimation();
+
+  // GSAP ScrollTrigger for Government Grants Section
+  const initGovernmentFundingAnimation = () => {
+    const section = document.getElementById('government-funding');
+    const grantRows = Array.from(document.querySelectorAll<HTMLElement>('.grant-row-card'));
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!section || grantRows.length === 0) return;
+
+    if (!prefersReducedMotion) {
+      // 1. Header Reveal
+      gsap.fromTo(
+        '.funding-header > *',
+        { opacity: 0, y: 25 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '#government-funding',
+            start: 'top 75%',
+            once: true
+          }
+        }
+      );
+
+      // 2. Grant Rows Staggered Reveal
+      gsap.fromTo(
+        grantRows,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.85,
+          stagger: 0.12,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '#government-funding',
+            start: 'top 75%',
+            once: true
+          }
+        }
+      );
+    }
+  };
+
+  initGovernmentFundingAnimation();
+
+  // Mobile Menu Navigation Toggle
+  const initMobileMenu = () => {
+    const toggleBtn = document.getElementById('mobile-menu-toggle');
+    const navLinks = document.getElementById('main-nav');
+
+    if (!toggleBtn || !navLinks) return;
+
+    toggleBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('mobile-open');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('mobile-open');
+      });
+    });
+  };
+
+  initMobileMenu();
+
+  // Top Ads Banner Handler
+  const initTopAdsBar = () => {
+    const topAdsBar = document.getElementById('top-ads-bar');
+    const closeAdsBtn = document.getElementById('close-ads-btn');
+
+    if (!topAdsBar) return;
+    document.body.classList.add('has-ads-bar');
+
+    if (closeAdsBtn) {
+      closeAdsBtn.addEventListener('click', () => {
+        topAdsBar.classList.add('dismissed');
+        document.body.classList.remove('has-ads-bar');
+      });
+    }
+  };
+
+  initTopAdsBar();
+
+  // Floating Ads Modal Card Handler
+  const initFloatingAdsCard = () => {
+    const card = document.getElementById('floating-ads-card');
+    const closeBtn = document.getElementById('close-floating-ads-btn');
+
+    if (!card) return;
+
+    setTimeout(() => {
+      card.classList.add('active');
+    }, 1000);
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        card.classList.remove('active');
+        card.classList.add('dismissed');
+      });
+    }
+  };
+
+  initFloatingAdsCard();
 });
