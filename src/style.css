@@ -7171,11 +7171,35 @@ body.page-mode-home #pricing-plans,
 body.page-mode-home #foc-package-section,
 body.page-mode-home #faq-section,
 body.page-mode-home #news-hub,
+body.page-mode-home #register-page,
 body:not([class*="page-mode-"]) #invoicenow-hub,
 body:not([class*="page-mode-"]) #pricing-plans,
 body:not([class*="page-mode-"]) #foc-package-section,
 body:not([class*="page-mode-"]) #faq-section,
-body:not([class*="page-mode-"]) #news-hub {
+body:not([class*="page-mode-"]) #news-hub,
+body:not([class*="page-mode-"]) #register-page {
+  display: none !important;
+}
+
+/* --- Register Page Mode --- */
+body.page-mode-register #register-page {
+  display: flex !important;
+}
+
+body.page-mode-register #hero,
+body.page-mode-register #product-highlights,
+body.page-mode-register #gst-mandate,
+body.page-mode-register #adopt-invoicenow,
+body.page-mode-register #invoicenow-benefits,
+body.page-mode-register #government-funding,
+body.page-mode-register #cta-banner,
+body.page-mode-register #pricing-plans,
+body.page-mode-register #foc-package-section,
+body.page-mode-register #faq-section,
+body.page-mode-register #news-hub,
+body.page-mode-register #invoicenow-hub,
+body.page-mode-register #main-footer,
+body.page-mode-register .footer-minimal {
   display: none !important;
 }
 

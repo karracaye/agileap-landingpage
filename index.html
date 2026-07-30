@@ -1487,7 +1487,7 @@
                           <span class="price-period">/ month</span>
                         </div>
                         <span class="billing-sub">Billed Monthly</span>
-                        <a href="#cta-banner" class="btn-modern-plan">Choose This Plan</a>
+                        <a href="#register" data-plan="Starter" data-price="SGD 20" class="btn-modern-plan">Choose This Plan</a>
                       </div>
                     </th>
 
@@ -1502,7 +1502,7 @@
                           <span class="price-period">/ month</span>
                         </div>
                         <span class="billing-sub">Billed Monthly</span>
-                        <a href="#cta-banner" class="btn-modern-plan">Choose This Plan</a>
+                        <a href="#register" data-plan="Basic" data-price="SGD 55" class="btn-modern-plan">Choose This Plan</a>
                       </div>
                     </th>
 
@@ -1518,7 +1518,7 @@
                           <span class="price-period">/ month</span>
                         </div>
                         <span class="billing-sub">Billed Monthly</span>
-                        <a href="#cta-banner" class="btn-modern-plan btn-orange-plan">Choose This Plan</a>
+                        <a href="#register" data-plan="Standard" data-price="SGD 90" class="btn-modern-plan btn-orange-plan">Choose This Plan</a>
                       </div>
                     </th>
 
@@ -1731,7 +1731,7 @@
                           <span class="foc-price-val">SGD 0 <span class="period">/ Month</span></span>
                         </div>
                         <span class="foc-up-price">U.P. SGD 150.00 / Billed Monthly</span>
-                        <a href="#cta-banner" class="btn-foc-action btn-foc-orange">Sign Up and Choose This Plan</a>
+                        <a href="#register" data-plan="FOC Package" data-price="SGD 0" class="btn-foc-action btn-foc-orange">Sign Up and Choose This Plan</a>
                       </div>
                     </th>
 
@@ -1743,7 +1743,7 @@
                           <span class="foc-price-val">SGD 20 <span class="period">/ Month</span></span>
                         </div>
                         <span class="foc-billing-sub">Billed Monthly</span>
-                        <a href="#cta-banner" class="btn-foc-action btn-foc-gray">Sign Up and Choose This Plan</a>
+                        <a href="#register" data-plan="Starter" data-price="SGD 20" class="btn-foc-action btn-foc-gray">Sign Up and Choose This Plan</a>
                       </div>
                     </th>
 
@@ -1755,7 +1755,7 @@
                           <span class="foc-price-val">SGD 55 <span class="period">/ Month</span></span>
                         </div>
                         <span class="foc-billing-sub">Billed Monthly</span>
-                        <a href="#cta-banner" class="btn-foc-action btn-foc-gray">Sign Up and Choose This Plan</a>
+                        <a href="#register" data-plan="Basic" data-price="SGD 55" class="btn-foc-action btn-foc-gray">Sign Up and Choose This Plan</a>
                       </div>
                     </th>
 
@@ -1767,7 +1767,7 @@
                           <span class="foc-price-val">SGD 90 <span class="period">/ Month</span></span>
                         </div>
                         <span class="foc-billing-sub">Billed Monthly</span>
-                        <a href="#cta-banner" class="btn-foc-action btn-foc-gray">Sign Up and Choose This Plan</a>
+                        <a href="#register" data-plan="Standard" data-price="SGD 90" class="btn-foc-action btn-foc-gray">Sign Up and Choose This Plan</a>
                       </div>
                     </th>
                   </tr>
@@ -2280,6 +2280,238 @@
         </div>
       </div>
     </div>
+
+
+    <!-- ============================================================
+         REGISTRATION PAGE
+         ============================================================ -->
+    <div id="register-page" class="reg-page" aria-label="Create Your Company Account">
+      <div class="reg-layout">
+
+        <!-- ── Left Panel ── -->
+        <aside class="reg-panel">
+          <div class="reg-panel-inner">
+            <a href="#home" class="reg-logo-link" aria-label="AgileAP Home">
+              <img src="/logo-full.png" alt="AgileAP" class="reg-logo" />
+            </a>
+
+            <h1 class="reg-panel-title">Create Your<br><span>Company</span> Account</h1>
+            <p class="reg-panel-sub">Join thousands of businesses using AgileAP to simplify their accounts payable process.</p>
+
+            <!-- Plan Card -->
+            <div class="reg-plan-card">
+              <span class="reg-plan-badge" id="reg-plan-badge">FREE PLAN</span>
+              <div class="reg-plan-price-row">
+                <span class="reg-plan-price" id="reg-plan-price">SGD 0</span>
+                <span class="reg-plan-period">/ Month</span>
+              </div>
+              <span class="reg-plan-original" id="reg-plan-original">U.P. SGD 150.00</span>
+              <span class="reg-plan-billing">Billing Monthly</span>
+              <hr class="reg-plan-divider" />
+              <ul class="reg-plan-features">
+                <li>
+                  <span class="reg-feature-icon"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+                  <span class="reg-feature-text">1 User</span>
+                </li>
+                <li>
+                  <span class="reg-feature-icon"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span>
+                  <span class="reg-feature-text">1 Entity</span>
+                </li>
+                <li>
+                  <span class="reg-feature-icon"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg></span>
+                  <span class="reg-feature-text">1000 InvoiceNow Documents<small>(Invoice, CN, PO)</small></span>
+                </li>
+                <li>
+                  <span class="reg-feature-icon"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+                  <span class="reg-feature-text">1000 Email Documents</span>
+                </li>
+              </ul>
+              <p class="reg-plan-tagline">Everything you need, for free</p>
+              <hr class="reg-plan-divider" />
+              <ul class="reg-plan-checklist">
+                <li>Invoice</li>
+                <li>Credit Note</li>
+                <li>Claims</li>
+                <li>Products and Services</li>
+                <li>Vendor / Customer Management</li>
+                <li>System Administration</li>
+                <li>Dashboard and Analytics</li>
+              </ul>
+            </div>
+
+            <!-- Help Box -->
+            <div class="reg-help-box">
+              <span class="reg-help-icon" aria-hidden="true">
+                <svg width="22" height="22" fill="none" stroke="#E55B1B" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+              </span>
+              <div>
+                <strong>Need help getting started?</strong>
+                <p>Our team is here to help you within <strong>3 business days</strong> to assist with the activation.</p>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- ── Right Form Panel ── -->
+        <main class="reg-form-panel">
+          <form class="reg-form" id="reg-form" novalidate autocomplete="off">
+
+            <!-- Section: Company Information -->
+            <div class="reg-form-section">
+              <div class="reg-section-header">
+                <span class="reg-section-icon" aria-hidden="true">
+                  <svg width="20" height="20" fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+                </span>
+                <h2>Company Information</h2>
+              </div>
+
+              <div class="reg-field">
+                <label for="company-name">Company Name<span class="req">*</span></label>
+                <input type="text" id="company-name" name="company_name" placeholder="Enter Company Name" required />
+              </div>
+
+              <div class="reg-row">
+                <div class="reg-field">
+                  <label for="work-email">Work Email<span class="req">*</span></label>
+                  <input type="email" id="work-email" name="work_email" placeholder="@company.com" required />
+                </div>
+                <div class="reg-field">
+                  <label for="phone">Phone Number<span class="req">*</span></label>
+                  <div class="reg-phone-wrap">
+                    <span class="reg-phone-prefix">
+                      <img src="https://flagcdn.com/w20/sg.png" alt="SG" width="20" />
+                      +65
+                    </span>
+                    <input type="tel" id="phone" name="phone" placeholder="9123 4567" required />
+                  </div>
+                </div>
+              </div>
+
+              <div class="reg-row">
+                <div class="reg-field">
+                  <label for="first-name">First Name<span class="req">*</span></label>
+                  <input type="text" id="first-name" name="first_name" placeholder="Juan" required />
+                </div>
+                <div class="reg-field">
+                  <label for="last-name">Last Name<span class="req">*</span></label>
+                  <input type="text" id="last-name" name="last_name" placeholder="Dela Cruz" required />
+                </div>
+              </div>
+
+              <div class="reg-row">
+                <div class="reg-field">
+                  <label for="country">Country<span class="req">*</span></label>
+                  <div class="reg-select-wrap">
+                    <img src="https://flagcdn.com/w20/sg.png" alt="SG" width="20" class="reg-select-flag" />
+                    <select id="country" name="country" required>
+                      <option value="SG" selected>Singapore</option>
+                      <option value="MY">Malaysia</option>
+                      <option value="PH">Philippines</option>
+                      <option value="AU">Australia</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="reg-field">
+                  <label for="referral">Referral Code</label>
+                  <input type="text" id="referral" name="referral_code" placeholder="(Optional)" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Section: InvoiceNow (Peppol) Details -->
+            <div class="reg-form-section">
+              <div class="reg-section-header">
+                <span class="reg-section-icon reg-section-icon--purple" aria-hidden="true">
+                  <svg width="20" height="20" fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                </span>
+                <h2>InvoiceNow (Peppol) Details</h2>
+              </div>
+
+              <div class="reg-invoicenow-box">
+                <div class="reg-row">
+                  <div class="reg-field">
+                    <label for="biz-reg">Business Reg No.<span class="req">*</span></label>
+                    <input type="text" id="biz-reg" name="biz_reg" placeholder="Enter business reg. no." required />
+                  </div>
+                  <div class="reg-field">
+                    <label for="payment-terms">Payment Terms<span class="req">*</span></label>
+                    <select id="payment-terms" name="payment_terms" required>
+                      <option value="" disabled selected>Select payment term</option>
+                      <option value="net15">Net 15</option>
+                      <option value="net30">Net 30</option>
+                      <option value="net45">Net 45</option>
+                      <option value="net60">Net 60</option>
+                      <option value="immediate">Immediate</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="reg-row">
+                  <div class="reg-field">
+                    <label for="tax-scheme">Tax Scheme<span class="req">*</span></label>
+                    <input type="text" id="tax-scheme" name="tax_scheme" placeholder="GST" required />
+                  </div>
+                  <div class="reg-field">
+                    <label for="tax-reg">Tax Registration No.<span class="req">*</span></label>
+                    <input type="text" id="tax-reg" name="tax_reg" placeholder="Enter tax reg. no." required />
+                  </div>
+                </div>
+
+                <div class="reg-field">
+                  <label for="address">Address<span class="req">*</span></label>
+                  <input type="text" id="address" name="address" placeholder="Enter registered address" required />
+                </div>
+
+                <div class="reg-row">
+                  <div class="reg-field">
+                    <label for="postal">Postal Code<span class="req">*</span></label>
+                    <input type="text" id="postal" name="postal" placeholder="Enter postal code" required />
+                  </div>
+                  <div class="reg-field">
+                    <label for="peppol-country">Country<span class="req">*</span></label>
+                    <div class="reg-select-wrap">
+                      <img src="https://flagcdn.com/w20/sg.png" alt="SG" width="20" class="reg-select-flag" />
+                      <select id="peppol-country" name="peppol_country" required>
+                        <option value="SG" selected>Singapore</option>
+                        <option value="MY">Malaysia</option>
+                        <option value="AU">Australia</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Agreements -->
+            <div class="reg-agreements">
+              <label class="reg-check-label">
+                <input type="checkbox" id="agree-terms" required />
+                <span class="reg-check-box"></span>
+                <span>I agree to all the <a href="#" class="reg-link">Terms</a> and <a href="#" class="reg-link">Privacy Policy</a></span>
+              </label>
+              <label class="reg-check-label">
+                <input type="checkbox" id="agree-invoicenow" checked />
+                <span class="reg-check-box"></span>
+                <span class="reg-invoicenow-label">I'm interested to join InvoiceNow (Peppol) via AgileAP <img src="/invoicenow-logo.png" alt="InvoiceNow" class="reg-invoicenow-logo" /></span>
+              </label>
+              <label class="reg-check-label">
+                <input type="checkbox" id="agree-gst" checked />
+                <span class="reg-check-box"></span>
+                <span>I'm interested to activate GST InvoiceNow submission</span>
+              </label>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="reg-submit-btn" id="reg-submit-btn">
+              Create Account
+            </button>
+
+            <p class="reg-login-link">Already registered? <a href="#" class="reg-link">Login Now</a></p>
+          </form>
+        </main>
+      </div>
+    </div>
+    <!-- / REGISTRATION PAGE -->
 
     <script type="module" src="/src/main.ts"></script>
   </body>

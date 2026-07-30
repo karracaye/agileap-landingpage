@@ -1,4 +1,5 @@
 import './style.css';
+import './reg.css';
 import { ThreeScene } from './three-scene';
 import { Benefits3D } from './benefits-3d';
 import { initAnimations } from './animations';
@@ -917,6 +918,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
   initMobileMenu();
 
+  // Save plan info to sessionStorage when a plan button is clicked
+  document.querySelectorAll<HTMLAnchorElement>('a[data-plan]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      sessionStorage.setItem('reg-plan',  btn.dataset.plan  || 'FOC Package');
+      sessionStorage.setItem('reg-price', btn.dataset.price || 'SGD 0');
+    });
+  });
+
   // Top Ads Banner Handler
   const initTopAdsBar = () => {
     const topAdsBar = document.getElementById('top-ads-bar');
@@ -1188,6 +1197,7 @@ window.addEventListener('DOMContentLoaded', () => {
         'page-mode-news',
         'page-mode-foc',
         'page-mode-faq',
+        'page-mode-register',
         'news-page-mode'
       );
     };
@@ -1227,6 +1237,18 @@ window.addEventListener('DOMContentLoaded', () => {
         document.body.classList.add('page-mode-faq');
         window.scrollTo(0, 0);
         setActiveNavLink('#faq');
+      } else if (hash === '#register') {
+        document.body.classList.add('page-mode-register');
+        window.scrollTo(0, 0);
+        // Prefill plan info from sessionStorage
+        const planName  = sessionStorage.getItem('reg-plan')  || 'FOC Package';
+        const planPrice = sessionStorage.getItem('reg-price') || 'SGD 0';
+        const badge  = document.getElementById('reg-plan-badge');
+        const price  = document.getElementById('reg-plan-price');
+        const orig   = document.getElementById('reg-plan-original');
+        if (badge)  badge.textContent  = planName === 'FOC Package' ? 'FREE PLAN' : planName.toUpperCase();
+        if (price)  price.textContent  = planPrice;
+        if (orig)   orig.style.display = planName === 'FOC Package' ? '' : 'none';
       } else {
         // Homepage Mode (1 continuous page showing Unlock Business Efficiency + all sections!)
         document.body.classList.add('page-mode-home');

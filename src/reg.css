@@ -1,0 +1,544 @@
+/* ==========================================================================
+   Registration Page — Compact single-page no-scroll layout
+   ========================================================================== */
+
+body.page-mode-register {
+  background: #f5f2ef !important;
+  overflow: hidden;
+}
+
+body.page-mode-register .header,
+body.page-mode-register #main-header {
+  display: none !important;
+}
+
+.reg-page {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  min-height: 0;
+  padding: clamp(6px, 1vh, 10px);
+  background: #f5f2ef;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.reg-layout {
+  width: min(100%, 1010px);
+  height: calc(100vh - clamp(12px, 2vh, 20px));
+  max-height: 940px;
+  display: grid;
+  grid-template-columns: minmax(300px, 0.42fr) minmax(500px, 0.58fr);
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 18px 55px rgba(15, 23, 42, 0.18);
+}
+
+/* ── Left Panel ── */
+.reg-panel {
+  min-width: 0;
+  background: linear-gradient(165deg, #fff4ef 0%, #ffebe2 100%);
+  border-right: 1px solid rgba(229, 91, 27, 0.15);
+}
+
+.reg-panel-inner {
+  height: 100%;
+  min-height: 0;
+  padding: clamp(18px, 3vh, 34px) clamp(20px, 3.4vw, 40px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1.1vh, 13px);
+}
+
+/* InvoiceNow logo — bigger */
+.reg-logo-link { display: inline-block; }
+.reg-logo { height: 42px; width: auto; max-width: 200px; object-fit: contain; }
+
+.reg-panel-title {
+  margin: 0;
+  font-family: var(--font-heading);
+  color: #343434;
+  font-size: clamp(1.3rem, 2.7vh, 1.75rem);
+  font-weight: 800;
+  line-height: 1.14;
+}
+
+.reg-panel-title span { color: #e95a1a; }
+
+.reg-panel-sub {
+  max-width: 310px;
+  margin: -2px 0 2px;
+  color: #555;
+  font-size: clamp(0.73rem, 1.3vh, 0.86rem);
+  font-weight: 500;
+  line-height: 1.38;
+}
+
+/* Plan Card */
+.reg-plan-card {
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: 9px;
+  padding: clamp(10px, 1.6vh, 18px) clamp(12px, 2vw, 20px);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
+}
+
+.reg-plan-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 20px;
+  padding: 0 14px;
+  margin-bottom: 3px;
+  border-radius: 999px;
+  background: #ffe4d5;
+  color: #e95a1a;
+  font-size: 0.62rem;
+  font-weight: 800;
+}
+
+.reg-plan-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  margin-top: 2px;
+}
+
+.reg-plan-price {
+  font-family: var(--font-heading);
+  color: #e95a1a;
+  font-size: clamp(1.55rem, 3.1vh, 2.1rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.reg-plan-period,
+.reg-plan-billing {
+  color: #9b9b9b;
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+
+.reg-plan-original {
+  display: block;
+  margin-top: 3px;
+  color: #969696;
+  font-size: 0.7rem;
+  font-style: italic;
+  font-weight: 700;
+  text-decoration: line-through;
+}
+
+.reg-plan-billing {
+  display: block;
+  margin-top: 1px;
+}
+
+.reg-plan-divider {
+  border: 0;
+  border-top: 1px solid #dedede;
+  margin: clamp(5px, 0.9vh, 9px) 0;
+}
+
+.reg-plan-features,
+.reg-plan-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.reg-plan-features {
+  display: grid;
+  gap: clamp(5px, 0.85vh, 9px);
+}
+
+.reg-plan-features li {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  align-items: start;
+  gap: 8px;
+  color: #333;
+  font-size: clamp(0.72rem, 1.25vh, 0.84rem);
+  font-weight: 700;
+}
+
+.reg-feature-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  color: #e95a1a;
+}
+
+.reg-feature-icon svg { width: 16px; height: 16px; }
+
+.reg-feature-text { display: flex; flex-direction: column; }
+
+.reg-feature-text small {
+  color: #969696;
+  font-size: 0.66rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.reg-plan-tagline {
+  margin: 4px 0 0;
+  color: #9b9b9b;
+  font-size: clamp(0.68rem, 1.1vh, 0.8rem);
+  font-style: italic;
+  font-weight: 700;
+}
+
+.reg-plan-checklist {
+  display: grid;
+  gap: clamp(4px, 0.75vh, 8px);
+}
+
+.reg-plan-checklist li {
+  display: grid;
+  grid-template-columns: 17px 1fr;
+  align-items: center;
+  gap: 7px;
+  color: #333;
+  font-size: clamp(0.72rem, 1.25vh, 0.84rem);
+  font-weight: 500;
+}
+
+.reg-plan-checklist li::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background: center / 12px 12px no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E55B1B' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
+}
+
+/* Help Box */
+.reg-help-box {
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  gap: 10px;
+  align-items: center;
+  margin-top: auto;
+  padding: clamp(9px, 1.5vh, 16px);
+  border: 1px solid #ffb58f;
+  border-radius: 8px;
+  background: #fff4ef;
+}
+
+.reg-help-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffe4d5;
+}
+
+.reg-help-box strong {
+  display: block;
+  color: #333;
+  font-size: clamp(0.72rem, 1.15vh, 0.82rem);
+  line-height: 1.2;
+}
+
+.reg-help-box p {
+  margin: 2px 0 0;
+  color: #777;
+  font-size: clamp(0.65rem, 1.0vh, 0.74rem);
+  line-height: 1.18;
+}
+
+/* ── Right Form Panel ── */
+.reg-form-panel {
+  min-width: 0;
+  padding: clamp(16px, 2.8vh, 30px) clamp(22px, 4vw, 46px);
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.reg-form {
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1.4vh, 15px);
+}
+
+.reg-form-section {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(6px, 1vh, 11px);
+}
+
+/* Section header — compact icon + small title */
+.reg-section-header {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: clamp(1px, 0.35vh, 4px);
+}
+
+/* Smaller icon circle */
+.reg-section-icon {
+  width: clamp(26px, 3.8vh, 34px);
+  height: clamp(26px, 3.8vh, 34px);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: #e95a1a;
+  flex: 0 0 auto;
+}
+
+.reg-section-icon svg { width: 15px; height: 15px; }
+
+/* Smaller section title */
+.reg-section-header h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(0.78rem, 1.4vh, 0.92rem);
+  font-weight: 700;
+  color: #07111f;
+  margin: 0;
+}
+
+/* Form rows & fields */
+.reg-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(8px, 1.5vw, 18px);
+}
+
+.reg-field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.reg-field label {
+  color: #333;
+  font-size: clamp(0.69rem, 1.15vh, 0.8rem);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.req { color: #e95a1a; }
+
+.reg-field input,
+.reg-field select {
+  width: 100%;
+  height: clamp(30px, 4.2vh, 38px);
+  padding: 0 13px;
+  border: 1px solid #d6d6d6;
+  border-radius: 5px;
+  background: #ffffff;
+  color: #333;
+  font-family: var(--font-body);
+  font-size: clamp(0.71rem, 1.18vh, 0.82rem);
+  outline: none;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+  box-sizing: border-box;
+}
+
+.reg-field input::placeholder,
+.reg-field select:invalid { color: #a7a7a7; }
+
+.reg-field input:focus,
+.reg-field select:focus,
+.reg-phone-wrap:focus-within {
+  border-color: #e95a1a;
+  box-shadow: 0 0 0 2px rgba(229, 91, 27, 0.12);
+}
+
+.reg-phone-wrap,
+.reg-select-wrap { min-width: 0; }
+
+.reg-phone-wrap {
+  height: clamp(30px, 4.2vh, 38px);
+  display: flex;
+  align-items: center;
+  border: 1px solid #d6d6d6;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #ffffff;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.reg-phone-prefix {
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 8px;
+  color: #a0a0a0;
+  border-right: 1px solid #e2e2e2;
+  background: #ffffff;
+  font-size: 0.72rem;
+  flex: 0 0 auto;
+}
+
+.reg-phone-prefix img,
+.reg-select-flag {
+  width: 13px;
+  height: 13px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.reg-phone-wrap input {
+  height: 100%;
+  min-width: 0;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding-left: 8px !important;
+}
+
+.reg-select-wrap { position: relative; }
+
+.reg-select-flag {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.reg-select-wrap select { padding-left: 36px !important; }
+
+/* InvoiceNow border box */
+.reg-invoicenow-box {
+  border: 1.5px solid #e95a1a;
+  border-radius: 8px;
+  padding: clamp(9px, 1.5vh, 16px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(6px, 1vh, 11px);
+}
+
+/* Checkboxes */
+.reg-agreements {
+  display: grid;
+  gap: clamp(4px, 0.7vh, 8px);
+}
+
+.reg-check-label {
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  gap: 12px;
+  align-items: center;
+  color: #333;
+  font-size: clamp(0.69rem, 1.15vh, 0.8rem);
+  line-height: 1.25;
+  cursor: pointer;
+}
+
+.reg-check-label input[type="checkbox"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.reg-check-box {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #e95a1a;
+  border-radius: 2px;
+  background: #e95a1a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reg-check-box::after {
+  content: "";
+  width: 11px;
+  height: 11px;
+  background: center / 11px 11px no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
+}
+
+.reg-check-label input:not(:checked) + .reg-check-box { background: #ffffff; }
+.reg-check-label input:not(:checked) + .reg-check-box::after { display: none; }
+
+.reg-link { color: #0a67b1; font-weight: 600; text-decoration: underline; }
+
+/* InvoiceNow logo — inline */
+.reg-invoicenow-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  flex-wrap: wrap;
+}
+
+.reg-invoicenow-logo {
+  width: auto;
+  height: 18px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Submit button */
+.reg-submit-btn {
+  width: 100%;
+  height: clamp(36px, 4.8vh, 44px);
+  margin-top: 2px;
+  border: 0;
+  border-radius: 5px;
+  background: #e95a1a;
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: clamp(0.8rem, 1.35vh, 0.92rem);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.reg-submit-btn:hover { background: #d84f13; transform: translateY(-1px); }
+
+.reg-login-link {
+  margin: 0;
+  color: #333;
+  text-align: center;
+  font-size: clamp(0.69rem, 1.15vh, 0.8rem);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  body.page-mode-register { overflow: auto; }
+
+  .reg-page {
+    height: auto;
+    min-height: 100vh;
+    padding: 0;
+    overflow: visible;
+  }
+
+  .reg-layout {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    grid-template-columns: 1fr;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .reg-panel-inner { padding: 24px 20px; }
+  .reg-plan-card { display: none; }
+  .reg-help-box { margin-top: 8px; }
+  .reg-form-panel { padding: 24px 20px 32px; overflow: visible; }
+}
+
+@media (max-width: 600px) {
+  .reg-row { grid-template-columns: 1fr; gap: 8px; }
+  .reg-invoicenow-box { padding: 10px; }
+}
