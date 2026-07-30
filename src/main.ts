@@ -925,26 +925,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
   initTopAdsBar();
 
-  // Floating Ads Modal Card Handler
-  const initFloatingAdsCard = () => {
-    const card = document.getElementById('floating-ads-card');
-    const closeBtn = document.getElementById('close-floating-ads-btn');
-
-    if (!card) return;
-
-    setTimeout(() => {
-      card.classList.add('active');
-    }, 1000);
-
-    if (closeBtn) {
-      closeBtn.addEventListener('click', () => {
-        card.classList.remove('active');
-        card.classList.add('dismissed');
-      });
-    }
-  };
-
-  initFloatingAdsCard();
+  // Keep the first viewport aligned with the top grant banner treatment.
+  // The floating promotion card remains in the markup, but no longer opens on page load.
 
   // Scroll Down Indicator Fade Handler
   const initScrollDownIndicator = () => {
