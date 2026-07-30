@@ -136,17 +136,16 @@ export function initAnimations(threeScene?: any) {
     );
   });
 
-  // 4. Pinned Scroll Showcase Parallax (fora.so style)
+  // 4. Hero Pinned Scroll Showcase Parallax (Center & Zoom Dashboard on Scroll)
   const heroDesktop = window.matchMedia('(min-width: 1025px)').matches;
-  const sceneWrapper = document.querySelector('.parallax-scene-wrapper');
+  const sceneWrapper = document.querySelector<HTMLElement>('.parallax-scene-wrapper');
+  const heroSection = document.querySelector<HTMLElement>('#hero');
 
   const getCenterDeltaX = () => {
-    if (!sceneWrapper || !heroDesktop) return 0;
-    const heroSec = document.querySelector('#hero');
-    if (!heroSec) return 0;
-    const heroRect = heroSec.getBoundingClientRect();
+    if (!sceneWrapper || !heroSection || !heroDesktop) return 0;
+    const heroRect = heroSection.getBoundingClientRect();
     const wrapperRect = sceneWrapper.getBoundingClientRect();
-    // Calculate difference between hero center and wrapper center
+    // Calculate horizontal shift to bring right-side wrapper into exact screen center
     const heroCenter = heroRect.left + heroRect.width / 2;
     const wrapperCenter = wrapperRect.left + wrapperRect.width / 2;
     return heroCenter - wrapperCenter;
@@ -156,50 +155,49 @@ export function initAnimations(threeScene?: any) {
     scrollTrigger: {
       trigger: '#hero',
       start: 'top top',
-      end: '+=52%',
+      end: '+=65%',
       pin: true,
-      scrub: 0.5,
+      scrub: 0.8,
       invalidateOnRefresh: true
     }
   });
 
-  // Fade out hero text
+  // Fade out left hero text column smoothly on scroll
   pinTimeline.to('.hero-text-container', {
     opacity: 0,
     x: heroDesktop ? -70 : 0,
-    y: -42,
-    duration: 0.2,
+    y: -40,
+    duration: 0.3,
     ease: 'power1.out'
   }, 0);
 
-  // Move the right-side dashboard into a DEAD-CENTER showcase position & enlarge it
+  // Move right-side dashboard card into DEAD-CENTER of the screen & enlarge it
   pinTimeline.to('.parallax-scene-wrapper', {
     x: () => getCenterDeltaX(),
     scale: heroDesktop ? 1.15 : 1.05,
-    duration: 0.35,
+    duration: 0.45,
     ease: 'power1.inOut'
-  }, 0.04);
+  }, 0.05);
 
-  // Flatten & Zoom dashboard mockup
+  // Flatten 3D tilt of dashboard mockup for clean center showcase
   pinTimeline.to('.dashboard-mockup', {
     rotateX: 0,
     rotateY: 0,
     rotateZ: 0,
-    y: heroDesktop ? 0 : -8,
-    duration: 0.3,
+    duration: 0.35,
     ease: 'power1.inOut'
   }, 0.05);
 
-  // Reveal & Expand complete dashboard bottom panels on scroll
+  // Expand dashboard bottom row panels
   pinTimeline.to('.dash-bottom-row', {
     opacity: 1,
     maxHeight: 120,
     y: 0,
-    duration: 0.35,
+    duration: 0.4,
     ease: 'power1.inOut'
-  }, 0.08);
+  }, 0.1);
 
-  // Reveal Explanation Bar ONLY when scroll parallax happens (Reverses smoothly to 0 on scroll up)
+  // Expand & reveal explanation banner below centered dashboard card
   pinTimeline.to('.dashboard-explanation-bar', {
     autoAlpha: 1,
     maxHeight: 260,
@@ -209,22 +207,22 @@ export function initAnimations(threeScene?: any) {
     borderWidth: '1px',
     y: 0,
     pointerEvents: 'auto',
-    duration: 0.35,
+    duration: 0.4,
     ease: 'power1.out'
-  }, 0.1);
+  }, 0.12);
 
-  // Parallax glide floating cards to match center showcase view
+  // Parallax glide floating cards for depth effect
   floatCards.forEach((card) => {
     const depth = parseFloat((card as HTMLElement).dataset.depth || '0.2');
     pinTimeline.to(card, {
       rotateX: 0,
       rotateY: 0,
       rotateZ: 0,
-      y: -80 * depth,
+      y: -60 * depth,
       opacity: 1,
-      duration: 0.3,
+      duration: 0.35,
       ease: 'power1.inOut'
-    }, 0.05);
+    }, 0.08);
   });
 
 

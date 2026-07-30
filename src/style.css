@@ -400,7 +400,24 @@ body.has-ads-bar .header {
 }
 
 .nav-links a:hover {
-  color: #ff6b00;
+  color: #E55B1B;
+}
+
+.nav-links a.active {
+  color: #E55B1B !important;
+  font-weight: 700 !important;
+  position: relative;
+}
+
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 2.5px;
+  background: #E55B1B;
+  border-radius: 2px;
 }
 
 .cta-actions {
@@ -538,15 +555,14 @@ body.has-ads-bar .header {
 
 /* Hero Section Styles */
 .hero-section {
-  min-height: 100vh;
-  padding: 8.5rem clamp(1.5rem, 5vw, 5rem) 6rem;
+  min-height: calc(100vh - 42px);
+  padding: 5.5rem clamp(1.5rem, 4vw, 4rem) 2.5rem;
   display: grid;
-  grid-template-columns: minmax(330px, 0.78fr) minmax(560px, 1.22fr);
-  gap: clamp(2rem, 3.4vw, 4rem);
+  grid-template-columns: minmax(300px, 0.9fr) minmax(440px, 1.1fr);
+  gap: clamp(1.5rem, 3vw, 3.5rem);
   align-items: center;
   justify-content: center;
   text-align: left;
-  overflow: hidden;
   position: relative;
 }
 
@@ -796,8 +812,8 @@ h1 {
 /* 3D Scene layout & viewport wrapper */
 .parallax-scene-wrapper {
   position: relative;
-  width: min(100%, 860px);
-  max-width: 860px;
+  width: 100%;
+  max-width: 720px;
   margin: 0;
   justify-self: end;
   z-index: 10;
@@ -1520,7 +1536,7 @@ h1 {
 }
 
 /* Responsive adjustments */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .header { padding: 1.25rem 2rem; }
   .hero-section {
     grid-template-columns: 1fr;
@@ -6518,6 +6534,2572 @@ body.light-mode .screen-label {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
+  }
+}
+
+/* ==========================================================================
+   Upgraded Modern Executive News & Announcements Hub Section (#news-hub)
+   ========================================================================== */
+.news-hub-section {
+  display: none !important;
+  width: 100%;
+  padding: 6rem clamp(1.5rem, 5vw, 5rem);
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.news-hub-container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.news-master-grid {
+  display: grid;
+  grid-template-columns: minmax(310px, 360px) 1fr;
+  gap: 2rem;
+  align-items: start;
+  margin-top: 3rem;
+}
+
+/* Left Sidebar Panel */
+.news-sidebar-panel {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+}
+
+.news-sidebar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f1f5f9;
+  margin-bottom: 1.25rem;
+}
+
+.news-sidebar-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+}
+
+.news-count-pill {
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  font-weight: 700;
+  background: #f1f5f9;
+  color: #64748b;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+}
+
+.news-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  max-height: 620px;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+}
+
+/* Custom Scrollbar for News List */
+.news-items-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.news-items-list::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+/* Sidebar Item Card */
+.news-item-card {
+  width: 100%;
+  text-align: left;
+  background: #f8fafc;
+  border: 1px solid #f1f5f9;
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.news-item-card:hover {
+  background: #ffffff;
+  border-color: rgba(229, 91, 27, 0.4);
+  transform: translateX(4px);
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+}
+
+.news-item-card.active {
+  background: #fff7f2;
+  border-color: #E55B1B;
+  box-shadow: 0 8px 24px rgba(229, 91, 27, 0.15);
+}
+
+.news-item-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.news-date-tag {
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  font-weight: 700;
+  background: #e2e8f0;
+  color: #475569;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+}
+
+.news-date-tag.orange-tag,
+.news-item-card.active .news-date-tag {
+  background: rgba(229, 91, 27, 0.15);
+  color: #E55B1B;
+}
+
+.news-cat-tag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.news-item-headline {
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.news-item-card.active .news-item-headline {
+  color: #E55B1B;
+}
+
+.news-item-arrow {
+  position: absolute;
+  right: 0.85rem;
+  bottom: 0.85rem;
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  transition: all 0.25s ease;
+}
+
+.news-item-card:hover .news-item-arrow,
+.news-item-card.active .news-item-arrow {
+  color: #E55B1B;
+  transform: translateX(3px);
+}
+
+/* Right Detail Panel */
+.news-detail-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Feature Banner Hero Graphic Card */
+.news-detail-banner-card {
+  width: 100%;
+  min-height: 220px;
+  background: linear-gradient(135deg, #090e17 0%, #1e1b4b 50%, #0f172a 100%);
+  border-radius: 20px;
+  padding: 2.25rem 2.5rem;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(9, 14, 23, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.banner-mesh-bg {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(229, 91, 27, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.banner-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+  margin-bottom: 1.75rem;
+}
+
+.banner-brand-logos {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.banner-agileap-logo {
+  height: 26px;
+  width: auto;
+  filter: brightness(0) invert(1);
+}
+
+.banner-divider-line {
+  width: 1px;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.invoicenow-badge {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+}
+
+.promo-code-badge {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(229, 91, 27, 0.4);
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  backdrop-filter: blur(12px);
+}
+
+.promo-label {
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.promo-code {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #E55B1B;
+  letter-spacing: 0.06em;
+}
+
+.banner-main-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 2.8vw, 2.25rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.25;
+  margin: 0;
+  z-index: 2;
+}
+
+/* Detail Content Card */
+.news-detail-content-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 2.25rem 2.5rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Meta Info Cards Grid */
+.meta-info-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 1.75rem;
+}
+
+.meta-card {
+  background: #f8fafc;
+  border: 1px solid #f1f5f9;
+  padding: 0.85rem 1rem;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.meta-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.meta-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.meta-label {
+  font-size: 0.7rem;
+  color: #64748b;
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+}
+
+.meta-val {
+  font-family: var(--font-heading);
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.3;
+}
+
+/* Article Body */
+.news-article-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  font-size: 0.95rem;
+  color: #334155;
+  line-height: 1.7;
+}
+
+.lead-paragraph {
+  font-size: 1.02rem;
+  font-weight: 500;
+  color: #0f172a;
+  margin: 0;
+}
+
+.highlight-callout-box {
+  background: #fff7f2;
+  border-left: 4px solid #E55B1B;
+  padding: 1.1rem 1.35rem;
+  border-radius: 0 14px 14px 0;
+  margin: 0.5rem 0;
+}
+
+.highlight-callout-box p {
+  margin: 0;
+  color: #1e293b;
+}
+
+.signoff-text {
+  font-size: 0.98rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Action CTAs */
+.news-article-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2.25rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.btn-news-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #E55B1B;
+  color: #ffffff;
+  padding: 0.75rem 1.6rem;
+  border-radius: 999px;
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(229, 91, 27, 0.3);
+  transition: all 0.25s ease;
+}
+
+.btn-news-primary:hover {
+  background: #d44d0f;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(229, 91, 27, 0.4);
+}
+
+.btn-news-secondary {
+  display: inline-flex;
+  align-items: center;
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid #cbd5e1;
+  padding: 0.75rem 1.6rem;
+  border-radius: 999px;
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-news-secondary:hover {
+  background: #f8fafc;
+  border-color: #E55B1B;
+  color: #E55B1B;
+}
+
+@media (max-width: 950px) {
+  .news-master-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .meta-info-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+  .news-detail-banner-card {
+    padding: 1.75rem 1.5rem;
+  }
+  .news-detail-content-card {
+    padding: 1.5rem;
+  }
+  .banner-top-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+/* ==========================================================================
+   Multi-Page Tab Router System (Homepage vs Dedicated Tab Pages)
+   ========================================================================== */
+
+/* 1. HOMEPAGE MODE (Default / #home) */
+/* Hide dedicated tab pages from homepage flow */
+body:not([class*="page-mode-"]) #news-hub,
+body.page-mode-home #news-hub,
+body:not([class*="page-mode-"]) #pricing-plans,
+body.page-mode-home #pricing-plans,
+body:not([class*="page-mode-"]) #foc-package-section,
+body.page-mode-home #foc-package-section,
+body:not([class*="page-mode-"]) #faq-section,
+body.page-mode-home #faq-section,
+body:not([class*="page-mode-"]) #invoicenow-hub,
+body.page-mode-home #invoicenow-hub {
+  display: none !important;
+}
+
+/* 2. TAB PAGE MODES (Hide WebGL Canvas, Ads Bars & Unrelated Sections) */
+body[class*="page-mode-"]:not(.page-mode-home) .webgl,
+body[class*="page-mode-"]:not(.page-mode-home) #webgl-canvas,
+body[class*="page-mode-"]:not(.page-mode-home) #top-ads-bar,
+body[class*="page-mode-"]:not(.page-mode-home) #floating-ads-card,
+body[class*="page-mode-"]:not(.page-mode-home) .hero-scroll-down-circle {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+
+body[class*="page-mode-"]:not(.page-mode-home) .header {
+  top: 0 !important;
+}
+
+body[class*="page-mode-"]:not(.page-mode-home) {
+  background: #f8fafc !important;
+}
+
+/* Common standalone page container formatting for dedicated tab pages */
+body[class*="page-mode-"]:not(.page-mode-home) main > section {
+  min-height: calc(100vh - 120px);
+  padding-top: 6.5rem !important;
+  padding-bottom: 4rem !important;
+}
+
+/* --- Dedicated Pricing Page (#pricing) --- */
+body.page-mode-pricing main > section:not(#pricing-plans) {
+  display: none !important;
+}
+body.page-mode-pricing #pricing-plans {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  background: #ffffff !important;
+}
+
+/* --- Dedicated InvoiceNow Page (#invoicenow) --- */
+body.page-mode-invoicenow main > section:not(#invoicenow-hub) {
+  display: none !important;
+}
+body.page-mode-invoicenow #invoicenow-hub {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  background: #ffffff !important;
+}
+
+/* --- Dedicated FAQ Page (#faq) --- */
+body.page-mode-faq main > section:not(#faq-section) {
+  display: none !important;
+}
+body.page-mode-faq #faq-section {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  background: #ffffff !important;
+}
+
+/* --- Dedicated GST InvoiceNow FOC Package Page (#foc-package) --- */
+body.page-mode-foc main > section:not(#foc-package-section) {
+  display: none !important;
+}
+body.page-mode-foc #foc-package-section {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  background: #ffffff !important;
+}
+
+/* --- Dedicated News Page (#news) --- */
+body.page-mode-news main > section:not(#news-hub) {
+  display: none !important;
+}
+body.page-mode-news #news-hub {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  background: #f8fafc !important;
+}
+
+/* --- Homepage Mode (#home & Default Root) --- */
+body.page-mode-home #hero,
+body.page-mode-home #product-highlights,
+body.page-mode-home #gst-mandate,
+body.page-mode-home #adopt-invoicenow,
+body.page-mode-home #invoicenow-benefits,
+body.page-mode-home #government-funding,
+body.page-mode-home #cta-banner,
+body:not([class*="page-mode-"]) #hero,
+body:not([class*="page-mode-"]) #product-highlights,
+body:not([class*="page-mode-"]) #gst-mandate,
+body:not([class*="page-mode-"]) #adopt-invoicenow,
+body:not([class*="page-mode-"]) #invoicenow-benefits,
+body:not([class*="page-mode-"]) #government-funding,
+body:not([class*="page-mode-"]) #cta-banner {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+body.page-mode-home #invoicenow-hub,
+body.page-mode-home #pricing-plans,
+body.page-mode-home #foc-package-section,
+body.page-mode-home #faq-section,
+body.page-mode-home #news-hub,
+body:not([class*="page-mode-"]) #invoicenow-hub,
+body:not([class*="page-mode-"]) #pricing-plans,
+body:not([class*="page-mode-"]) #foc-package-section,
+body:not([class*="page-mode-"]) #faq-section,
+body:not([class*="page-mode-"]) #news-hub {
+  display: none !important;
+}
+
+/* ==========================================================================
+   AgileAP Flat Modern Minimalist Pricing (100% Responsive & Flat UI)
+   ========================================================================== */
+.pricing-plans-section.modern-minimal-pricing {
+  width: 100%;
+  padding: 4.5rem clamp(1rem, 4vw, 3.5rem) 5.5rem;
+  background: #ffffff !important;
+}
+
+body.page-mode-pricing #pricing-plans {
+  display: block !important;
+}
+
+.pricing-container {
+  max-width: 1380px;
+  margin: 0 auto;
+}
+
+/* Header Section */
+.pricing-modern-header {
+  margin-bottom: 3rem;
+}
+
+.header-capsule {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #E55B1B;
+  background: #fff7f2;
+  border: 1px solid rgba(229, 91, 27, 0.3);
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 1.1rem;
+}
+
+.capsule-dot {
+  width: 6px;
+  height: 6px;
+  background: #E55B1B;
+  border-radius: 50%;
+}
+
+.pricing-modern-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  color: #0b132b;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.75rem;
+}
+
+.gradient-text {
+  color: #E55B1B; /* Flat color, no gradient text clip or glowing effects */
+}
+
+.pricing-modern-subtitle {
+  font-size: 1.02rem;
+  color: #64748b;
+  max-width: 820px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Flat Table Container Layout */
+.modern-pricing-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: none !important; /* Pure flat */
+  background: #ffffff;
+}
+
+.modern-pricing-table {
+  width: 100%;
+  min-width: 980px;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: var(--font-body);
+}
+
+/* Sticky Plan Header Row */
+.plan-header-row th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #ffffff;
+  padding: 1.4rem 0.85rem 1.1rem;
+  border-bottom: 2px solid #e2e8f0;
+  vertical-align: bottom;
+}
+
+.table-corner-header h3 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #0b132b;
+  margin: 0 0 0.2rem;
+}
+
+.table-corner-header p {
+  font-size: 0.78rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Flat Plan Column Header Cards */
+.col-plan-head {
+  width: 17%;
+}
+
+.modern-plan-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1.2rem 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  position: relative;
+  box-shadow: none !important; /* Flat UI */
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.modern-plan-card.popular-card {
+  background: #fffcf9;
+  border: 2px solid #E55B1B;
+}
+
+.popular-tag {
+  position: absolute;
+  top: -11px;
+  background: #E55B1B;
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 0.6rem;
+  font-weight: 800;
+  padding: 0.15rem 0.7rem;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+  box-shadow: none !important; /* Flat */
+}
+
+.modern-plan-card.enterprise-card {
+  background: #0b132b;
+  border: 1px solid #0b132b;
+}
+
+.modern-plan-card.enterprise-card .plan-name,
+.modern-plan-card.enterprise-card .price-val {
+  color: #ffffff !important;
+}
+
+.modern-plan-card.enterprise-card .billing-sub {
+  color: #94a3b8;
+}
+
+.plan-name {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0b132b;
+}
+
+.plan-price-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 0.2rem;
+}
+
+.price-val {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0b132b;
+  line-height: 1;
+}
+
+.price-period {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.billing-sub {
+  font-size: 0.72rem;
+  color: #64748b;
+  margin-bottom: 0.35rem;
+}
+
+.btn-modern-plan {
+  display: inline-block;
+  width: 100%;
+  background: #000000;
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.6rem 0.75rem;
+  border-radius: 999px;
+  text-decoration: none;
+  border: none;
+  box-shadow: none !important; /* Pure Flat */
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-modern-plan:hover {
+  background: #333333;
+  color: #ffffff;
+}
+
+.btn-orange-plan {
+  background: #E55B1B;
+}
+
+.btn-orange-plan:hover {
+  background: #d44d0f;
+}
+
+.btn-dark-plan {
+  background: #ffffff;
+  color: #0b132b;
+}
+
+.btn-dark-plan:hover {
+  background: #E55B1B;
+  color: #ffffff;
+}
+
+/* Flat Table Cells & Rows */
+.modern-pricing-table th,
+.modern-pricing-table td {
+  padding: 0.9rem 1.1rem;
+  text-align: center;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.88rem;
+  color: #1e293b;
+  vertical-align: middle;
+}
+
+.modern-pricing-table td.col-feature-title,
+.modern-pricing-table th.col-feature-title {
+  text-align: left;
+  width: 32%;
+  padding-left: 1.5rem;
+  font-weight: 600;
+  color: #0b132b;
+  background: #ffffff;
+}
+
+.spec-row td {
+  background: #fafafa;
+  font-weight: 600;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.category-header-row .category-header-cell {
+  background: #f8fafc;
+  text-align: left;
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #0b132b;
+  padding: 0.8rem 1.5rem;
+  border-top: 1px solid #cbd5e1;
+  border-bottom: 1px solid #cbd5e1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.modern-pricing-table td.highlight-col {
+  background: #fffcf9;
+}
+
+/* Micro Badges & Icons (Flat) */
+.badge-val {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #334155;
+  background: #f1f5f9;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+}
+
+.badge-val.orange {
+  color: #E55B1B;
+  background: #fff7f2;
+  border: 1px solid rgba(229, 91, 27, 0.3);
+}
+
+.badge-val.max {
+  color: #0b132b;
+  background: #e2e8f0;
+}
+
+.modern-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: #E55B1B;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 900;
+  border-radius: 50%;
+  box-shadow: none !important; /* Flat */
+}
+
+.modern-dash {
+  color: #cbd5e1;
+  font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   GST InvoiceNow FOC Package Page (.foc-pricing-section) - Upgraded Modern
+   ========================================================================== */
+.foc-pricing-section {
+  width: 100%;
+  padding: 4.5rem clamp(1rem, 4vw, 3.5rem) 5.5rem;
+  background: #ffffff !important;
+}
+
+body.page-mode-foc #foc-package-section {
+  display: block !important;
+}
+
+.foc-container {
+  max-width: 1380px;
+  margin: 0 auto;
+}
+
+.foc-header {
+  margin-bottom: 3rem;
+}
+
+.foc-header .header-capsule {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #E55B1B;
+  background: #fff7f2;
+  border: 1px solid rgba(229, 91, 27, 0.3);
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 1.1rem;
+}
+
+.foc-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  color: #0b132b;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 1rem;
+}
+
+.foc-subtitle-main {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 0.5rem;
+  line-height: 1.5;
+}
+
+.foc-subtitle-sub {
+  font-size: 0.95rem;
+  color: #64748b;
+  max-width: 1100px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.foc-subtitle-sub strong.text-dark {
+  color: #0b132b;
+  font-weight: 700;
+}
+
+/* Modern FOC Table Wrapper */
+.foc-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: none !important;
+  background: #ffffff;
+}
+
+.foc-matrix-table {
+  width: 100%;
+  min-width: 1000px;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: var(--font-body);
+}
+
+.foc-header-row th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #ffffff;
+  padding: 1.5rem 0.85rem 1.1rem;
+  border-bottom: 2px solid #e2e8f0;
+  vertical-align: bottom;
+}
+
+.col-foc-head {
+  width: 17%;
+}
+
+/* FOC Plan Header Cards */
+.foc-plan-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1.2rem 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  position: relative;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.foc-plan-card.featured-foc-card {
+  background: #fffcf9;
+  border: 2px solid #E55B1B;
+}
+
+.foc-ribbon {
+  position: absolute;
+  top: -11px;
+  background: #E55B1B;
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 0.6rem;
+  font-weight: 800;
+  padding: 0.15rem 0.7rem;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+}
+
+.foc-plan-name {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0b132b;
+}
+
+.foc-price-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 0.2rem;
+}
+
+.foc-price-val {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0b132b;
+}
+
+.foc-price-val .period {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #64748b;
+}
+
+.foc-up-price {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #64748b;
+  text-decoration: line-through;
+  margin-bottom: 0.35rem;
+}
+
+.foc-billing-sub {
+  font-size: 0.72rem;
+  color: #64748b;
+  margin-bottom: 0.35rem;
+}
+
+/* Action Buttons */
+.btn-foc-action {
+  display: inline-block;
+  width: 100%;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.6rem 0.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-foc-orange {
+  background: #E55B1B;
+  color: #ffffff;
+}
+
+.btn-foc-orange:hover {
+  background: #d44d0f;
+}
+
+.btn-foc-gray {
+  background: #000000;
+  color: #ffffff;
+}
+
+.btn-foc-gray:hover {
+  background: #333333;
+}
+
+/* Highlighted FOC Peach Column */
+.highlight-foc-col {
+  background: #fffcf9 !important;
+}
+
+/* Table Cells */
+.foc-matrix-table th,
+.foc-matrix-table td {
+  padding: 0.9rem 1.1rem;
+  text-align: center;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.88rem;
+  color: #1e293b;
+  vertical-align: middle;
+}
+
+.foc-matrix-table td.col-feature-title,
+.foc-matrix-table th.col-feature-title {
+  text-align: left;
+  width: 32%;
+  padding-left: 1.5rem;
+  font-weight: 600;
+  color: #0b132b;
+  background: #ffffff;
+}
+
+.foc-spec-row td {
+  font-weight: 600;
+  background: #fafafa;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.foc-cat-row .foc-cat-cell {
+  background: #f8fafc;
+  text-align: left;
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #0b132b;
+  padding: 0.8rem 1.5rem;
+  border-top: 1px solid #cbd5e1;
+  border-bottom: 1px solid #cbd5e1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* Checkmarks & Dashes */
+.foc-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: #E55B1B;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 900;
+  border-radius: 50%;
+}
+
+.foc-dash {
+  color: #cbd5e1;
+  font-size: 1.1rem;
+}
+
+/* Footnotes & Subscription Changes Block */
+.foc-footnote-text {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: 1.25rem;
+  margin-bottom: 3rem;
+  line-height: 1.55;
+}
+
+.foc-sub-changes-block {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 2rem 2.2rem;
+}
+
+.foc-sub-changes-block h3 {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0b132b;
+  margin: 0 0 0.5rem;
+}
+
+.foc-sub-changes-block p {
+  font-size: 0.92rem;
+  color: #475569;
+  max-width: 950px;
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* Mobile Responsiveness for FOC Page */
+@media (max-width: 850px) {
+  .foc-pricing-section {
+    padding: 3.5rem 1rem 4rem !important;
+  }
+
+  .foc-title {
+    font-size: 1.85rem;
+  }
+
+  .foc-matrix-table td.col-feature-title,
+  .foc-matrix-table th.col-feature-title {
+    position: sticky;
+    left: 0;
+    z-index: 8;
+    background: #ffffff;
+    border-right: 1px solid #e2e8f0;
+    min-width: 170px;
+    max-width: 200px;
+    padding-left: 0.85rem !important;
+    padding-right: 0.75rem !important;
+    font-size: 0.82rem;
+  }
+
+  .foc-cat-row .foc-cat-cell {
+    position: sticky;
+    left: 0;
+    z-index: 9;
+  }
+}
+
+/* ==========================================================================
+   AgileAP FAQ Knowledge Hub Section (.faq-hub-section)
+   ========================================================================== */
+.faq-hub-section {
+  width: 100%;
+  padding: 4.5rem clamp(1rem, 4vw, 3.5rem) 5.5rem;
+  background: #ffffff !important;
+}
+
+body.page-mode-faq #faq-section {
+  display: block !important;
+}
+
+.faq-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.faq-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.faq-header .header-capsule {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #E55B1B;
+  background: #fff7f2;
+  border: 1px solid rgba(229, 91, 27, 0.3);
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 1.1rem;
+}
+
+.faq-main-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  color: #0b132b;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin: 0 0 0.85rem;
+}
+
+.faq-main-subtitle {
+  font-size: 1.02rem;
+  color: #64748b;
+  max-width: 780px;
+  margin: 0 auto;
+  line-height: 1.55;
+}
+
+/* Categories Filter Nav */
+.faq-categories-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.faq-cat-btn {
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #475569;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.faq-cat-btn:hover {
+  background: #f1f5f9;
+  color: #0b132b;
+  border-color: #cbd5e1;
+}
+
+.faq-cat-btn.active {
+  background: #000000;
+  color: #ffffff;
+  border-color: #000000;
+}
+
+/* Accordion Wrapper */
+.faq-accordion-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 3.5rem;
+}
+
+.faq-item {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.faq-item.active {
+  border-color: #E55B1B;
+  background: #fffcf9;
+}
+
+.faq-question-btn {
+  width: 100%;
+  padding: 1.35rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.question-text {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0b132b;
+  line-height: 1.35;
+}
+
+.faq-icon-toggle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  position: relative;
+  flex-shrink: 0;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.faq-icon-toggle::before,
+.faq-icon-toggle::after {
+  content: '';
+  position: absolute;
+  background: #475569;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.2s ease;
+}
+
+.faq-icon-toggle::before {
+  width: 10px;
+  height: 2px;
+}
+
+.faq-icon-toggle::after {
+  width: 2px;
+  height: 10px;
+}
+
+.faq-item.active .faq-icon-toggle {
+  background: #E55B1B;
+  transform: rotate(45deg);
+}
+
+.faq-item.active .faq-icon-toggle::before,
+.faq-item.active .faq-icon-toggle::after {
+  background: #ffffff;
+}
+
+.faq-answer-panel {
+  display: none;
+  padding: 0 1.5rem 1.4rem;
+}
+
+.faq-item.active .faq-answer-panel {
+  display: block;
+}
+
+.faq-answer-panel p {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0 0 0.75rem;
+}
+
+.faq-answer-panel p:last-child {
+  margin-bottom: 0;
+}
+
+.faq-answer-panel ul {
+  margin: 0.5rem 0 0.75rem 1.25rem;
+  padding: 0;
+}
+
+.faq-answer-panel li {
+  font-size: 0.92rem;
+  color: #475569;
+  line-height: 1.55;
+  margin-bottom: 0.35rem;
+}
+
+/* Contact Support Card */
+.faq-contact-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 2.2rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.contact-card-left h3 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #0b132b;
+  margin: 0 0 0.25rem;
+}
+
+.contact-card-left p {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.contact-card-right {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.btn-faq-whatsapp {
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: #25D366;
+  padding: 0.65rem 1.25rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.btn-faq-whatsapp:hover {
+  background: #1da851;
+}
+
+.btn-faq-email {
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: #000000;
+  padding: 0.65rem 1.25rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.btn-faq-email:hover {
+  background: #333333;
+}
+
+/* ==========================================================================
+   AgileAP Dedicated InvoiceNow Hub Section (.invoicenow-page-section)
+   ========================================================================== */
+.invoicenow-page-section {
+  width: 100%;
+  padding: 4rem clamp(1rem, 4vw, 3.5rem) 7rem;
+  background: #ffffff !important;
+}
+
+body.page-mode-invoicenow #invoicenow-hub {
+  display: block !important;
+}
+
+.invoicenow-page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Animation Keyframes for InvoiceNow Page */
+@keyframes invHeroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes invCardPop {
+  from {
+    opacity: 0;
+    transform: translateY(22px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+body.page-mode-invoicenow .invoicenow-hero {
+  animation: invHeroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+body.page-mode-invoicenow .invoicenow-dashboard-mockup {
+  animation: invCardPop 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.12s forwards;
+  opacity: 0;
+}
+
+/* Scroll Reveal Elements on InvoiceNow Page */
+.invoicenow-what-is-section,
+.invoicenow-mandate-split,
+.invoicenow-why-section,
+.why-card,
+.why-tax-compliance-card {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.inv-revealed {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Part 1: Hero Banner */
+.invoicenow-hero {
+  text-align: center;
+  margin-bottom: 4.5rem;
+}
+
+.invoicenow-hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+  font-weight: 800;
+  color: #0b132b;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.85rem;
+}
+
+.invoicenow-official-logo {
+  height: clamp(30px, 3.5vw, 42px);
+  width: auto;
+  vertical-align: middle;
+  display: inline-block;
+  margin-left: 0.35rem;
+}
+
+.invoicenow-hero-sub {
+  font-size: 0.95rem;
+  color: #475569;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+.invoicenow-claim-box {
+  display: inline-block;
+  background: #0f172a;
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  max-width: 620px;
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
+}
+
+.invoicenow-claim-box h3 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem;
+  color: #ffffff;
+}
+
+.invoicenow-claim-box .claim-sub {
+  font-size: 0.82rem;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+.validity-note {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-top: 0.75rem;
+  font-style: italic;
+}
+
+/* Vector Recreated Dashboard Mockup (.hd-recreated-ui) */
+.invoicenow-dashboard-mockup.hd-recreated-ui {
+  margin: 2.5rem auto 0;
+  max-width: 1040px;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  text-align: left;
+}
+
+.hd-dash-container {
+  display: flex;
+  min-height: 520px;
+  background: #ffffff;
+}
+
+.hd-dash-sidebar {
+  width: 220px;
+  background: #ffffff;
+  border-right: 1px solid #f1f5f9;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.hd-sb-head {
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.hd-sb-head.red-head {
+  background: #e11d48;
+}
+
+.hd-sb-head.teal-head {
+  background: #2dd4bf;
+  color: #0f172a;
+}
+
+.hd-sb-head .hd-toggle {
+  margin-left: auto;
+  font-size: 0.65rem;
+  opacity: 0.9;
+}
+
+.hd-sb-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0.4rem 0.25rem;
+  flex: 1;
+}
+
+.hd-sb-menu li {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #475569;
+  border-radius: 6px;
+  transition: background 0.15s ease;
+  cursor: pointer;
+}
+
+.hd-sb-menu li:hover {
+  background: #f8fafc;
+  color: #0b132b;
+}
+
+.hd-sb-menu li.active {
+  background: #f1f5f9;
+  color: #0b132b;
+  font-weight: 700;
+}
+
+.hd-dash-main {
+  flex: 1;
+  padding: 1.5rem 1.8rem;
+  background: #fafafa;
+}
+
+.hd-dash-head h2 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0b132b;
+  margin: 0 0 0.15rem;
+}
+
+.hd-dash-head p {
+  font-size: 0.82rem;
+  color: #64748b;
+  margin: 0 0 1rem;
+}
+
+.hd-dash-tabs {
+  display: flex;
+  gap: 1.25rem;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 1.25rem;
+}
+
+.hd-dash-tabs .tab-item {
+  background: transparent;
+  border: none;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #94a3b8;
+  padding: 0.4rem 0 0.65rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.hd-dash-tabs .tab-item.active {
+  color: #0066ff;
+  font-weight: 700;
+}
+
+.hd-dash-tabs .tab-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #0066ff;
+}
+
+.hd-quick-actions h3 {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0b132b;
+  margin: 0 0 0.85rem;
+}
+
+.hd-metrics-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.metric-box {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 1rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.metric-box .lbl {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.metric-box .val {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #0b132b;
+}
+
+.hd-charts-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.chart-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-header {
+  margin-bottom: 0.85rem;
+}
+
+.chart-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.chart-title strong {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0b132b;
+}
+
+.chart-title .orange-amt {
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #d97736;
+}
+
+.chart-body-wrap {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+}
+
+.chart-left-content {
+  flex: 1;
+}
+
+.chart-legend-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.chart-legend-grid .lg-item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.chart-legend-grid .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.dot.c-rust { background: #b93c19; }
+.dot.c-orange { background: #d97736; }
+.dot.c-wheat { background: #e7be94; }
+.dot.c-sand { background: #e5c9a4; }
+
+.donut-chart-svg-wrap {
+  width: 100%;
+  max-width: 190px;
+  margin: 0 auto;
+}
+
+.donut-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.chart-tools-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.35rem;
+}
+
+.tool-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  border: none;
+  background: #ffffff;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transition: all 0.15s ease;
+}
+
+.tool-btn:hover {
+  background: #f1f5f9;
+  color: #0b132b;
+}
+
+.tool-btn.orange-btn {
+  background: #ea580c;
+  color: #ffffff;
+}
+
+.tool-btn.orange-btn:hover {
+  background: #c2410c;
+}
+
+/* Responsive Recreated Dashboard UI */
+@media (max-width: 900px) {
+  .hd-dash-container {
+    flex-direction: column;
+  }
+
+  .hd-dash-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .hd-metrics-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .hd-charts-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .hd-metrics-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.mandate-arch-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+.why-card-img-wrap {
+  width: 100%;
+  margin-bottom: 1.25rem;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.why-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.why-payment-banner-card {
+  margin-top: 2.5rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+}
+
+.payment-banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Part 2: What is Peppol (InvoiceNow) E-Invoicing? */
+.invoicenow-what-is-section {
+  margin-bottom: 4.5rem;
+}
+
+.invoicenow-what-is-section .section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  font-weight: 800;
+  color: #0b132b;
+  text-align: center;
+  margin: 0 0 0.75rem;
+  letter-spacing: -0.015em;
+}
+
+.purple-text {
+  color: #8b5cf6;
+}
+
+.section-desc {
+  font-size: 0.92rem;
+  color: #475569;
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.65;
+}
+
+.invoicenow-video-card {
+  background: #000000;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  margin-bottom: 2.5rem;
+}
+
+.video-header {
+  background: #09090b;
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  color: #ffffff;
+  border-bottom: 1px solid #27272a;
+}
+
+.video-logo {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 800;
+  background: #7c3aed;
+  color: #ffffff;
+  padding: 0.25rem 0.55rem;
+  border-radius: 5px;
+}
+
+.video-title-wrap h3 {
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+}
+
+.yt-channel-link {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.yt-channel-link:hover {
+  color: #a78bfa;
+}
+
+.video-title-wrap span {
+  font-size: 0.72rem;
+  color: #a1a1aa;
+}
+
+.btn-yt-channel {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #ff0000;
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.btn-yt-channel:hover {
+  background: #cc0000;
+}
+
+.video-frame iframe {
+  display: block;
+  width: 100%;
+  border: none;
+}
+
+.invoicenow-two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem;
+}
+
+.col-text-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1.6rem 1.8rem;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.col-text-card:hover {
+  transform: translateY(-2px);
+  border-color: #cbd5e1;
+}
+
+.card-mini-head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.card-mini-head strong {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #0b132b;
+}
+
+.dot-icon {
+  font-size: 0.75rem;
+}
+.dot-icon.blue { color: #2563eb; }
+.dot-icon.purple { color: #7c3aed; }
+
+.col-text-card p {
+  font-size: 0.88rem;
+  color: #475569;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Part 3: GST InvoiceNow Requirement Split */
+.invoicenow-mandate-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 2.75rem 2.5rem;
+  margin-bottom: 4.5rem;
+}
+
+.mandate-left h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+  font-weight: 800;
+  color: #0b132b;
+  margin: 0 0 1rem;
+  line-height: 1.3;
+}
+
+.mandate-left p {
+  font-size: 0.88rem;
+  color: #475569;
+  line-height: 1.65;
+  margin: 0 0 1.5rem;
+}
+
+.mandate-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.btn-learn-more {
+  display: inline-block;
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #0b132b;
+  background: #ffffff;
+  border: 1.5px solid #0b132b;
+  padding: 0.75rem 1.75rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-learn-more:hover {
+  background: #0b132b;
+  color: #ffffff;
+}
+
+.navy-claim-btn {
+  background: #0f172a;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
+}
+
+.navy-claim-btn strong {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 800;
+  margin-bottom: 0.2rem;
+}
+
+.navy-claim-btn span {
+  font-size: 0.78rem;
+  color: #94a3b8;
+}
+
+.validity-sub {
+  font-size: 0.82rem;
+  color: #64748b;
+  margin: 0;
+  font-style: italic;
+}
+
+/* 5-Corner Architecture Card */
+.architecture-graphic-card {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+}
+
+.arch-badge {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #E55B1B;
+  background: #fff7f2;
+  border: 1px solid rgba(229, 91, 27, 0.3);
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  display: inline-block;
+  margin-bottom: 1.25rem;
+}
+
+.arch-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.arch-corner {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+}
+
+.corner-tag {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: #ffffff;
+  background: #E55B1B;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 0.35rem;
+}
+
+.arch-corner h4 {
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #0b132b;
+  margin: 0 0 0.2rem;
+}
+
+.arch-corner p {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.35;
+}
+
+.arch-center-box {
+  grid-column: span 2;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  text-align: center;
+}
+
+.invoice-badge {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: #1d4ed8;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.2rem;
+}
+
+.arch-center-box span {
+  font-size: 0.75rem;
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+/* Part 4 & 5: WHY USE INVOICENOW? */
+.invoicenow-why-section {
+  text-align: center;
+}
+
+.why-header-wrap {
+  margin-bottom: 2.5rem;
+}
+
+.why-badge-pill {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #7c3aed;
+  background: #f5f3ff;
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.85rem;
+}
+
+.why-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 2.6vw, 1.85rem);
+  font-weight: 800;
+  color: #0b132b;
+  margin: 0 0 0.65rem;
+  letter-spacing: -0.015em;
+}
+
+.why-sub {
+  font-size: 0.92rem;
+  color: #475569;
+  max-width: 740px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.why-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.why-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.75rem 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.why-card:hover {
+  transform: translateY(-4px);
+  border-color: #cbd5e1;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.06);
+}
+
+.why-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+
+.card-pill {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 0.2rem;
+}
+
+.orange-pill { color: #ea580c; background: #fff7f2; }
+.purple-pill { color: #7c3aed; background: #f5f3ff; }
+.blue-pill { color: #2563eb; background: #eff6ff; }
+.green-pill { color: #059669; background: #f0fdf4; }
+.indigo-pill { color: #4338ca; background: #e0e7ff; }
+
+.icon-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.icon-circle.orange { background: #fff7f2; }
+.icon-circle.purple { background: #f5f3ff; }
+.icon-circle.blue { background: #eff6ff; }
+.icon-circle.green { background: #f0fdf4; }
+.icon-circle.indigo { background: #e0e7ff; }
+
+.why-card-header h3 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0b132b;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.why-feature-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.why-feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.feature-icon {
+  width: 18px;
+  height: 18px;
+  background: #f1f5f9;
+  color: #0b132b;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 900;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+/* Pillar 5: Tax Compliance Highlight Card */
+.why-tax-compliance-card {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 1px solid #cbd5e1;
+  border-radius: 18px;
+  padding: 2.2rem 2.5rem;
+  text-align: left;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  margin-bottom: 5rem;
+}
+
+.tax-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 1rem;
+}
+
+.tax-badge-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.tax-badge-icon h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0b132b;
+  margin: 0;
+}
+
+.iras-tag {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #ffffff;
+  background: #4338ca;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+}
+
+.tax-card-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.tax-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.tax-check {
+  width: 22px;
+  height: 22px;
+  background: #4338ca;
+  color: #ffffff;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 900;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.tax-point p {
+  font-size: 0.88rem;
+  color: #334155;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Mobile Responsiveness for InvoiceNow Hub Page */
+@media (max-width: 900px) {
+  .invoicenow-dashboard-mockup {
+    flex-direction: column;
+  }
+
+  .dashboard-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .invoicenow-two-cols,
+  .invoicenow-mandate-split,
+  .why-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .invoicenow-mandate-split {
+    padding: 2rem 1.5rem;
   }
 }
 

@@ -961,4 +961,386 @@ window.addEventListener('DOMContentLoaded', () => {
   };
 
   initScrollDownIndicator();
+
+  // News & Announcements Hub Interactive Handler
+  const initNewsHub = () => {
+    interface NewsArticle {
+      id: number;
+      dateTag: string;
+      category: string;
+      title: string;
+      bannerTitleHtml: string;
+      promoCode?: string;
+      dateVal: string;
+      locationVal: string;
+      presentationVal: string;
+      leadParagraph: string;
+      calloutText: string;
+      signoffText: string;
+      primaryCtaText: string;
+      primaryCtaLink: string;
+    }
+
+    const articles: NewsArticle[] = [
+      {
+        id: 0,
+        dateTag: "Jul 2026",
+        category: "Event",
+        title: "We Are Exhibiting at the InvoiceNow Fair 2026!",
+        bannerTitleHtml: 'We Are Exhibiting at the <span class="highlight-orange">InvoiceNow</span> Fair 2026!',
+        promoCode: "INFAP2026",
+        dateVal: "29 July 2026",
+        locationVal: "Suntec Singapore Convention & Exhibition Centre",
+        presentationVal: "2:30 PM",
+        leadParagraph: "Come visit our booth to chat with our team and see live demonstrations of how we can prepare your business for the upcoming mandates!",
+        calloutText: "Don't miss our special presentation at <strong>2:30 PM</strong>. Join our talk to learn how to claim your government funding, optimize your workflows, and unlock a special <strong>1-day-only InvoiceNow Fair package</strong> when you sign up for AgileAP on the day of the event!",
+        signoffText: "See you at Suntec!",
+        primaryCtaText: "Claim Fair Promo Package",
+        primaryCtaLink: "#government-funding"
+      },
+      {
+        id: 1,
+        dateTag: "Apr 2026",
+        category: "Guide",
+        title: "Educational Resources",
+        bannerTitleHtml: 'Master E-Invoicing with AgileAP <span class="highlight-orange">Educational Resources</span>',
+        dateVal: "15 April 2026",
+        locationVal: "Online Knowledge Base & Webinars",
+        presentationVal: "On-Demand Access",
+        leadParagraph: "Access our comprehensive library of guides, video tutorials, and interactive walkthroughs to streamline your accounts payable and receivable operations.",
+        calloutText: "Learn how top Asian enterprises cut processing costs by over 70% using <strong>AgileAP Automated 3-Way Invoice Matching</strong> and Peppol e-invoicing standards.",
+        signoffText: "Explore our latest guides today!",
+        primaryCtaText: "Access Resource Center",
+        primaryCtaLink: "#invoicenow-benefits"
+      },
+      {
+        id: 2,
+        dateTag: "Apr 2026",
+        category: "Roadmap",
+        title: "Mandatory GST InvoiceNow Implementation Roadmap",
+        bannerTitleHtml: 'Singapore Mandatory <span class="highlight-orange">GST InvoiceNow</span> Implementation Roadmap',
+        dateVal: "10 April 2026",
+        locationVal: "IRAS Compliance Portal & AgileAP Platform",
+        presentationVal: "Phased Mandate (2025 - 2031)",
+        leadParagraph: "IRAS and IMDA have introduced progressive mandatory phases requiring all GST-registered businesses in Singapore to transmit invoice data directly to IRAS via the Peppol-based InvoiceNow network.",
+        calloutText: "<strong>Implementation Phase Roadmap:</strong><br>• <strong>Phase 1 (1 May 2025):</strong> Soft launch & voluntary early adoption.<br>• <strong>Phase 2 (1 Nov 2025):</strong> Mandatory for newly incorporated GST-registered companies.<br>• <strong>Phase 3 (1 Apr 2026):</strong> Mandatory for all new GST-registered entities.<br>• <strong>Phases 4-6 (2027-2031):</strong> Progressive rollout across all existing GST-registered businesses.<br><br>Claim up to <strong>$1,000 GST Transition Grant</strong> & 70% CTC subsidies when adopting AgileAP Accredited Access Point Solution.",
+        signoffText: "Check your mandatory onboarding date & claim your government grant with AgileAP today!",
+        primaryCtaText: "Check Onboarding Date & Grants",
+        primaryCtaLink: "#invoicenow"
+      },
+      {
+        id: 3,
+        dateTag: "Apr 2026",
+        category: "Product",
+        title: "Seamless ERP Integration with AgileAP",
+        bannerTitleHtml: 'Seamless <span class="highlight-orange">ERP & Accounting Integration</span> with AgileAP',
+        dateVal: "05 April 2026",
+        locationVal: "AgileAP Cloud Ecosystem",
+        presentationVal: "Instant Turnkey Setup",
+        leadParagraph: "Connect AgileAP with SAP, Oracle, Xero, QuickBooks, and custom ERP systems with zero code required.",
+        calloutText: "Our bidirectional API synchronizes invoices, purchase orders, vendor lists, and payment statuses in real-time with <strong>99.8% extraction accuracy</strong>.",
+        signoffText: "Streamline your financial tech stack!",
+        primaryCtaText: "Request ERP Integration Demo",
+        primaryCtaLink: "#cta-banner"
+      },
+      {
+        id: 4,
+        dateTag: "Apr 2026",
+        category: "Grants",
+        title: "Funding & Support for Businesses",
+        bannerTitleHtml: 'Government <span class="highlight-orange">Funding & Support</span> for Businesses',
+        promoCode: "GRANT2026",
+        dateVal: "01 April 2026",
+        locationVal: "IMDA & EnterpriseSG Grant Program",
+        presentationVal: "Up to 50% - 70% Subsidies",
+        leadParagraph: "Discover government grants and subsidies designed to accelerate digital financial transformation for Singapore businesses.",
+        calloutText: "Eligible businesses can tap into the <strong>InvoiceNow Adoption Grant (IAG)</strong> and CTC grants to offset implementation costs for AgileAP automation packages.",
+        signoffText: "Apply for your government subsidies today!",
+        primaryCtaText: "Check Eligibility Now",
+        primaryCtaLink: "#government-funding"
+      },
+      {
+        id: 5,
+        dateTag: "Mar 2025",
+        category: "Award",
+        title: "AgileAP Recognized as an Affordable e-Invoicing Solution by MDEC",
+        bannerTitleHtml: 'AgileAP Recognized as an <span class="highlight-orange">Affordable e-Invoicing Leader</span> by MDEC',
+        dateVal: "20 March 2025",
+        locationVal: "Kuala Lumpur, Malaysia",
+        presentationVal: "MDEC Digital Economy Summit",
+        leadParagraph: "Malaysia Digital Economy Corporation (MDEC) has officially recognized AgileAP as an accredited, high-performance e-Invoicing solution for SMEs and enterprise corporations.",
+        calloutText: "This recognition highlights AgileAP's commitment to delivering enterprise-class financial automation at accessible price points across Southeast Asia.",
+        signoffText: "Empowering businesses across APAC!",
+        primaryCtaText: "Learn More About AgileAP",
+        primaryCtaLink: "#adopt-invoicenow"
+      },
+      {
+        id: 6,
+        dateTag: "Oct 2024",
+        category: "Accreditation",
+        title: "AgileAP Receives Peppol-Ready Solution Provider (PRSP) Accreditation from MDEC Malaysia",
+        bannerTitleHtml: 'Official <span class="highlight-orange">Peppol-Ready (PRSP) Accreditation</span> from MDEC Malaysia',
+        dateVal: "14 October 2024",
+        locationVal: "MDEC Malaysia National Accreditation",
+        presentationVal: "ISO & Peppol Certified",
+        leadParagraph: "AgileAP has successfully earned the official Peppol-Ready Solution Provider (PRSP) accreditation from MDEC Malaysia.",
+        calloutText: "Our platform complies fully with global Peppol standards, enabling seamless cross-border e-invoicing between Singapore, Malaysia, and worldwide trading partners.",
+        signoffText: "Global connectivity built for modern finance!",
+        primaryCtaText: "Start E-Invoicing Free",
+        primaryCtaLink: "#cta-banner"
+      }
+    ];
+
+    const cards = Array.from(document.querySelectorAll<HTMLButtonElement>('.news-item-card'));
+    const bannerTitle = document.getElementById('news-banner-title');
+    const promoBadge = document.getElementById('news-promo-badge');
+    const promoCode = document.getElementById('news-promo-code');
+    const dateVal = document.getElementById('meta-date-val');
+    const locationVal = document.getElementById('meta-location-val');
+    const presentationVal = document.getElementById('meta-presentation-val');
+    const articleBody = document.getElementById('news-article-body');
+
+    if (cards.length === 0) return;
+
+    cards.forEach((card, index) => {
+      card.addEventListener('click', () => {
+        const article = articles[index];
+        if (!article) return;
+
+        // Update active class
+        cards.forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+
+        // Update banner title
+        if (bannerTitle) bannerTitle.innerHTML = article.bannerTitleHtml;
+
+        // Update promo code badge
+        if (promoBadge && promoCode) {
+          if (article.promoCode) {
+            promoCode.textContent = article.promoCode;
+            promoBadge.style.display = 'flex';
+          } else {
+            promoBadge.style.display = 'none';
+          }
+        }
+
+        // Update meta fields
+        if (dateVal) dateVal.textContent = article.dateVal;
+        if (locationVal) locationVal.textContent = article.locationVal;
+        if (presentationVal) presentationVal.textContent = article.presentationVal;
+
+        // Update article body content
+        if (articleBody) {
+          articleBody.innerHTML = `
+            <p class="lead-paragraph">${article.leadParagraph}</p>
+            <div class="highlight-callout-box">
+              <p>${article.calloutText}</p>
+            </div>
+            <p class="signoff-text"><em>${article.signoffText}</em></p>
+          `;
+        }
+
+        // Update action CTAs
+        const primaryCtaBtn = document.querySelector<HTMLAnchorElement>('.btn-news-primary');
+        if (primaryCtaBtn) {
+          primaryCtaBtn.setAttribute('href', article.primaryCtaLink);
+          const span = primaryCtaBtn.querySelector('span');
+          if (span) span.textContent = article.primaryCtaText;
+        }
+      });
+    });
+  };
+
+  initNewsHub();
+
+  // Multi-Page Tab Router System
+  const initPageRouter = () => {
+    const navLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>('#main-nav a'));
+    const logoLink = document.querySelector<HTMLAnchorElement>('.logo a');
+
+    const removeAllPageModes = () => {
+      document.body.classList.remove(
+        'page-mode-home',
+        'page-mode-pricing',
+        'page-mode-invoicenow',
+        'page-mode-news',
+        'page-mode-foc',
+        'page-mode-faq',
+        'news-page-mode'
+      );
+    };
+
+    const setActiveNavLink = (targetHref: string) => {
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === targetHref || (targetHref === '#news' && href === '#news-hub')) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    };
+
+    const updateRouteState = () => {
+      const hash = window.location.hash;
+      removeAllPageModes();
+
+      if (hash === '#pricing') {
+        document.body.classList.add('page-mode-pricing');
+        window.scrollTo(0, 0);
+        setActiveNavLink('#pricing');
+      } else if (hash === '#invoicenow') {
+        document.body.classList.add('page-mode-invoicenow');
+        window.scrollTo(0, 0);
+        setActiveNavLink('#invoicenow');
+      } else if (hash === '#news' || hash === '#news-hub') {
+        document.body.classList.add('page-mode-news');
+        window.scrollTo(0, 0);
+        setActiveNavLink('#news');
+      } else if (hash === '#foc-package' || hash === '#government-funding') {
+        document.body.classList.add('page-mode-foc');
+        window.scrollTo(0, 0);
+        setActiveNavLink('#foc-package');
+      } else if (hash === '#faq') {
+        document.body.classList.add('page-mode-faq');
+        window.scrollTo(0, 0);
+        setActiveNavLink('#faq');
+      } else {
+        // Homepage Mode (1 continuous page showing Unlock Business Efficiency + all sections!)
+        document.body.classList.add('page-mode-home');
+        setActiveNavLink('#home');
+      }
+
+      // Refresh GSAP ScrollTrigger so hidden sections don't calculate triggers
+      setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 50);
+    };
+
+    // Pricing Toggle Handler (Monthly vs Annual 20% Discount)
+    const initPricingToggle = () => {
+      const toggleBtn = document.getElementById('pricing-toggle-btn');
+      const monthlyLabel = document.getElementById('billing-monthly-label');
+      const annualLabel = document.getElementById('billing-annual-label');
+      const priceAmounts = document.querySelectorAll<HTMLElement>('.price-amount[data-monthly]');
+
+      if (!toggleBtn) return;
+
+      let isAnnual = false;
+
+      toggleBtn.addEventListener('click', () => {
+        isAnnual = !isAnnual;
+
+        if (isAnnual) {
+          toggleBtn.classList.add('annual');
+          annualLabel?.classList.add('active');
+          monthlyLabel?.classList.remove('active');
+
+          priceAmounts.forEach(el => {
+            const annualVal = el.getAttribute('data-annual');
+            if (annualVal) el.textContent = annualVal;
+          });
+        } else {
+          toggleBtn.classList.remove('annual');
+          monthlyLabel?.classList.add('active');
+          annualLabel?.classList.remove('active');
+
+          priceAmounts.forEach(el => {
+            const monthlyVal = el.getAttribute('data-monthly');
+            if (monthlyVal) el.textContent = monthlyVal;
+          });
+        }
+      });
+    };
+
+    initPricingToggle();
+
+    // FAQ Accordion & Category Filter Handler
+    const initFAQAccordion = () => {
+      const catBtns = document.querySelectorAll<HTMLButtonElement>('.faq-cat-btn');
+      const faqItems = document.querySelectorAll<HTMLElement>('.faq-item');
+      const questionBtns = document.querySelectorAll<HTMLButtonElement>('.faq-question-btn');
+
+      catBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const cat = btn.getAttribute('data-faq-category');
+          catBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          faqItems.forEach(item => {
+            const itemCat = item.getAttribute('data-category');
+            if (cat === 'all' || itemCat === cat) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      questionBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const item = btn.closest('.faq-item');
+          const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+          if (isExpanded) {
+            btn.setAttribute('aria-expanded', 'false');
+            item?.classList.remove('active');
+          } else {
+            questionBtns.forEach(b => {
+              b.setAttribute('aria-expanded', 'false');
+              b.closest('.faq-item')?.classList.remove('active');
+            });
+            btn.setAttribute('aria-expanded', 'true');
+            item?.classList.add('active');
+          }
+        });
+      });
+    };
+
+    initFAQAccordion();
+
+    // InvoiceNow Page Scroll Reveal Observer
+    const initInvoiceNowScrollObserver = () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('inv-revealed');
+          }
+        });
+      }, { threshold: 0.08 });
+
+      document.querySelectorAll('.invoicenow-what-is-section, .invoicenow-mandate-split, .invoicenow-why-section, .why-card, .why-tax-compliance-card').forEach(el => {
+        observer.observe(el);
+      });
+    };
+
+    initInvoiceNowScrollObserver();
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          e.preventDefault();
+          window.location.hash = href;
+          updateRouteState();
+        }
+      });
+    });
+
+    if (logoLink) {
+      logoLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.location.hash = '';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        updateRouteState();
+      });
+    }
+
+    window.addEventListener('hashchange', updateRouteState);
+    window.addEventListener('load', updateRouteState);
+    updateRouteState();
+  };
+
+  initPageRouter();
 });
