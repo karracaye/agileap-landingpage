@@ -92,8 +92,12 @@ html.lenis {
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.top-ads-bar.dismissed {
+  display: none !important;
+}
+
 body.has-ads-bar .header {
-  top: 42px;
+  top: var(--ads-bar-height, 42px);
   transition: top 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -101,6 +105,12 @@ body.has-ads-bar .header {
   display: flex;
   align-items: center;
   gap: 0.85rem;
+}
+
+.mobile-pill-text,
+.mobile-text,
+.mobile-btn-text {
+  display: none;
 }
 
 .ads-pill {
@@ -6008,62 +6018,87 @@ body.light-mode .screen-label {
     font-weight: 400 !important;
   }
 
-  /* Upgraded Compact Modern Top Ads Banner (Mobile) */
+  /* Ultra-Sleek Single-Row Top Ads Banner (Mobile) */
   .top-ads-bar {
-    height: auto !important;
-    min-height: 40px !important;
-    padding: 0.35rem 2rem 0.35rem 0.75rem !important;
+    height: 38px !important;
+    min-height: 38px !important;
+    padding: 0 1.8rem 0 0.5rem !important;
     background: linear-gradient(90deg, #E55B1B 0%, #ff7328 100%) !important;
     display: flex !important;
     align-items: center !important;
+    justify-content: center !important;
   }
 
   .ads-bar-content {
     display: flex !important;
     flex-direction: row !important;
-    flex-wrap: wrap !important;
+    flex-wrap: nowrap !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 0.4rem !important;
+    gap: 0.35rem !important;
     width: 100% !important;
   }
 
+  .desktop-pill-text,
+  .desktop-text,
+  .desktop-btn-text {
+    display: none !important;
+  }
+
+  .mobile-pill-text,
+  .mobile-text,
+  .mobile-btn-text {
+    display: inline !important;
+  }
+
   .ads-pill {
-    font-size: 0.6rem !important;
-    padding: 0.1rem 0.5rem !important;
+    font-size: 0.54rem !important;
+    padding: 0.08rem 0.4rem !important;
     border-radius: 999px !important;
     background: rgba(255, 255, 255, 0.22) !important;
     font-weight: 700 !important;
     letter-spacing: 0.02em !important;
     white-space: nowrap !important;
+    flex-shrink: 0 !important;
   }
 
   .ads-text {
-    font-size: 0.72rem !important;
+    font-size: 0.65rem !important;
     font-weight: 500 !important;
-    white-space: normal !important;
-    overflow: visible !important;
-    text-overflow: clip !important;
-    max-width: none !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    color: #ffffff !important;
+    max-width: clamp(140px, 46vw, 340px) !important;
     text-align: center !important;
   }
 
   .ads-btn {
-    font-size: 0.68rem !important;
-    padding: 0.15rem 0.6rem !important;
+    font-size: 0.6rem !important;
+    padding: 0.12rem 0.52rem !important;
     border-radius: 999px !important;
     font-weight: 700 !important;
     white-space: nowrap !important;
     background: #ffffff !important;
     color: #E55B1B !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12) !important;
+    flex-shrink: 0 !important;
   }
 
   .ads-close-btn {
-    right: 0.4rem !important;
+    right: 0.35rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    padding: 0.15rem !important;
+  }
+
+  .ads-close-btn svg {
+    width: 11px !important;
+    height: 11px !important;
   }
 
   body.has-ads-bar .header {
-    top: 40px !important;
+    top: 38px !important;
   }
 
   /* 1. Mobile Hero Buttons: Modern, compact pill design inline row */

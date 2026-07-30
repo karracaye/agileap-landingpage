@@ -903,12 +903,22 @@ window.addEventListener('DOMContentLoaded', () => {
     const closeAdsBtn = document.getElementById('close-ads-btn');
 
     if (!topAdsBar) return;
-    document.body.classList.add('has-ads-bar');
+
+    const updateAdsBarHeight = () => {
+      if (topAdsBar.classList.contains('dismissed')) return;
+      const height = topAdsBar.offsetHeight;
+      document.documentElement.style.setProperty('--ads-bar-height', `${height}px`);
+      document.body.classList.add('has-ads-bar');
+    };
+
+    updateAdsBarHeight();
+    window.addEventListener('resize', updateAdsBarHeight);
 
     if (closeAdsBtn) {
       closeAdsBtn.addEventListener('click', () => {
         topAdsBar.classList.add('dismissed');
         document.body.classList.remove('has-ads-bar');
+        document.documentElement.style.setProperty('--ads-bar-height', '0px');
       });
     }
   };
