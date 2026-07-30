@@ -925,8 +925,28 @@ window.addEventListener('DOMContentLoaded', () => {
 
   initTopAdsBar();
 
-  // Keep the first viewport aligned with the top grant banner treatment.
-  // The floating promotion card remains in the markup, but no longer opens on page load.
+  // Floating Promo Card Pop Up Handler
+  const initFloatingAdsCard = () => {
+    const card = document.getElementById('floating-ads-card');
+    const closeBtn = document.getElementById('close-floating-ads-btn');
+    if (!card) return;
+
+    // Pop up floating promo card after 1.2s on page load
+    setTimeout(() => {
+      if (!card.classList.contains('dismissed')) {
+        card.classList.add('active');
+      }
+    }, 1200);
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        card.classList.remove('active');
+        card.classList.add('dismissed');
+      });
+    }
+  };
+
+  initFloatingAdsCard();
 
   // Scroll Down Indicator Fade Handler
   const initScrollDownIndicator = () => {

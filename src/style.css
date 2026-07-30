@@ -108,6 +108,12 @@ body.has-ads-bar .header {
   justify-content: center;
 }
 
+.desktop-pill-text,
+.desktop-text,
+.desktop-btn-text {
+  display: inline;
+}
+
 .mobile-pill-text,
 .mobile-text,
 .mobile-btn-text {
@@ -128,7 +134,7 @@ body.has-ads-bar .header {
 }
 
 .ads-text {
-  display: none;
+  display: inline;
   color: #ffffff;
   font-weight: 450;
   font-size: 0.81rem;
@@ -186,6 +192,38 @@ body.has-ads-bar .header {
 .ads-close-btn:hover {
   background: rgba(255, 255, 255, 0.22);
   color: #ffffff;
+}
+
+@media (max-width: 640px) {
+  .top-ads-bar {
+    height: 38px;
+    padding: 0 2.2rem 0 0.75rem;
+    font-size: 0.72rem;
+  }
+  .ads-bar-content {
+    gap: 0.45rem;
+  }
+  .desktop-pill-text,
+  .desktop-text,
+  .desktop-btn-text {
+    display: none !important;
+  }
+  .mobile-pill-text,
+  .mobile-text,
+  .mobile-btn-text {
+    display: inline !important;
+  }
+  .ads-pill {
+    font-size: 0.58rem;
+    padding: 0.1rem 0.4rem;
+  }
+  .ads-text {
+    font-size: 0.7rem;
+  }
+  .ads-btn {
+    font-size: 0.68rem;
+    padding: 0.18rem 0.55rem;
+  }
 }
 
 /* Floating Ads Banner Card (Compact Modern Executive Design) */
@@ -688,9 +726,9 @@ h1 {
 
 .text-reveal-item {
   display: inline-block;
-  font-size: clamp(3.1rem, 5.1vw, 5.05rem);
-  line-height: 1.06;
-  letter-spacing: 0;
+  font-size: clamp(2.35rem, 3.8vw, 3.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
 }
 
 .hero-text-container h1 {
@@ -714,12 +752,12 @@ h1 {
 }
 
 .subheadline {
-  font-size: 1.05rem;
+  font-size: 0.96rem;
   font-weight: 400;
   color: #475569;
-  line-height: 1.68;
-  max-width: 660px;
-  margin: 0 0 2.15rem;
+  line-height: 1.62;
+  max-width: 600px;
+  margin: 0 0 2rem;
   text-align: left;
 }
 
@@ -1857,11 +1895,11 @@ h1 {
 
 .product-highlights-section .section-header h2 {
   font-family: var(--font-heading);
-  font-size: 2.2rem;
+  font-size: clamp(1.6rem, 2.6vw, 2.05rem);
   font-weight: 700;
   color: #0f172a;
-  margin-top: 0.8rem;
-  margin-bottom: 0.6rem;
+  margin-top: 0.6rem;
+  margin-bottom: 0.5rem;
   letter-spacing: -0.02em;
 }
 
@@ -2130,10 +2168,10 @@ h1 {
 
 .mandate-header-center h2 {
   font-family: var(--font-heading);
-  font-size: 2.1rem;
+  font-size: clamp(1.6rem, 2.6vw, 2.05rem);
   font-weight: 700;
   color: #0f172a;
-  margin-top: 0.75rem;
+  margin-top: 0.6rem;
   line-height: 1.25;
 }
 
@@ -7183,12 +7221,12 @@ body.page-mode-pricing #pricing-plans {
 
 .pricing-modern-title {
   font-family: var(--font-heading);
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-size: clamp(1.75rem, 3.2vw, 2.35rem);
   font-weight: 800;
   color: #0b132b;
-  line-height: 1.15;
+  line-height: 1.18;
   letter-spacing: -0.02em;
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.6rem;
 }
 
 .gradient-text {
@@ -7498,12 +7536,12 @@ body.page-mode-foc #foc-package-section {
 
 .foc-title {
   font-family: var(--font-heading);
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-size: clamp(1.75rem, 3.2vw, 2.35rem);
   font-weight: 800;
   color: #0b132b;
-  line-height: 1.15;
+  line-height: 1.18;
   letter-spacing: -0.02em;
-  margin: 0 0 1rem;
+  margin: 0 0 0.8rem;
 }
 
 .foc-subtitle-main {
@@ -7834,12 +7872,12 @@ body.page-mode-faq #faq-section {
 
 .faq-main-title {
   font-family: var(--font-heading);
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-size: clamp(1.75rem, 3.2vw, 2.35rem);
   font-weight: 800;
   color: #0b132b;
-  line-height: 1.15;
-  letter-spacing: -0.025em;
-  margin: 0 0 0.85rem;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.8rem;
 }
 
 .faq-main-subtitle {
