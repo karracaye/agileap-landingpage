@@ -555,14 +555,14 @@ window.addEventListener('DOMContentLoaded', () => {
       gsap.set('.adoption-copy', { opacity: 0, x: 60 });
       gsap.set('.adoption-benefit-card', { opacity: 0, y: 24, scale: 0.96 });
       gsap.set('.adoption-float-card', { opacity: 0, y: 24, scale: 0.9 });
-      
-      // Step 1: Laptop base starts subtle while the graph/analytics screen is centered & BIGGER!
+
+      // Laptop starts centered & big — the cinematic reveal starts here
       gsap.set('.adoption-laptop-base', { opacity: 0, scaleY: 0.2 });
       gsap.set('.adoption-laptop', {
         opacity: 1,
-        xPercent: 54, // Centered on screen at start!
+        xPercent: 54,   // centered on the full viewport
         y: 10,
-        scale: 1.35, // BIGGER & PROMINENT in the center!
+        scale: 1.35,    // big & prominent
         rotateX: 3,
         transformOrigin: 'center center'
       });
@@ -579,9 +579,7 @@ window.addEventListener('DOMContentLoaded', () => {
       });
 
       adoptionStory
-        // ----------------------------------------------------
-        // STEP 1: Graphs show up first in the center!
-        // ----------------------------------------------------
+        // ── Step 1: Dashboard & charts reveal while laptop is still centered & big ──
         .fromTo(
           '.adoption-dashboard-main',
           { opacity: 0, y: 30, scale: 0.92 },
@@ -600,9 +598,7 @@ window.addEventListener('DOMContentLoaded', () => {
           0.06
         )
 
-        // ----------------------------------------------------
-        // STEP 2: Scroll again -> Laptop frame forms around graph in center!
-        // ----------------------------------------------------
+        // ── Step 2: Laptop frame builds around the centered dashboard ──
         .to('.adoption-laptop-base', {
           opacity: 1,
           scaleY: 1,
@@ -615,13 +611,11 @@ window.addEventListener('DOMContentLoaded', () => {
           ease: 'power1.out'
         }, 0.24)
 
-        // ----------------------------------------------------
-        // STEP 3: Scroll again -> Laptop scales down & glides to Left Side + Full Benefits reveal on right!
-        // ----------------------------------------------------
+        // ── Step 3: Laptop glides to the left & shrinks — right side content reveals ──
         .to('.adoption-laptop', {
           xPercent: 0,
           y: 0,
-          scale: 1, // Scales smoothly from 1.35 down to 1.0 on the left!
+          scale: 1,
           duration: 0.44,
           ease: 'power2.inOut'
         }, 0.40)
@@ -647,6 +641,7 @@ window.addEventListener('DOMContentLoaded', () => {
           stagger: 0.045,
           ease: 'power2.out'
         }, 0.74);
+
     } else {
       gsap.fromTo(
         '.adoption-copy > *',
@@ -884,14 +879,39 @@ window.addEventListener('DOMContentLoaded', () => {
 
     if (!toggleBtn || !navLinks) return;
 
-    toggleBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('mobile-open');
+    const closeMenu = () => {
+      navLinks.classList.remove('mobile-open');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      toggleBtn.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>`;
+    };
+
+    const openMenu = () => {
+      navLinks.classList.add('mobile-open');
+      toggleBtn.setAttribute('aria-expanded', 'true');
+      toggleBtn.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 6L6 18M6 6l12 12"/></svg>`;
+    };
+
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (navLinks.classList.contains('mobile-open')) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
     });
 
+    // Close when a nav link is clicked
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        navLinks.classList.remove('mobile-open');
+        closeMenu();
       });
+    });
+
+    // Close when clicking outside the menu
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target as Node) && !toggleBtn.contains(e.target as Node)) {
+        closeMenu();
+      }
     });
   };
 

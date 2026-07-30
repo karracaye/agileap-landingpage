@@ -1719,7 +1719,7 @@ h1 {
 }
 
 @media (max-width: 768px) {
-  .nav-links { display: none; }
+  /* nav-links uses the transform-based slide-in via .mobile-open; do NOT use display:none */
   .hero-text-container h1 { font-size: 2.6rem; }
   .text-reveal-item { font-size: 2.35rem; }
   .subheadline { font-size: 0.95rem; }
@@ -3104,11 +3104,13 @@ h1 {
   min-height: 100vh;
   position: relative;
   z-index: 5;
-  padding: 5rem 2rem 5.5rem;
+  /* calc(72px header + 40px announcement bar + breathing room) */
+  padding: calc(72px + 5rem) 2rem 2rem;
   background: #ffffff;
-  overflow: hidden;
+  overflow: visible; /* Must be visible so centered laptop isn't clipped during animation */
   display: flex;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .adoption-grid {
@@ -3642,25 +3644,29 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1100;
+    position: relative;
   }
 
+  /* Hide desktop nav links (they reappear via mobile-open slide-in) */
   .nav-links {
     position: fixed;
     top: 72px;
     left: 0;
+    display: flex !important; /* override any display:none */
     width: 100%;
-    background: rgba(255, 255, 255, 0.96);
+    background: #ffffff;
     backdrop-filter: blur(24px);
     flex-direction: column;
     padding: 1.8rem 2rem;
     gap: 1.4rem;
     border-bottom: 1px solid rgba(226, 232, 240, 0.9);
     box-shadow: 0 16px 32px rgba(15, 23, 42, 0.08);
-    transform: translateY(-120%);
+    transform: translateY(-130%);
     opacity: 0;
     pointer-events: none;
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
-    z-index: 99;
+    transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.38s ease;
+    z-index: 1050;
   }
 
   .nav-links.mobile-open {
