@@ -52,7 +52,7 @@ body.page-mode-register #main-header {
   padding: clamp(18px, 3vh, 34px) clamp(20px, 3.4vw, 40px);
   display: flex;
   flex-direction: column;
-  gap: clamp(8px, 1.1vh, 13px);
+  gap: clamp(10px, 1.3vh, 15px);
 }
 
 /* InvoiceNow logo — bigger */
@@ -85,7 +85,7 @@ body.page-mode-register #main-header {
   border: 1px solid rgba(15, 23, 42, 0.1);
   border-radius: 9px;
   padding: clamp(10px, 1.6vh, 18px) clamp(12px, 2vw, 20px);
-  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
+  box-shadow: 0 3px 10px rgba(99, 99, 99, 0.12);
 }
 
 .reg-plan-badge {
@@ -154,7 +154,7 @@ body.page-mode-register #main-header {
 
 .reg-plan-features {
   display: grid;
-  gap: clamp(5px, 0.85vh, 9px);
+  gap: clamp(6px, 1vh, 11px);
 }
 
 .reg-plan-features li {
@@ -267,13 +267,13 @@ body.page-mode-register #main-header {
   min-height: 0;
   display: flex;
   flex-direction: column;
-  gap: clamp(8px, 1.4vh, 15px);
+  gap: clamp(6px, 1.6vh, 12px);
 }
 
 .reg-form-section {
   display: flex;
   flex-direction: column;
-  gap: clamp(6px, 1vh, 11px);
+  gap: clamp(12px, 2vh, 12px);
 }
 
 /* Section header — compact icon + small title */
@@ -415,18 +415,18 @@ body.page-mode-register #main-header {
 
 /* InvoiceNow border box */
 .reg-invoicenow-box {
-  border: 1.5px solid #e95a1a;
-  border-radius: 8px;
-  padding: clamp(9px, 1.5vh, 16px);
+  border: 1px solid #f3d6c8;
+  border-radius: 5px;
+  padding: clamp(10px, 1.5vh, 16px);
   display: flex;
   flex-direction: column;
-  gap: clamp(6px, 1vh, 11px);
+  gap: clamp(10px, 3vh, 11px);
 }
 
 /* Checkboxes */
 .reg-agreements {
   display: grid;
-  gap: clamp(4px, 0.7vh, 8px);
+  gap: clamp(1px, 1vh, 5px);
 }
 
 .reg-check-label {
@@ -451,7 +451,7 @@ body.page-mode-register #main-header {
 .reg-check-box {
   width: 16px;
   height: 16px;
-  border: 2px solid #e95a1a;
+  border: 1px solid #e95a1a;
   border-radius: 2px;
   background: #e95a1a;
   display: inline-flex;
@@ -482,7 +482,7 @@ body.page-mode-register #main-header {
 
 .reg-invoicenow-logo {
   width: auto;
-  height: 18px;
+  height: 30px;
   display: inline-block;
   vertical-align: middle;
 }
