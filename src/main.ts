@@ -1,6 +1,5 @@
 import './style.css';
 import './reg.css';
-import { ThreeScene } from './three-scene';
 import { Benefits3D } from './benefits-3d';
 import { initAnimations } from './animations';
 import gsap from 'gsap';
@@ -9,15 +8,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 window.addEventListener('DOMContentLoaded', () => {
-  const canvas = document.querySelector<HTMLCanvasElement>('#webgl-canvas');
-  if (!canvas) {
-    console.error('Could not find WebGL canvas element.');
-    return;
-  }
-
-  // Initialize Three.js scene
-  const threeScene = new ThreeScene(canvas);
-
   // Initialize Benefits Section 3D & Parallax Scene
   const benefitsCanvas = document.querySelector<HTMLCanvasElement>('#benefits-3d-canvas');
   if (benefitsCanvas) {
@@ -25,7 +15,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   // Initialize GSAP & ScrollTrigger Animations
-  initAnimations(threeScene);
+  initAnimations();
 
   // Interactive Highlights Section Setup
   const apItems = [
