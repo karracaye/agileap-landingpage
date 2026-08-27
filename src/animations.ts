@@ -137,7 +137,7 @@ export function initAnimations(threeScene?: any) {
   });
 
   // 4. Hero Pinned Scroll Showcase Parallax (Center & Zoom Dashboard on Scroll)
-  const heroDesktop = window.matchMedia('(min-width: 1025px)').matches;
+  const heroDesktop = window.matchMedia('(min-width: 1024px)').matches;
   const sceneWrapper = document.querySelector<HTMLElement>('.parallax-scene-wrapper');
   const heroSection = document.querySelector<HTMLElement>('#hero');
 
@@ -151,79 +151,80 @@ export function initAnimations(threeScene?: any) {
     return heroCenter - wrapperCenter;
   };
 
-  const pinTimeline = gsap.timeline({
-    scrollTrigger: {
-      trigger: '#hero',
-      start: 'top top',
-      end: '+=65%',
-      pin: true,
-      scrub: 0.8,
-      invalidateOnRefresh: true
-    }
-  });
+  if (heroDesktop) {
+    const pinTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.hero-compliance-integrations-container',
+        start: 'bottom 85%',
+        end: '+=65%',
+        pin: '#hero',
+        scrub: 0.8,
+        invalidateOnRefresh: true
+      }
+    });
 
-  // Fade out left hero text column smoothly on scroll
-  pinTimeline.to('.hero-text-container', {
-    opacity: 0,
-    x: heroDesktop ? -70 : 0,
-    y: -40,
-    duration: 0.3,
-    ease: 'power1.out'
-  }, 0);
+    // Fade out left hero text column & compliance cards smoothly on scroll
+    pinTimeline.to(['.hero-text-container', '.hero-compliance-integrations-container'], {
+      opacity: 0,
+      x: -50,
+      y: -40,
+      duration: 0.3,
+      ease: 'power1.out'
+    }, 0);
 
-  // Move right-side dashboard card into DEAD-CENTER of the screen & enlarge it
-  pinTimeline.to('.parallax-scene-wrapper', {
-    x: () => getCenterDeltaX(),
-    scale: heroDesktop ? 1.15 : 1.05,
-    duration: 0.45,
-    ease: 'power1.inOut'
-  }, 0.05);
+    // Move right-side dashboard card into DEAD-CENTER of the screen & enlarge it
+    pinTimeline.to('.parallax-scene-wrapper', {
+      x: () => getCenterDeltaX(),
+      y: 120,
+      scale: 1.15,
+      duration: 0.45,
+      ease: 'power1.inOut'
+    }, 0.05);
 
-  // Flatten 3D tilt of dashboard mockup for clean center showcase
-  pinTimeline.to('.dashboard-mockup', {
-    rotateX: 0,
-    rotateY: 0,
-    rotateZ: 0,
-    duration: 0.35,
-    ease: 'power1.inOut'
-  }, 0.05);
-
-  // Expand dashboard bottom row panels
-  pinTimeline.to('.dash-bottom-row', {
-    opacity: 1,
-    maxHeight: 120,
-    y: 0,
-    duration: 0.4,
-    ease: 'power1.inOut'
-  }, 0.1);
-
-  // Expand & reveal explanation banner below centered dashboard card
-  pinTimeline.to('.dashboard-explanation-bar', {
-    autoAlpha: 1,
-    maxHeight: 260,
-    marginTop: '2rem',
-    paddingTop: '1.5rem',
-    paddingBottom: '1.5rem',
-    borderWidth: '1px',
-    y: 0,
-    pointerEvents: 'auto',
-    duration: 0.4,
-    ease: 'power1.out'
-  }, 0.12);
-
-  // Parallax glide floating cards for depth effect
-  floatCards.forEach((card) => {
-    const depth = parseFloat((card as HTMLElement).dataset.depth || '0.2');
-    pinTimeline.to(card, {
+    // Flatten 3D tilt of dashboard mockup for clean center showcase
+    pinTimeline.to('.dashboard-mockup', {
       rotateX: 0,
       rotateY: 0,
       rotateZ: 0,
-      y: -60 * depth,
-      opacity: 1,
       duration: 0.35,
       ease: 'power1.inOut'
-    }, 0.08);
-  });
+    }, 0.05);
+
+    // Expand dashboard bottom row panels
+    pinTimeline.to('.dash-bottom-row', {
+      opacity: 1,
+      maxHeight: 120,
+      y: 0,
+      duration: 0.4,
+      ease: 'power1.inOut'
+    }, 0.1);
+
+    // Expand & reveal explanation banner below centered dashboard card
+    pinTimeline.to('.dashboard-explanation-bar', {
+      autoAlpha: 1,
+      maxHeight: 260,
+      marginTop: '1.5rem',
+      paddingTop: '1.25rem',
+      paddingBottom: '1.25rem',
+      borderWidth: '1px',
+      y: 0,
+      pointerEvents: 'auto',
+      duration: 0.4,
+      ease: 'power1.out'
+    }, 0.12);
+
+    // Parallax glide floating cards for depth effect
+    floatCards.forEach((card) => {
+      const depth = parseFloat((card as HTMLElement).dataset.depth || '0.2');
+      pinTimeline.to(card, {
+        rotateX: 0,
+        rotateY: 0,
+        y: depth * 60,
+        duration: 0.4,
+        ease: 'power1.out'
+      }, 0.05);
+    });
+  }
 
 
 
