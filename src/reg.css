@@ -1,6 +1,7 @@
-/* ==========================================================================
-   Registration Page — Compact single-page no-scroll layout
-   ========================================================================== */
+*, *::before, *::after {
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
 
 body.page-mode-register {
   background: #f5f2ef !important;

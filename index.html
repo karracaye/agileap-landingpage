@@ -13,20 +13,18 @@
   </head>
   <body>
     <div id="app-content">
-      <!-- Top Promotional Announcement Ads Banner Bar (Upgraded #E55B1B Design) -->
-      <div id="top-ads-bar" class="top-ads-bar">
+      <!-- Top Promotional Announcement Ads Banner Bar (Minimalist Single-Line High-Impact Design) -->
+      <div id="top-ads-bar" class="top-ads-bar" role="region" aria-label="Promotional banner">
         <div class="ads-bar-content">
-          <span class="ads-pill">
-            <span class="desktop-pill-text">⚡ SPECIAL GRANT OFFER</span>
-            <span class="mobile-pill-text">⚡ GRANT OFFER</span>
-          </span>
-          <span class="ads-text">
-            <span class="desktop-text">Claim up to <strong>$1,000 GST Transition Grant</strong> & get started with AgileAP InvoiceNow FOC Package!</span>
-            <span class="mobile-text">Claim up to <strong>$1,000 GST Grant</strong> & FOC Package!</span>
-          </span>
-          <a href="#government-funding" class="ads-btn">
-            <span class="desktop-btn-text">Claim Grant Now</span>
-            <span class="mobile-btn-text">Claim Now</span>
+          <img src="/logo-icon.png" alt="AgileAP" class="ads-bar-logo" />
+          <strong class="ads-title">Claim Your InvoiceNow Free Package Today!</strong>
+          <span class="ads-dot desktop-text">•</span>
+          <span class="ads-desc desktop-text">Enjoy FREE access until 31 March 2031 for GST-registered businesses in Singapore.</span>
+          <span class="ads-desc mobile-text">FREE access until 31 March 2031.</span>
+
+          <a href="#foc-package" class="ads-btn">
+            <span class="desktop-btn-text">Sign Up Now</span>
+            <span class="mobile-btn-text">Sign Up</span>
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
@@ -2411,17 +2409,29 @@
                 <img src="/logo-full.png" alt="AgileAP Logo" class="footer-minimal-logo" />
               </div>
               <div class="footer-info-details">
-                <p class="footer-address-line">24 Sin Ming Lane #08-105 Midview City Singapore 573970</p>
+                <a href="https://maps.google.com/?q=24+Sin+Ming+Lane+%2308-105+Midview+City+Singapore+573970" target="_blank" rel="noopener noreferrer" class="footer-address-link">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="footer-inline-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <span>24 Sin Ming Lane #08-105 Midview City Singapore 573970</span>
+                </a>
                 <div class="footer-contact-line">
-                  <a href="mailto:sales@agileap.com" class="footer-contact-link">sales@agileap.com</a>
+                  <a href="mailto:sales@agileap.com" class="footer-contact-link">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="footer-inline-icon"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    sales@agileap.com
+                  </a>
                   <span class="footer-dot-sep">|</span>
-                  <a href="tel:+6580880170" class="footer-contact-link">+65 8088 0170</a>
+                  <a href="tel:+6580880170" class="footer-contact-link">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="footer-inline-icon"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    +65 8088 0170
+                  </a>
                 </div>
               </div>
             </div>
 
             <div class="footer-cta-action">
-              <a href="#cta-banner" class="btn-minimal-contact">Contact Us</a>
+              <a href="#cta-banner" class="btn-minimal-contact">
+                <span>Contact Us</span>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
             </div>
           </div>
 
@@ -2431,38 +2441,12 @@
           <div class="footer-minimal-bottom-row">
             <p class="footer-copyright-text">© 2026 Activants Pte Ltd. - All Rights Reserved</p>
             <div class="footer-legal-links-wrap">
-              <a href="#" class="legal-link">Terms of use</a>
-              <a href="#" class="legal-link">Privacy policy</a>
+              <a href="#terms" class="legal-link" id="footer-terms-link">Terms & Conditions</a>
+              <a href="#privacy" class="legal-link" id="footer-privacy-link">Privacy Policy</a>
             </div>
           </div>
         </div>
       </footer>
-
-      <!-- Floating Ads Banner Card (Restored Original Screenshot Layout + Modern UI Touches) -->
-      <div id="floating-ads-card" class="floating-ads-card" role="dialog" aria-labelledby="ads-card-title">
-        <button type="button" class="ads-card-close-btn" id="close-floating-ads-btn" aria-label="Close promotion">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <path d="M18 6L6 18M6 6l12 12"/>
-          </svg>
-        </button>
-
-        <div class="ads-card-body">
-          <div class="ads-card-logo">
-            <img src="/logo-icon.png" alt="AgileAP Icon" class="ads-logo-img" />
-          </div>
-
-          <div class="ads-card-main">
-            <h3 id="ads-card-title" class="ads-card-heading">Claim Your InvoiceNow Free Package Today!</h3>
-            <p class="ads-card-text">
-              If your business is GST-registered in Singapore, you're eligible to enjoy the <strong>FOC InvoiceNow Package</strong>, with <strong>FREE access until 31 March 2031</strong>. Register today and start sending and receiving InvoiceNow e-invoices at no cost.
-            </p>
-          </div>
-
-          <div class="ads-card-action">
-            <a href="#government-funding" class="btn-ads-signup">Sign Up</a>
-          </div>
-        </div>
-      </div>
     </div>
 
 
@@ -2696,6 +2680,207 @@
       </div>
     </div>
     <!-- / REGISTRATION PAGE -->
+
+    <!-- ============================================================
+         TERMS & CONDITIONS DEDICATED PAGE
+         ============================================================ -->
+    <div id="terms-page" class="terms-page-wrapper" aria-label="Terms and Conditions">
+      <div class="terms-page-container">
+        <!-- Back Navigation Header -->
+        <header class="terms-page-nav">
+          <a href="#home" class="terms-back-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            <span>Back to Home</span>
+          </a>
+          <div class="terms-page-brand">
+            <a href="#home"><img src="/logo-full.png" alt="AgileAP" class="terms-page-logo" /></a>
+          </div>
+        </header>
+
+        <!-- Terms Page Banner -->
+        <div class="terms-hero-banner">
+          <span class="terms-hero-badge">LEGAL AGREEMENT</span>
+          <h1 class="terms-hero-title">Terms & Conditions</h1>
+          <p class="terms-hero-sub">AgileAP Account Payable System • Last Updated: August 2026</p>
+        </div>
+
+        <!-- Main Terms Content Body -->
+        <main class="terms-page-card">
+          <div class="terms-content">
+            <section class="terms-section">
+              <h2 class="terms-section-title">ACCEPTANCE OF TERMS</h2>
+              <p>By accessing or using the AgileAP Account Payable System web application ("Application"), you agree to comply with and be bound by these terms and conditions ("Terms"). If you do not agree to these Terms, please do not use the Application.</p>
+            </section>
+
+            <section class="terms-section">
+              <h2 class="terms-section-title">USE OF THE APPLICATION</h2>
+              <ul class="terms-list">
+                <li><strong>Eligibility:</strong> You must be at least 18 years old and capable of forming a legally binding contract to use the Application. If you are using the Application on behalf of a business, you represent that you have the authority to bind that business to these Terms.</li>
+                <li><strong>User Account:</strong> You may be required to create an account to use certain features of the Application. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. AgileAP is not liable for any loss or damage arising from your failure to protect your account information.</li>
+                <li><strong>Acceptable Use:</strong> You agree to use the Application for lawful purposes only and in a manner consistent with all applicable laws and regulations. You will not engage in any activity that may disrupt or interfere with the proper functioning of the Application or attempt to gain unauthorised access to any part of the Application or its related systems or networks.</li>
+              </ul>
+            </section>
+
+            <section class="terms-section">
+              <h2 class="terms-section-title">PAYMENT AND SUBSCRIPTION</h2>
+              <ul class="terms-list">
+                <li><strong>Subscription:</strong> Some features and services provided by the Application may require payment and a subscription. By subscribing to the Application, you agree to pay the applicable fees.</li>
+                <li><strong>Billing:</strong> The fees for the Application will be billed on a recurring basis, and you authorise us to charge your designated payment method. All payments are non-refundable except as required by law.</li>
+                <li><strong>Cancellation:</strong> You may cancel your subscription at any time, but no refunds will be provided for any unused portion of the subscription.</li>
+              </ul>
+            </section>
+
+            <section class="terms-section">
+              <h2 class="terms-section-title">PRIVACY</h2>
+              <p>Your use of the Application is subject to our Privacy Policy, which can be found on the Application's website. By using the Application, you consent to the collection and use of your information as described in the Privacy Policy.</p>
+            </section>
+
+            <section class="terms-section">
+              <h2 class="terms-section-title">INTELLECTUAL PROPERTY</h2>
+              <ul class="terms-list">
+                <li><strong>Ownership:</strong> The Application and its content are owned by AgileAP or its licensors and are protected by copyright and other intellectual property laws.</li>
+                <li><strong>License:</strong> AgileAP grants you a limited, non-exclusive, non-transferable license to use the Application for your personal or business use in accordance with these Terms.</li>
+              </ul>
+            </section>
+
+            <section class="terms-section">
+              <h2 class="terms-section-title">DISCLAIMERS</h2>
+              <p>The Application is provided "as is" and "as available" without warranties of any kind, either express or implied. AgileAP does not warrant that the Application will be error-free, uninterrupted, or secure. To the fullest extent permitted by law, AgileAP disclaims all warranties, express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, and non-infringement.</p>
+            </section>
+
+            <section class="terms-section">
+              <h2 class="terms-section-title">LIMITATION OF LIABILITY</h2>
+              <p>To the maximum extent permitted by law, AgileAP shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenue, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses, resulting from (a) your use or inability to use the Application; (b) any unauthorised access to or use of our servers and/or any personal information stored therein; (c) any interruption or cessation of transmission to or from the Application; (d) any bugs, viruses, trojan horses, or the like that may be transmitted to or through our Application by any third party.</p>
+            </section>
+
+            <section class="terms-section">
+              <h2 class="terms-section-title">TERMINATION</h2>
+              <p>AgileAP may terminate or suspend your access to the Application at its sole discretion, without notice, for any reason, including if you violate these Terms.</p>
+            </section>
+
+            <section class="terms-section">
+              <h2 class="terms-section-title">MODIFICATIONS</h2>
+              <p>AgileAP reserves the right to modify or update these Terms at any time. It is your responsibility to review these Terms regularly. Your continued use of the Application following any changes constitutes your acceptance of those changes.</p>
+            </section>
+
+            <section class="terms-section">
+              <h2 class="terms-section-title">GOVERNING LAW AND DISPUTE RESOLUTION</h2>
+              <p>These Terms are governed by the laws of Singapore, without regard to its conflict of law principles. Any disputes arising out of or in connection with these Terms or the Application shall be resolved through binding arbitration in Singapore in accordance with the rules of the Singapore International Arbitration Centre (SIAC). The arbitrator's decision shall be final and binding, and judgment on the award rendered by the arbitrator may be entered in any court having jurisdiction.</p>
+              <div class="terms-footer-note">
+                <p>By using the AgileAP Account Payable System web application, you agree to these Terms and Conditions.</p>
+              </div>
+            </section>
+
+            <section class="terms-section">
+              <h2 class="terms-section-title">CONTACT INFORMATION</h2>
+              <p>If you have any questions or concerns about these Terms, please contact us at <a href="mailto:support@agileap.com" class="terms-link">support@agileap.com</a></p>
+              <div class="terms-footer-note">
+                <p>By using the AgileAP Account Payable System web application, you agree to these Terms and Conditions.</p>
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         PRIVACY POLICY DEDICATED PAGE
+         ============================================================ -->
+    <div id="privacy-page" class="terms-page-wrapper" aria-label="Privacy Policy">
+      <div class="terms-page-container">
+        <!-- Back Navigation Header -->
+        <header class="terms-page-nav">
+          <a href="#home" class="terms-back-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            <span>Back to Home</span>
+          </a>
+          <div class="terms-page-brand">
+            <a href="#home"><img src="/logo-full.png" alt="AgileAP" class="terms-page-logo" /></a>
+          </div>
+        </header>
+
+        <!-- Privacy Hero Banner -->
+        <div class="terms-hero-banner">
+          <span class="terms-hero-badge">PRIVACY STATEMENT</span>
+          <h1 class="terms-hero-title">Privacy Policy</h1>
+          <p class="terms-hero-sub">AgileAP Account Payable System • Last Updated: August 2026</p>
+        </div>
+
+        <!-- Main Privacy Content Body -->
+        <main class="terms-page-card">
+          <div class="terms-content">
+            <section class="terms-section">
+              <h2 class="terms-section-title">INTRODUCTION</h2>
+              <p>AgileAP is committed to safeguarding the privacy and security of your personal information. This Privacy Policy explains how we collect, use, disclose, and protect your information when you use the AgileAP Account Payable System web application. By using the AgileAP Account Payable System web application, you agree to this Privacy Policy.</p>
+            </section>
+
+            <section class="terms-section">
+              <h2 class="terms-section-title">INFORMATION WE COLLECT</h2>
+              <ul class="terms-list">
+                <li><strong>Information You Provide:</strong> We may collect personal and business information that you voluntarily provide when using the Application, including but not limited to your name, email address, business name, and other contact details.</li>
+                <li><strong>Usage Information:</strong> We may collect information about your use of the Application, including your IP address, browser type, device information, and the pages you visit.</li>
+              </ul>
+            </section>
+
+            <section class="terms-section">
+              <h2 class="terms-section-title">HOW WE USE YOUR INFORMATION</h2>
+              <p>We use the information we collect for the following purposes:</p>
+              <ul class="terms-list">
+                <li><strong>To Provide Services:</strong> We use your information to provide the services and features of the Application.</li>
+                <li><strong>To Communicate:</strong> We may use your contact information to communicate with you about the Application, including updates and customer support.</li>
+                <li><strong>To Improve the Application:</strong> We use data to analyse and improve the functionality and performance of the Application.</li>
+              </ul>
+            </section>
+
+            <section class="terms-section">
+              <h2 class="terms-section-title">SHARING OF INFORMATION</h2>
+              <p>We do not sell, trade, or rent your personal information to third parties. However, we may share your information with third-party service providers who assist us in delivering our services, and in the following circumstances:</p>
+              <ul class="terms-list">
+                <li><strong>Legal Requirements:</strong> We may disclose your information if required by law or in response to legal requests.</li>
+                <li><strong>Business Transfers:</strong> In the event of a merger, acquisition, or sale of all or part of our assets, your information may be transferred as part of that transaction.</li>
+              </ul>
+            </section>
+
+            <section class="terms-section">
+              <h2 class="terms-section-title">DATA SECURITY</h2>
+              <p>We take reasonable measures to protect your information from unauthorised access, disclosure, alteration, or destruction. However, no method of transmission over the internet or electronic storage is completely secure, and we cannot guarantee absolute security. By using the Application, you acknowledge and agree that we are not liable for any data breaches or unauthorised access that are beyond our reasonable control.</p>
+            </section>
+
+            <section class="terms-section">
+              <h2 class="terms-section-title">YOUR CHOICES</h2>
+              <p>You have the following rights regarding your personal information:</p>
+              <ul class="terms-list">
+                <li><strong>Access and Correction:</strong> You can access and update your personal information through your account settings.</li>
+                <li><strong>Opt-Out:</strong> You may opt-out of receiving promotional emails from us by following the instructions in those emails.</li>
+              </ul>
+            </section>
+
+            <section class="terms-section">
+              <h2 class="terms-section-title">CHILDREN'S PRIVACY</h2>
+              <p>The Application is not intended for children under 18. We do not knowingly collect personal information from children under 18. If we become aware that we have collected personal information from a child under 18, we will take steps to delete such information.</p>
+            </section>
+
+            <section class="terms-section">
+              <h2 class="terms-section-title">CHANGES TO THIS PRIVACY POLICY</h2>
+              <p>We may update this Privacy Policy to reflect changes in our data practices. We will notify you of any significant changes via the Application or other means. Your continued use of the Application after such changes signifies your acceptance of the updated Privacy Policy.</p>
+            </section>
+
+            <section class="terms-section">
+              <h2 class="terms-section-title">LIMITATION OF LIABILITY</h2>
+              <p>To the maximum extent permitted by law, AgileAP shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses, resulting from (a) your use or inability to use the Application; (b) any unauthorised access to or use of our servers and/or any personal information stored therein; (c) any interruption or cessation of transmission to or from the Application; and (d) any bugs, viruses, trojan horses, or the like that may be transmitted to or through our Application by any third party.</p>
+            </section>
+
+            <section class="terms-section">
+              <h2 class="terms-section-title">CONTACT INFORMATION</h2>
+              <p>If you have questions about our handling of personal information or this Privacy Policy, please contact us at <a href="mailto:support@agileap.com" class="terms-link">support@agileap.com</a></p>
+              <div class="terms-footer-note">
+                <p>By using the AgileAP Account Payable System web application, you agree to this Privacy Policy.</p>
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
 
     <script type="module" src="/src/main.ts"></script>
   </body>

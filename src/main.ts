@@ -1188,6 +1188,8 @@ window.addEventListener('DOMContentLoaded', () => {
         'page-mode-foc',
         'page-mode-faq',
         'page-mode-register',
+        'page-mode-terms',
+        'page-mode-privacy',
         'news-page-mode'
       );
     };
@@ -1239,6 +1241,12 @@ window.addEventListener('DOMContentLoaded', () => {
         if (badge)  badge.textContent  = planName === 'FOC Package' ? 'FREE PLAN' : planName.toUpperCase();
         if (price)  price.textContent  = planPrice;
         if (orig)   orig.style.display = planName === 'FOC Package' ? '' : 'none';
+      } else if (hash === '#terms' || hash === '#terms-and-conditions') {
+        document.body.classList.add('page-mode-terms');
+        window.scrollTo(0, 0);
+      } else if (hash === '#privacy' || hash === '#privacy-policy') {
+        document.body.classList.add('page-mode-privacy');
+        window.scrollTo(0, 0);
       } else {
         // Homepage Mode (1 continuous page showing Unlock Business Efficiency + all sections!)
         document.body.classList.add('page-mode-home');
@@ -1376,5 +1384,28 @@ window.addEventListener('DOMContentLoaded', () => {
     updateRouteState();
   };
 
+  // Legal Pages Navigation Handler
+  const initLegalLinks = () => {
+    const footerTermsLink = document.querySelector<HTMLElement>('#footer-terms-link');
+    const footerPrivacyLink = document.querySelector<HTMLElement>('#footer-privacy-link');
+
+    if (footerTermsLink) {
+      footerTermsLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.location.hash = '#terms';
+        window.scrollTo(0, 0);
+      });
+    }
+
+    if (footerPrivacyLink) {
+      footerPrivacyLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.location.hash = '#privacy';
+        window.scrollTo(0, 0);
+      });
+    }
+  };
+
   initPageRouter();
+  initLegalLinks();
 });
