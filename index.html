@@ -31,18 +31,35 @@
     </div>
 
     <div id="app-content">
-      <!-- Top Promotional Announcement Ads Banner Bar (Exact Match to Uploaded Image) -->
+      <!-- Top Promotional Announcement Ads Banner Bar -->
       <div id="top-ads-bar" class="top-ads-bar" role="region" aria-label="Promotional banner">
         <div class="ads-bar-content">
           <img src="/logo-icon.png" alt="AgileAP" class="ads-bar-logo" />
-          <span class="ads-desc">Enjoy FREE access until 31 March 2031 for GST-registered businesses in Singapore.</span>
-          <a href="#foc-package" class="ads-btn">
-            Sign Up Now
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+
+          <span class="ads-desc">
+            <span class="desktop-text">Enjoy FREE access until 31 March 2031 for GST-registered businesses in Singapore.</span>
+            <span class="mobile-text">Singapore GST InvoiceNow Compliant</span>
+          </span>
+
+          <div class="ads-contact-group">
+            <a href="mailto:sales@agileap.com" class="ads-contact-pill email-pill" title="Email Us">
+              <iconify-icon icon="lucide:mail" width="13" height="13"></iconify-icon>
+              <span>sales@agileap.com</span>
+            </a>
+            <a href="tel:+6580880170" class="ads-contact-pill phone-pill" title="Call Us">
+              <iconify-icon icon="lucide:phone" width="13" height="13"></iconify-icon>
+              <span>+65 8088 0170</span>
+            </a>
+          </div>
+
+          <a href="#foc-package" class="ads-btn-primary">
+            <span class="desktop-btn-text">Sign Up Now</span>
+            <span class="mobile-btn-text">Sign Up</span>
+            <iconify-icon icon="lucide:arrow-right" width="12" height="12"></iconify-icon>
           </a>
         </div>
         <button type="button" class="ads-close-btn" id="close-ads-btn" aria-label="Dismiss banner">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          <iconify-icon icon="lucide:x" width="14" height="14"></iconify-icon>
         </button>
       </div>
 

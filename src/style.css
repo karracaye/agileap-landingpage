@@ -197,14 +197,15 @@ html.lenis {
 }
 
 /* Top Promotional Announcement Ads Banner Bar (Midnight Obsidian Flush Theme) */
+/* Top Promotional Announcement Ads Banner Bar (Midnight Obsidian Theme) */
 .top-ads-bar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 42px;
-  background: #090e17;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  height: 44px;
+  background: linear-gradient(90deg, #090e17 0%, #151d2a 50%, #090e17 100%);
+  border-bottom: 1px solid rgba(229, 91, 27, 0.35);
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -212,7 +213,7 @@ html.lenis {
   padding: 0 1.5rem;
   z-index: 1001;
   font-size: 0.82rem;
-  box-shadow: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -221,14 +222,14 @@ html.lenis {
 }
 
 body.has-ads-bar .header {
-  top: var(--ads-bar-height, 42px);
+  top: var(--ads-bar-height, 44px);
   transition: top 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .ads-bar-content {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.85rem;
   justify-content: center;
   max-width: 1440px;
   width: 100%;
@@ -252,22 +253,6 @@ body.has-ads-bar .header {
   flex-shrink: 0;
 }
 
-.ads-title {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 0.83rem;
-  color: #ffffff;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-.ads-dot {
-  color: #E55B1B;
-  font-size: 0.85rem;
-  font-weight: 700;
-  flex-shrink: 0;
-}
-
 .ads-desc {
   font-size: 0.78rem;
   color: #cbd5e1;
@@ -277,30 +262,70 @@ body.has-ads-bar .header {
   text-overflow: ellipsis;
 }
 
-.ads-btn {
+/* Executive Email & Phone Contact Pills */
+.ads-contact-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-shrink: 0;
+}
+
+.ads-contact-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.65rem;
+  border-radius: 6px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ads-contact-pill.email-pill iconify-icon {
+  color: #E55B1B;
+}
+
+.ads-contact-pill.phone-pill iconify-icon {
+  color: #38bdf8;
+}
+
+.ads-contact-pill:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Primary Action CTA Button */
+.ads-btn-primary {
   font-family: var(--font-heading);
   font-size: 0.74rem;
   font-weight: 700;
-  background: #ffffff;
-  color: #E55B1B;
-  padding: 0.24rem 0.85rem;
+  background: #E55B1B;
+  color: #ffffff;
+  padding: 0.26rem 0.85rem;
   border-radius: 6px;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+  gap: 0.35rem;
+  box-shadow: 0 2px 10px rgba(229, 91, 27, 0.3);
   transition: all 0.25s ease;
   white-space: nowrap;
   flex-shrink: 0;
-  margin-left: 0.35rem;
+  margin-left: 0.25rem;
 }
 
-.ads-btn:hover {
-  background: #fff5ee;
-  color: #c4460b;
-  transform: translateY(-1px) scale(1.03);
-  box-shadow: 0 4px 16px rgba(229, 91, 27, 0.35);
+.ads-btn-primary:hover {
+  background: #d44d0f;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(229, 91, 27, 0.45);
 }
 
 .ads-close-btn {
@@ -308,25 +333,23 @@ body.has-ads-bar .header {
   right: 1.1rem;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(229, 91, 27, 0.2);
-  border: 1px solid rgba(229, 91, 27, 0.55);
-  color: #ffaa80;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #94a3b8;
   cursor: pointer;
   padding: 0.3rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 2px 8px rgba(229, 91, 27, 0.25);
+  border-radius: 6px;
+  transition: all 0.2s ease;
 }
 
 .ads-close-btn:hover {
-  background: #E55B1B;
+  background: rgba(229, 91, 27, 0.25);
   color: #ffffff;
   border-color: #E55B1B;
-  transform: translateY(-50%) scale(1.12);
-  box-shadow: 0 4px 14px rgba(229, 91, 27, 0.5);
+  transform: translateY(-50%) scale(1.08);
 }
 
 @media (max-width: 768px) {
@@ -884,6 +907,89 @@ body.has-ads-bar .header {
   display: flex;
   flex-direction: column;
   gap: 1.75rem;
+  justify-content: flex-start;
+}
+
+.sidebar-invoicenow-bottom,
+.hd-sidebar-invoicenow-bottom {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid #E2E8F0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  text-align: center;
+}
+
+.sidebar-invoicenow-logo,
+.hd-invoicenow-logo {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.25s ease;
+}
+
+.sidebar-invoicenow-logo:hover,
+.hd-invoicenow-logo:hover {
+  transform: scale(1.06);
+}
+
+.sidebar-invoicenow-label,
+.hd-sidebar-invoicenow-bottom span {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #64748B;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sincra-dash-bottom-strip {
+  margin-top: 0.75rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid #F1F5F9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.dash-invoicenow-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.dash-footer-invoicenow-logo {
+  height: 26px;
+  width: auto;
+  object-fit: contain;
+}
+
+.dash-invoicenow-brand span {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+.dash-footer-contact {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.dash-footer-contact .contact-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  color: #475569;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  font-weight: 600;
 }
 
 .sincra-nav-list {
@@ -1318,19 +1424,21 @@ body.has-ads-bar .header {
   border: 1px solid #E2E8F0;
   margin: 0 auto;
   position: relative;
+  overflow: visible !important;
 }
 
 /* Floating InvoiceNow Corner Badge (Prominent & Moving Animation) */
 .invoicenow-corner-badge {
   position: absolute;
-  top: -24px;
-  right: 28px;
+  bottom: -22px;
+  right: -15px;
+  top: auto;
   z-index: 40;
   background: #ffffff;
   border: 1.5px solid #E2E8F0;
-  border-radius: 18px;
-  padding: 0.75rem 1.45rem;
-  box-shadow: 0 16px 40px rgba(11, 19, 43, 0.14), 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  padding: 0.65rem 1.35rem;
+  box-shadow: 0 16px 40px rgba(11, 19, 43, 0.16), 0 4px 12px rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
   justify-content: center;
