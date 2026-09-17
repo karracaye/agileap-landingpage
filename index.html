@@ -2,29 +2,42 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/logo-icon.png" />
+    <link rel="apple-touch-icon" href="/logo-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AgileAP - Unlock Business Efficiency</title>
-    <meta name="description" content="Empower Your Business with Comprehensive Accounts Payable and Accounts Receivable Automation" />
+    <title>AgileAP - Automate Account Payable and Receivables | Singapore InvoiceNow Compliant</title>
+    <meta name="description" content="Automate Account Payable and Receivables | Singapore InvoiceNow Compliant" />
+    <meta property="og:description" content="Automate Account Payable and Receivables | Singapore InvoiceNow Compliant" />
+    <meta name="twitter:description" content="Automate Account Payable and Receivables | Singapore InvoiceNow Compliant" />
+    <!-- Iconify -->
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   </head>
   <body>
+    <!-- AgileAP Site Entry Sequence Intro Splash Screen -->
+    <div id="agileap-intro-splash" class="agileap-intro-splash">
+      <div class="splash-inner">
+        <div class="splash-logo-sequence">
+          <!-- Step 1: Spinning Icon Logo (Zero-flash initial state) -->
+          <img src="/logo-icon.png" alt="AgileAP Icon" class="splash-icon-spin" id="splash-icon-spin" style="opacity: 0; transform: scale(0.3);" />
+          <!-- Step 2: Full AgileAP Logo Reveal (Zero-flash initial state) -->
+          <img src="/logo-full.png" alt="AgileAP Logo" class="splash-full-logo" id="splash-full-logo" style="opacity: 0; transform: scale(0.9);" />
+        </div>
+        <div class="splash-glow-ring"></div>
+      </div>
+    </div>
+
     <div id="app-content">
-      <!-- Top Promotional Announcement Ads Banner Bar (Minimalist Single-Line High-Impact Design) -->
+      <!-- Top Promotional Announcement Ads Banner Bar (Exact Match to Uploaded Image) -->
       <div id="top-ads-bar" class="top-ads-bar" role="region" aria-label="Promotional banner">
         <div class="ads-bar-content">
           <img src="/logo-icon.png" alt="AgileAP" class="ads-bar-logo" />
-          <strong class="ads-title">Claim Your InvoiceNow Free Package Today!</strong>
-          <span class="ads-dot desktop-text">•</span>
-          <span class="ads-desc desktop-text">Enjoy FREE access until 31 March 2031 for GST-registered businesses in Singapore.</span>
-          <span class="ads-desc mobile-text">FREE access until 31 March 2031.</span>
-
+          <span class="ads-desc">Enjoy FREE access until 31 March 2031 for GST-registered businesses in Singapore.</span>
           <a href="#foc-package" class="ads-btn">
-            <span class="desktop-btn-text">Sign Up Now</span>
-            <span class="mobile-btn-text">Sign Up</span>
+            Sign Up Now
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
@@ -33,521 +46,383 @@
         </button>
       </div>
 
-      <!-- Header (Exact Match to User Image Upload) -->
-      <header id="main-header" class="header">
-        <div class="logo">
-          <a href="#" aria-label="AgileAP Home">
-            <img src="/logo-full.png" alt="AgileAP Logo" class="logo-img" />
-          </a>
-        </div>
+      <!-- Header (Exact Match to Uploaded Image) -->
+      <header id="main-header" class="header exact-agileap-header">
+        <div class="header-container">
+          <div class="logo">
+            <a href="#" aria-label="AgileAP Home">
+              <img src="/logo-full.png" alt="AgileAP Logo" class="logo-img" />
+            </a>
+          </div>
 
-        <nav class="nav-links" id="main-nav">
-          <a href="#pricing" id="nav-pricing">Pricing</a>
-          <a href="#invoicenow" id="nav-invoicenow">InvoiceNow</a>
-          <a href="#news" id="nav-news">News</a>
-          <a href="#foc-package" id="nav-foc">GST InvoiceNow FOC Package</a>
-          <a href="#faq" id="nav-faq">FAQ</a>
-        </nav>
+          <nav class="nav-links exact-agileap-nav" id="main-nav">
+            <a href="#pricing" id="nav-pricing">Pricing</a>
+            <a href="#invoicenow" id="nav-invoicenow">InvoiceNow</a>
+            <a href="#news" id="nav-news">News</a>
+            <a href="#foc-package" id="nav-foc">GST InvoiceNow FOC Package</a>
+            <a href="#faq" id="nav-faq">FAQ</a>
+          </nav>
 
-        <div class="cta-actions">
-          <a href="#cta-banner" class="btn btn-try-free">Try For Free</a>
-          <a href="#cta-banner" class="btn btn-login-now">Login Now</a>
-          <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
-          </button>
+          <div class="cta-actions">
+            <a href="#cta-banner" class="btn btn-try-free">Try For Free</a>
+            <a href="#login" class="btn btn-login-now">Login Now</a>
+            <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+            </button>
+          </div>
         </div>
       </header>
 
       <!-- Main Layout -->
       <main>
-        <!-- Hero Section with Interactive Parallax Dashboard -->
-        <section id="hero" class="hero-section">
-          <div class="hero-text-container">
-            <!-- Capsule Badge Pill -->
-            <div class="hero-badge hero-tag-pill">
-              <span class="badge-label">AP • AR • E-INVOICING • AUTOMATION</span>
-            </div>
-
-            <!-- Typography -->
-            <h1>
-              <span class="text-reveal-mask">
-                <span class="text-reveal-item font-bold-heading">
-                  Automate Finance.<br><span class="text-orange font-black-heading">Simplify Every Transaction.</span>
-                </span>
-              </span>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-hive-section">
+          <div class="hero-hive-content">
+            
+            <!-- Main Headline -->
+            <h1 class="sincra-hero-title">
+              Automate Finance.<br><span class="hero-title-gradient">Simplify Every Transaction.</span>
             </h1>
 
-            <p class="subheadline">Streamline Accounts Payable and Accounts Receivable with intelligent invoice processing, automated matching, approvals, reconciliation and e-invoicing—all in one connected platform.</p>
-            
-            <div class="hero-ctas">
-              <a href="#cta-banner" class="btn btn-brand btn-large hero-primary-btn">
-                Request a Demo
-                <span class="btn-arrow-circle">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                    <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-              </a>
-              <a href="#product-highlights" class="btn btn-light-brand btn-large hero-secondary-btn">
-                Explore AgileAP
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
+            <!-- Subtitle -->
+            <p class="sincra-hero-sub">
+              Streamline Accounts Payable and Accounts Receivable with intelligent invoice processing, automated matching, approvals, reconciliation and e-invoicing—all in one connected platform.
+            </p>
+
+            <!-- Primary Action CTAs -->
+            <div class="sincra-hero-ctas">
+              <a href="#cta-banner" class="btn-sincra-primary">Start Free Trial</a>
+              <a href="#hero" class="btn-sincra-secondary">Request a Demo</a>
             </div>
 
-            <!-- 3 Feature Cards Row -->
-            <div class="hero-mini-features-row" aria-label="AgileAP key capabilities">
-              <div class="mini-feature-card">
-                <div class="mini-icon-circle icon-orange">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E55B1B" stroke-width="2">
-                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                    <circle cx="9" cy="7" r="4"/>
-                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                  </svg>
-                </div>
-                <div class="mini-feature-text">
-                  <strong>AP + AR</strong>
-                  <span>Unified workflows for complete visibility</span>
-                </div>
-              </div>
-
-              <div class="mini-feature-card">
-                <div class="mini-icon-circle icon-green">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                    <polyline points="14 2 14 8 20 8"/>
-                    <path d="m9 15 2 2 4-4"/>
-                  </svg>
-                </div>
-                <div class="mini-feature-text">
-                  <strong>Intelligent Matching</strong>
-                  <span>Automate invoice validation and matching</span>
-                </div>
-              </div>
-
-              <div class="mini-feature-card">
-                <div class="mini-icon-circle icon-purple">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9333ea" stroke-width="2">
-                    <circle cx="12" cy="12" r="10"/>
-                    <line x1="2" y1="12" x2="22" y2="12"/>
-                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                  </svg>
-                </div>
-                <div class="mini-feature-text">
-                  <strong>Global E-Invoicing</strong>
-                  <span>Connect to e-invoicing networks worldwide</span>
-                </div>
-              </div>
+            <!-- Intro Badge Showcase (Displayed strictly when Dashboard is at Center) -->
+            <div id="dashboard-intro-badge" class="dashboard-intro-badge">
+              <h2 class="intro-badge-heading">
+                Unlock <span class="intro-badge-highlight">Business Efficiency</span>
+              </h2>
+              <p class="intro-badge-sub">
+                Empower Your Business with Comprehensive Accounts Payable & Accounts Receivable Automation
+              </p>
             </div>
-          </div>
 
-          <!-- Interactive 3D Mockup Parallax Container -->
-          <div class="parallax-scene-wrapper">
-            <div class="dashboard-3d-container">
+            <!-- Browser Window Frame Showcase -->
+            <div class="browser-frame-container hive-browser-frame sincra-browser-frame">
               
-              <!-- 1. The Unified Dashboard Mockup Card -->
-              <div class="dashboard-mockup">
+              <!-- Floating InvoiceNow Corner Badge -->
+              <div class="invoicenow-corner-badge">
+                <img src="/invoicenow-logo.png" alt="InvoiceNow Logo" class="invoicenow-corner-img" />
+              </div>
+
+              <!-- Attachment 2 Dashboard Inside Browser Frame -->
+              <div class="agileap-dashboard-app sincra-dash-layout">
                 
-                <!-- Sidebar Portion -->
-                <aside class="dash-sidebar">
-                  <div class="dash-logo">
-                    <img src="/logo-full.png" alt="AgileAP Logo" class="dash-logo-img" />
+                <!-- Left Sidebar -->
+                <aside class="agileap-sidebar sincra-sidebar">
+                  <!-- Logo Header -->
+                  <div class="sidebar-logo-header">
+                    <div class="brand-logo-mark">
+                      <img src="/logo-full.png" alt="AgileAP Logo" class="dash-logo-img" style="height: 36px; width: auto;" />
+                    </div>
                   </div>
-                  <div class="dash-menu-label">Main Menu</div>
-                  <div class="dash-menu-item active">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                      <polyline points="9 22 9 12 15 12 15 22"/>
-                    </svg>
-                    Dashboard
-                  </div>
-                  <div class="dash-menu-item">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                      <path d="M18 20V10M12 20V4M6 20v-6"/>
-                    </svg>
-                    Insight
-                  </div>
-                  <div class="dash-menu-item">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                      <polyline points="14 2 14 8 20 8"/>
-                    </svg>
-                    Invoices
-                  </div>
-                  <div class="dash-menu-item">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                      <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
-                      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
-                    </svg>
-                    Products
-                  </div>
-                  <div class="dash-menu-item">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                      <line x1="16" y1="13" x2="8" y2="13"/>
-                      <line x1="16" y1="17" x2="8" y2="17"/>
-                      <polyline points="10 9 9 9 8 9"/>
-                    </svg>
-                    Reimburse
-                  </div>
-                  <div class="dash-menu-item">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                    </svg>
-                    Inbox
+
+                  <!-- Navigation Menu List -->
+                  <div class="sincra-nav-list">
+                    <a href="#" class="sincra-nav-item active">
+                      <iconify-icon icon="lucide:layout-dashboard" width="15" height="15"></iconify-icon>
+                      <span>Dashboard</span>
+                    </a>
+                    <a href="#" class="sincra-nav-item">
+                      <iconify-icon icon="lucide:file-text" width="15" height="15"></iconify-icon>
+                      <span>Purchase Requisition</span>
+                    </a>
+                    <a href="#" class="sincra-nav-item">
+                      <iconify-icon icon="lucide:package-check" width="15" height="15"></iconify-icon>
+                      <span>Goods Receipt</span>
+                    </a>
+                    <a href="#" class="sincra-nav-item">
+                      <iconify-icon icon="lucide:receipt" width="15" height="15"></iconify-icon>
+                      <span>Bills To Pay</span>
+                    </a>
+                    <a href="#" class="sincra-nav-item">
+                      <iconify-icon icon="lucide:wallet" width="15" height="15"></iconify-icon>
+                      <span>Claims / Petty Cash</span>
+                    </a>
+                    <a href="#" class="sincra-nav-item">
+                      <iconify-icon icon="lucide:shopping-cart" width="15" height="15"></iconify-icon>
+                      <span>Purchase Order</span>
+                    </a>
+                    <a href="#" class="sincra-nav-item">
+                      <iconify-icon icon="lucide:banknote" width="15" height="15"></iconify-icon>
+                      <span>Payment</span>
+                    </a>
                   </div>
                 </aside>
 
-                <!-- Main Panel Portion -->
-                <div class="dash-main">
-                  <!-- Header topbar -->
-                  <header class="dash-header">
-                    <div class="dash-search">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21L16.65 16.65"/></svg>
-                      <span>Search something here</span>
+                <!-- Dashboard Main Work Area -->
+                <main class="agileap-main-panel sincra-main">
+                  
+                  <!-- Title Bar with Right Action -->
+                  <div class="sincra-dash-header">
+                    <div class="sincra-title-block">
+                      <h2>Dashboard</h2>
+                      <p>Welcome to your financial command center</p>
                     </div>
-                    <div class="dash-user">
-                      <div class="dash-notif">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#334155" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-                        <span class="dash-badge"></span>
-                      </div>
-                      <div class="dash-profile">
-                        <div class="dash-avatar"></div>
-                        <span class="dash-username">John Cornors</span>
-                        <svg class="dash-dropdown-arrow" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="3">
-                          <polyline points="6 9 12 15 18 9"/>
-                        </svg>
-                      </div>
+                    <div class="sincra-header-actions">
+                      <button class="sincra-icon-btn" title="Refresh">
+                        <iconify-icon icon="lucide:refresh-cw" width="14" height="14"></iconify-icon>
+                      </button>
+                      <button class="sincra-icon-btn" title="Share">
+                        <iconify-icon icon="lucide:share-2" width="14" height="14"></iconify-icon>
+                      </button>
+                      <button class="sincra-action-btn">
+                        <iconify-icon icon="lucide:file-bar-chart" width="13" height="13"></iconify-icon>
+                        <span>Report</span>
+                      </button>
                     </div>
-                  </header>
+                  </div>
 
-                  <!-- Layout Grid -->
-                  <div class="dash-grid">
-                    <!-- Spending Statistics Card -->
-                    <div class="dash-panel chart-panel">
-                      <div class="panel-header">
-                        <h3>Spending Statistics</h3>
-                        <div class="panel-nav-year">
-                          <svg class="year-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5">
-                            <polyline points="15 18 9 12 15 6"/>
-                          </svg>
-                          <span>2024</span>
-                          <svg class="year-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5">
-                            <polyline points="9 18 15 12 9 6"/>
-                          </svg>
-                        </div>
+                  <!-- 3 Metric Cards Row (Matching Sincra 3 Cards with Sparklines) -->
+                  <div class="sincra-metrics-row">
+                    
+                    <!-- Card 1: Total Payable -->
+                    <div class="sincra-kpi-card">
+                      <div class="kpi-meta-top">
+                        <span class="kpi-title">Total Payable</span>
+                        <span class="kpi-menu-dots">•••</span>
                       </div>
-                      <div class="bar-chart-wrapper">
-                        <div class="chart-y-axis">
-                          <span>$15k</span>
-                          <span>$10k</span>
-                          <span>$5k</span>
-                          <span>$1k</span>
-                          <span>$500</span>
-                        </div>
-                        <div class="bar-chart">
-                          <div class="chart-bar" style="--bar-height: 48%;" data-month="Jan"></div>
-                          <div class="chart-bar" style="--bar-height: 25%;" data-month="Feb"></div>
-                          <div class="chart-bar" style="--bar-height: 58%;" data-month="Mar"></div>
-                          <div class="chart-bar" style="--bar-height: 38%;" data-month="Apr"></div>
-                          <div class="chart-bar" style="--bar-height: 42%;" data-month="Mei"></div>
-                          <div class="chart-bar active-hover" style="--bar-height: 78%;" data-month="Jun">
-                            <div class="chart-tooltip">
-                              <span class="tooltip-title">Expense</span>
-                              <span class="tooltip-val">$15.030</span>
-                            </div>
+                      <div class="kpi-body-flex">
+                        <div class="kpi-value-block">
+                          <strong class="kpi-number">SGD 1,627,400.00</strong>
+                          <div class="kpi-sub-trend">
+                            <span class="trend-badge green-badge">↗ 12.5%</span>
+                            <span class="trend-note">+325 Vs Last Month</span>
                           </div>
-                          <div class="chart-bar" style="--bar-height: 32%;" data-month="Jul"></div>
-                          <div class="chart-bar" style="--bar-height: 46%;" data-month="Aug"></div>
-                          <div class="chart-bar" style="--bar-height: 78%;" data-month="Sep"></div>
-                          <div class="chart-bar" style="--bar-height: 58%;" data-month="Oct"></div>
-                          <div class="chart-bar" style="--bar-height: 36%;" data-month="Nov"></div>
-                          <div class="chart-bar" style="--bar-height: 70%;" data-month="Des"></div>
                         </div>
-                      </div>
-                    </div>
-
-                    <!-- Sidebar Cards -->
-                    <div class="dash-sidebar-cards">
-                      <!-- Balance Card -->
-                      <div class="dash-panel balance-panel">
-                        <div class="panel-header">
-                          <h3>Your balance</h3>
-                          <span>•••</span>
-                        </div>
-                        <div class="balance-val">$120,435.00 <span class="currency">(USD)</span></div>
-                        <div class="balance-meta">From Jan 01, 2022 to Jan 31, 2022</div>
-                      </div>
-
-                      <!-- Donut Department Card -->
-                      <div class="dash-panel dept-panel">
-                        <div class="panel-header">
-                          <h3>Total by Department</h3>
-                          <span>•••</span>
-                        </div>
-                        <div class="donut-container">
-                          <svg width="68" height="68" viewBox="0 0 36 36" class="donut">
-                            <circle cx="18" cy="18" r="15.915" fill="transparent" stroke="#f1f5f9" stroke-width="3"></circle>
-                            <circle cx="18" cy="18" r="15.915" fill="transparent" stroke="#ff6b00" stroke-width="3" stroke-dasharray="60 40" stroke-dashoffset="25" class="donut-segment-orange"></circle>
-                            <circle cx="18" cy="18" r="15.915" fill="transparent" stroke="#0066ff" stroke-width="3" stroke-dasharray="25 75" stroke-dashoffset="85" class="donut-segment-blue"></circle>
+                        <div class="kpi-sparkline">
+                          <svg width="72" height="32" viewBox="0 0 72 32" fill="none">
+                            <path d="M2 26Q14 20 26 22T50 10T70 4" stroke="#16A34A" stroke-width="2.2" stroke-linecap="round" fill="none"/>
                           </svg>
                         </div>
                       </div>
                     </div>
+
+                    <!-- Card 2: Paid Amount -->
+                    <div class="sincra-kpi-card">
+                      <div class="kpi-meta-top">
+                        <span class="kpi-title">Paid Amount</span>
+                        <span class="kpi-menu-dots">•••</span>
+                      </div>
+                      <div class="kpi-body-flex">
+                        <div class="kpi-value-block">
+                          <strong class="kpi-number">SGD 197,613.59</strong>
+                          <div class="kpi-sub-trend">
+                            <span class="trend-badge green-badge">↗ 8.2%</span>
+                            <span class="trend-note">+142 Vs Last Month</span>
+                          </div>
+                        </div>
+                        <div class="kpi-sparkline">
+                          <svg width="72" height="32" viewBox="0 0 72 32" fill="none">
+                            <path d="M2 28Q18 16 36 20T54 8T70 6" stroke="#16A34A" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Card 3: Pending Amount -->
+                    <div class="sincra-kpi-card">
+                      <div class="kpi-meta-top">
+                        <span class="kpi-title">Pending Amount</span>
+                        <span class="kpi-menu-dots">•••</span>
+                      </div>
+                      <div class="kpi-body-flex">
+                        <div class="kpi-value-block">
+                          <strong class="kpi-number">SGD 716,450.77</strong>
+                          <div class="kpi-sub-trend">
+                            <span class="trend-badge red-badge">↘ 5.4%</span>
+                            <span class="trend-note">-18 Vs Last Month</span>
+                          </div>
+                        </div>
+                        <div class="kpi-sparkline">
+                          <svg width="72" height="32" viewBox="0 0 72 32" fill="none">
+                            <path d="M2 6Q18 14 36 12T54 24T70 26" stroke="#EF4444" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+
                   </div>
 
-                  <!-- Bottom Row Summary Panels -->
-                  <div class="dash-bottom-row">
-                    <div class="dash-panel mini-panel">
-                      <div class="mini-panel-header">
-                        <span class="mini-label">Total Income</span>
-                        <span class="mini-trend green">↑ +12.4%</span>
+                  <!-- 2 Panel Bottom Grid (Chart + Summary) -->
+                  <div class="sincra-bottom-grid">
+                    
+                    <!-- Left Main Area Chart Panel -->
+                    <div class="sincra-panel chart-panel-large">
+                      <div class="panel-header-flex">
+                        <h3>Amount & Document Insight</h3>
+                        <div class="panel-controls">
+                          <button class="mini-tool-btn" title="Edit"><iconify-icon icon="lucide:pencil" width="12" height="12"></iconify-icon></button>
+                          <button class="mini-tool-btn" title="Add"><iconify-icon icon="lucide:plus" width="12" height="12"></iconify-icon></button>
+                        </div>
                       </div>
-                      <strong class="mini-amount">$94,210.00</strong>
-                    </div>
-                    <div class="dash-panel mini-panel">
-                      <div class="mini-panel-header">
-                        <span class="mini-label">Total Expense</span>
-                        <span class="mini-trend red">↓ -4.1%</span>
+
+                      <div class="sincra-wave-graphic">
+                        <svg width="100%" height="150" viewBox="0 0 450 150" preserveAspectRatio="none">
+                          <defs>
+                            <linearGradient id="sincraGrad" x1="0" y1="0" x2="0" y2="1">
+                              <stop offset="0%" stop-color="#E85D04" stop-opacity="0.25"/>
+                              <stop offset="100%" stop-color="#E85D04" stop-opacity="0.0"/>
+                            </linearGradient>
+                          </defs>
+                          <path d="M0 130 C80 120, 130 50, 180 90 C230 130, 270 20, 340 70 C390 110, 420 40, 450 60 L450 150 L0 150 Z" fill="url(#sincraGrad)"/>
+                          <path d="M0 130 C80 120, 130 50, 180 90 C230 130, 270 20, 340 70 C390 110, 420 40, 450 60" stroke="#E85D04" stroke-width="2.5" fill="none"/>
+                        </svg>
+                        <!-- Floating Tooltip Badge on Chart -->
+                        <div class="sincra-tooltip-pill" style="top: 35px; left: 62%;">
+                          <span>SGD 4,892</span>
+                        </div>
                       </div>
-                      <strong class="mini-amount">$26,225.00</strong>
                     </div>
+
+                    <!-- Right Summary Panel -->
+                    <div class="sincra-panel summary-panel-right">
+                      <div class="panel-header-flex">
+                        <span class="panel-sub-label">Total Balance</span>
+                      </div>
+                      <strong class="balance-big-val">SGD 2,541,464.36</strong>
+                      <div class="balance-progress-box">
+                        <span class="progress-title">Spending in November</span>
+                        <div class="bar-track">
+                          <div class="bar-fill" style="width: 78%;"></div>
+                        </div>
+                      </div>
+                    </div>
+
                   </div>
-                </div>
-              </div>
 
-              <!-- 2. Floating Parallax Cards Overlapping it -->
-              <!-- Top Left: Paid Amount -->
-              <div class="float-card card-paid" data-depth="0.15">
-                <div class="card-icon-container bg-green">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2">
-                    <path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-                  </svg>
-                </div>
-                <div class="card-details">
-                  <span class="card-title">Paid Amount</span>
-                  <span class="card-value">SGD 197,613.59</span>
-                  <span class="card-trend trend-up">
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 15l-6-6-6 6"/></svg>
-                    8.2% vs last month
-                  </span>
-                </div>
-              </div>
-
-              <!-- Bottom Left: Pending Amount -->
-              <div class="float-card card-pending" data-depth="0.25">
-                <div class="card-icon-container bg-orange">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff6b00" stroke-width="2">
-                    <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
-                  </svg>
-                </div>
-                <div class="card-details">
-                  <span class="card-title">Pending Amount</span>
-                  <span class="card-value">SGD 716,450.77</span>
-                  <span class="card-trend trend-down">
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg>
-                    5.4% vs last month
-                  </span>
-                </div>
-              </div>
-
-              <!-- Top Right: Total Documents -->
-              <div class="float-card card-docs" data-depth="0.2">
-                <div class="card-icon-container bg-purple">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
-                  </svg>
-                </div>
-                <div class="card-details">
-                  <span class="card-title">Total Documents</span>
-                  <span class="card-value">686</span>
-                  <span class="card-trend trend-up">
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 15l-6-6-6 6"/></svg>
-                    10.1% vs last month
-                  </span>
-                </div>
-              </div>
-
-              <!-- Bottom Right: Total Payable -->
-              <div class="float-card card-payable" data-depth="0.3">
-                <div class="card-icon-container bg-red">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2">
-                    <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M12 4v16M2 12h20"/>
-                  </svg>
-                </div>
-                <div class="card-details">
-                  <span class="card-title">Total Payable</span>
-                  <span class="card-value">SGD 1,627,400.00</span>
-                  <span class="card-trend trend-up">
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 15l-6-6-6 6"/></svg>
-                    4.2% vs last month
-                  </span>
-                </div>
+                </main>
               </div>
             </div>
 
-            <!-- Interactive Explanation Banner for Centered Showcase (Reveals on Scroll Parallax) -->
-            <div class="dashboard-explanation-bar">
-              <h3 class="explanation-title">Simplify Your AP and AR Processes</h3>
-              <p class="explanation-desc">
-                At AgileAP, we understand the importance of efficient financial management for your business. Our platform offers a comprehensive suite of tools designed to streamline your accounts payable processes and elevate your financial operations. Here's why our platform is the ideal choice for managing your business finances.
-              </p>
-            </div>
+
+
           </div>
+        </section>
 
-          <!-- Global Compliance & Seamless Integrations Cards -->
-          <div class="hero-compliance-integrations-container">
-            <div class="compliance-integrations-grid">
+        <!-- Global Compliance & Seamless ERP Integrations Enterprise Strip -->
+        <section id="enterprise-ecosystem" class="enterprise-trust-strip-section">
+          <div class="trust-strip-container">
+            
+            <!-- Centered Header -->
+            <h3 class="trust-strip-title">Global E-Invoicing Compliance & Seamless ERP Integrations</h3>
+            
+            <!-- Row 1: ERP Logos Strip (Centered Clean Line) -->
+            <div class="trust-logos-row">
+              <div class="trust-logo-item" title="SAP">
+                <img src="/sap-logo.png" alt="SAP" class="trust-logo-img sap-logo" />
+              </div>
+              <div class="trust-logo-item" title="Oracle">
+                <img src="/Oracle-Logo.png" alt="Oracle" class="trust-logo-img oracle-logo" />
+              </div>
+              <div class="trust-logo-item" title="Microsoft Dynamics 365">
+                <img src="/microsoft.webp" alt="Microsoft Dynamics 365" class="trust-logo-img ms-logo" />
+              </div>
+              <div class="trust-logo-item" title="NetSuite">
+                <img src="/netsuite.png" alt="NetSuite" class="trust-logo-img netsuite-logo" />
+              </div>
+              <div class="trust-logo-item" title="IFS">
+                <img src="/IFS_logo_2021.png" alt="IFS" class="trust-logo-img ifs-logo" />
+              </div>
+              <div class="trust-logo-item" title="QuickBooks">
+                <img src="/quickbook.webp" alt="QuickBooks" class="trust-logo-img qb-logo" />
+              </div>
+            </div>
+
+            <!-- Row 2: Compliance Badges Row (Centered, divided by vertical lines like reference image) -->
+            <div class="trust-badges-row">
               
-              <!-- Left Card: Global Compliance. Local Ready. -->
-              <div class="hero-feature-card compliance-card">
-                <div class="card-header">
-                  <h3 class="card-title">Global Compliance. Local Ready.</h3>
-                  <p class="card-subtitle">Stay compliant with e-invoicing mandates and standards across different countries and regions.</p>
-                </div>
-                <div class="countries-grid">
-                  <!-- Singapore -->
-                  <div class="country-item">
-                    <div class="country-flag flag-singapore">
-                      <svg width="28" height="19" viewBox="0 0 28 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="28" height="19" rx="2" fill="#FFFFFF"/>
-                        <path d="M0 2C0 0.895431 0.895431 0 2 0H26C27.1046 0 28 0.895431 28 2V9.5H0V2Z" fill="#ED2939"/>
-                        <path d="M6.2 2.5C5.1 3.2 4.4 4.4 4.4 5.8C4.4 7.2 5.1 8.4 6.2 9.1C4.9 9.1 3.8 8.0 3.8 6.6C3.8 5.2 4.9 4.1 6.2 2.5Z" fill="white"/>
-                        <circle cx="7.2" cy="4.2" r="0.55" fill="white"/>
-                        <circle cx="8.4" cy="5.2" r="0.55" fill="white"/>
-                        <circle cx="8.1" cy="6.6" r="0.55" fill="white"/>
-                        <circle cx="6.7" cy="6.6" r="0.55" fill="white"/>
-                        <circle cx="6.4" cy="5.2" r="0.55" fill="white"/>
-                      </svg>
-                    </div>
-                    <h4 class="country-name">Singapore</h4>
-                    <span class="country-spec">InvoiceNow / Peppol</span>
-                    <a href="#invoicenow" class="country-link">
-                      Learn more 
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </a>
-                  </div>
-
-                  <!-- Malaysia -->
-                  <div class="country-item">
-                    <div class="country-flag flag-malaysia">
-                      <svg width="28" height="19" viewBox="0 0 28 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="28" height="19" rx="2" fill="#FFFFFF"/>
-                        <rect y="0" width="28" height="1.36" fill="#CC0000"/>
-                        <rect y="2.71" width="28" height="1.36" fill="#CC0000"/>
-                        <rect y="5.43" width="28" height="1.36" fill="#CC0000"/>
-                        <rect y="8.14" width="28" height="1.36" fill="#CC0000"/>
-                        <rect y="10.86" width="28" height="1.36" fill="#CC0000"/>
-                        <rect y="13.57" width="28" height="1.36" fill="#CC0000"/>
-                        <rect y="16.29" width="28" height="2.71" fill="#CC0000"/>
-                        <rect width="14" height="10.86" fill="#000066"/>
-                        <path d="M6.5 2.2C5.2 2.8 4.4 4.1 4.4 5.6C4.4 7.1 5.2 8.4 6.5 9C5.3 9 4 7.8 4 6.3C4 4.8 5.3 3.6 6.5 2.2Z" fill="#FFCC00"/>
-                        <polygon points="9.5,3.8 9.9,4.8 10.9,4.4 10.3,5.3 11.2,5.9 10.1,6.2 10.4,7.3 9.5,6.6 8.6,7.3 8.9,6.2 7.8,5.9 8.7,5.3 8.1,4.4 9.1,4.8" fill="#FFCC00"/>
-                      </svg>
-                    </div>
-                    <h4 class="country-name">Malaysia</h4>
-                    <span class="country-spec">MyInvois</span>
-                    <a href="#invoicenow" class="country-link">
-                      Learn more 
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </a>
-                  </div>
-
-                  <!-- Europe -->
-                  <div class="country-item">
-                    <div class="country-flag flag-europe">
-                      <svg width="28" height="19" viewBox="0 0 28 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="28" height="19" rx="2" fill="#003399"/>
-                        <g fill="#FFCC00">
-                          <circle cx="14" cy="4.2" r="0.65"/>
-                          <circle cx="17.6" cy="5.1" r="0.65"/>
-                          <circle cx="19.8" cy="7.3" r="0.65"/>
-                          <circle cx="20.6" cy="10.9" r="0.65"/>
-                          <circle cx="19.8" cy="14.5" r="0.65"/>
-                          <circle cx="17.6" cy="16.7" r="0.65"/>
-                          <circle cx="14" cy="17.6" r="0.65"/>
-                          <circle cx="10.4" cy="16.7" r="0.65"/>
-                          <circle cx="8.2" cy="14.5" r="0.65"/>
-                          <circle cx="7.4" cy="10.9" r="0.65"/>
-                          <circle cx="8.2" cy="7.3" r="0.65"/>
-                          <circle cx="10.4" cy="5.1" r="0.65"/>
-                        </g>
-                      </svg>
-                    </div>
-                    <h4 class="country-name">Europe</h4>
-                    <span class="country-spec">Peppol / EN 16931</span>
-                    <a href="#invoicenow" class="country-link">
-                      Learn more 
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </a>
-                  </div>
-
-                  <!-- More Countries -->
-                  <div class="country-item">
-                    <div class="country-icon globe-icon">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="1.8">
-                        <circle cx="12" cy="12" r="10"/>
-                        <line x1="2" y1="12" x2="22" y2="12"/>
-                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                      </svg>
-                    </div>
-                    <h4 class="country-name">More Countries</h4>
-                    <span class="country-spec">Expanding support worldwide</span>
-                    <a href="#invoicenow" class="country-link">
-                      Learn more 
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </a>
-                  </div>
-                </div>
+              <!-- Singapore -->
+              <div class="trust-badge-item">
+                <span class="badge-country-name">
+                  <svg width="20" height="14" viewBox="0 0 28 19" fill="none" class="trust-flag">
+                    <rect width="28" height="19" rx="2" fill="#FFFFFF"/>
+                    <path d="M0 2C0 0.895431 0.895431 0 2 0H26C27.1046 0 28 0.895431 28 2V9.5H0V2Z" fill="#ED2939"/>
+                    <path d="M6.2 2.5C5.1 3.2 4.4 4.4 4.4 5.8C4.4 7.2 5.1 8.4 6.2 9.1C4.9 9.1 3.8 8.0 3.8 6.6C3.8 5.2 4.9 4.1 6.2 2.5Z" fill="white"/>
+                    <circle cx="7.2" cy="4.2" r="0.55" fill="white"/>
+                    <circle cx="8.4" cy="5.2" r="0.55" fill="white"/>
+                    <circle cx="8.1" cy="6.6" r="0.55" fill="white"/>
+                    <circle cx="6.7" cy="6.6" r="0.55" fill="white"/>
+                    <circle cx="6.4" cy="5.2" r="0.55" fill="white"/>
+                  </svg>
+                  Singapore
+                </span>
+                <span class="trust-rating-pill">InvoiceNow / Peppol</span>
               </div>
 
-              <!-- Right Card: Seamless Integrations. -->
-              <div class="hero-feature-card integrations-card">
-                <div class="card-header">
-                  <h3 class="card-title">Seamless Integrations.</h3>
-                  <p class="card-subtitle">Connect AgileAP with your ERP, accounting and business systems through secure APIs and standard connectors.</p>
-                </div>
-                <div class="integrations-logos-grid">
-                  <!-- SAP -->
-                  <div class="integration-logo-item logo-sap" title="SAP">
-                    <img src="/sap-logo.png" alt="SAP" class="integration-logo-img logo-img-sap" />
-                  </div>
+              <div class="trust-divider"></div>
 
-                  <!-- ORACLE -->
-                  <div class="integration-logo-item logo-oracle" title="Oracle">
-                    <img src="/Oracle-Logo.png" alt="Oracle" class="integration-logo-img logo-img-oracle" />
-                  </div>
+              <!-- Malaysia -->
+              <div class="trust-badge-item">
+                <span class="badge-country-name">
+                  <svg width="20" height="14" viewBox="0 0 28 19" fill="none" class="trust-flag">
+                    <rect width="28" height="19" rx="2" fill="#FFFFFF"/>
+                    <rect y="0" width="28" height="1.36" fill="#CC0000"/>
+                    <rect y="2.71" width="28" height="1.36" fill="#CC0000"/>
+                    <rect y="5.43" width="28" height="1.36" fill="#CC0000"/>
+                    <rect y="8.14" width="28" height="1.36" fill="#CC0000"/>
+                    <rect y="10.86" width="28" height="1.36" fill="#CC0000"/>
+                    <rect y="13.57" width="28" height="1.36" fill="#CC0000"/>
+                    <rect y="16.29" width="28" height="2.71" fill="#CC0000"/>
+                    <rect width="14" height="10.86" fill="#000066"/>
+                    <path d="M6.5 2.2C5.2 2.8 4.4 4.1 4.4 5.6C4.4 7.1 5.2 8.4 6.5 9C5.3 9 4 7.8 4 6.3C4 4.8 5.3 3.6 6.5 2.2Z" fill="#FFCC00"/>
+                    <polygon points="9.5,3.8 9.9,4.8 10.9,4.4 10.3,5.3 11.2,5.9 10.1,6.2 10.4,7.3 9.5,6.6 8.6,7.3 8.9,6.2 7.8,5.9 8.7,5.3 8.1,4.4 9.1,4.8" fill="#FFCC00"/>
+                  </svg>
+                  Malaysia
+                </span>
+                <span class="trust-rating-pill">MyInvois System</span>
+              </div>
 
-                  <!-- Microsoft Dynamics 365 -->
-                  <div class="integration-logo-item logo-ms-dynamics" title="Microsoft Dynamics 365">
-                    <img src="/microsoft.webp" alt="Microsoft Dynamics 365" class="integration-logo-img logo-img-microsoft" />
-                  </div>
+              <div class="trust-divider"></div>
 
-                  <!-- NetSuite -->
-                  <div class="integration-logo-item logo-netsuite" title="NetSuite">
-                    <img src="/netsuite.png" alt="NetSuite" class="integration-logo-img logo-img-netsuite" />
-                  </div>
+              <!-- Europe -->
+              <div class="trust-badge-item">
+                <span class="badge-country-name">
+                  <svg width="20" height="14" viewBox="0 0 28 19" fill="none" class="trust-flag">
+                    <rect width="28" height="19" rx="2" fill="#003399"/>
+                    <g fill="#FFCC00">
+                      <circle cx="14" cy="4.2" r="0.65"/>
+                      <circle cx="17.6" cy="5.1" r="0.65"/>
+                      <circle cx="19.8" cy="7.3" r="0.65"/>
+                      <circle cx="20.6" cy="10.9" r="0.65"/>
+                      <circle cx="19.8" cy="14.5" r="0.65"/>
+                      <circle cx="17.6" cy="16.7" r="0.65"/>
+                      <circle cx="14" cy="17.6" r="0.65"/>
+                      <circle cx="10.4" cy="16.7" r="0.65"/>
+                      <circle cx="8.2" cy="14.5" r="0.65"/>
+                      <circle cx="7.4" cy="10.9" r="0.65"/>
+                      <circle cx="8.2" cy="7.3" r="0.65"/>
+                      <circle cx="10.4" cy="5.1" r="0.65"/>
+                    </g>
+                  </svg>
+                  Europe
+                </span>
+                <span class="trust-rating-pill">Peppol / EN 16931</span>
+              </div>
 
-                  <!-- IFS -->
-                  <div class="integration-logo-item logo-ifs" title="IFS">
-                    <img src="/IFS_logo_2021.png" alt="IFS" class="integration-logo-img logo-img-ifs" />
-                  </div>
+              <div class="trust-divider"></div>
 
-                  <!-- Intuit QuickBooks -->
-                  <div class="integration-logo-item logo-quickbooks" title="QuickBooks">
-                    <img src="/quickbook.webp" alt="QuickBooks" class="integration-logo-img logo-img-quickbooks" />
-                  </div>
-                </div>
-                <div class="integrations-footer">
-                  <a href="#integrations" class="integrations-link">
-                    View all integrations 
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                  </a>
-                </div>
+              <!-- Worldwide -->
+              <div class="trust-badge-item">
+                <span class="badge-country-name">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                  Global Hub
+                </span>
+                <span class="trust-rating-pill">Worldwide Standards</span>
               </div>
 
             </div>
+
           </div>
+        </section>
 
           <!-- Floating Animated Circular Scroll Down Indicator (Non-clickable identification) -->
           <div class="hero-scroll-down-circle" id="scroll-down-btn" aria-hidden="true">
@@ -714,9 +589,7 @@
 
               <div class="adoption-float-card adoption-card-costs" data-adopt-depth="0.16">
                 <span class="adoption-card-icon icon-blue" aria-hidden="true">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
-                    <path d="M5 20V11"/><path d="M12 20V5"/><path d="M19 20v-8"/>
-                  </svg>
+                  <iconify-icon icon="lucide:bar-chart-3" width="24" height="24"></iconify-icon>
                 </span>
                 <strong>Lower Costs</strong>
                 <p>Automate AP tasks and reduce manual processing.</p>
@@ -724,9 +597,7 @@
 
               <div class="adoption-float-card adoption-card-results" data-adopt-depth="0.19">
                 <span class="adoption-card-icon icon-coral" aria-hidden="true">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
-                    <path d="m13 2-8 12h7l-1 8 8-12h-7l1-8z"/>
-                  </svg>
+                  <iconify-icon icon="lucide:zap" width="24" height="24"></iconify-icon>
                 </span>
                 <strong>Faster Results</strong>
                 <p>Accelerate invoice processing and payment cycles.</p>
@@ -734,9 +605,7 @@
 
               <div class="adoption-float-card adoption-card-time" data-adopt-depth="0.2">
                 <span class="adoption-card-icon icon-orange" aria-hidden="true">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
-                    <circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/>
-                  </svg>
+                  <iconify-icon icon="lucide:clock" width="24" height="24"></iconify-icon>
                 </span>
                 <strong>More Time for Growth</strong>
                 <p>Free your team to focus on strategic initiatives.</p>
@@ -744,9 +613,7 @@
 
               <div class="adoption-float-card adoption-card-decisions" data-adopt-depth="0.17">
                 <span class="adoption-card-icon icon-green" aria-hidden="true">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
-                    <path d="M5 20v-5"/><path d="M12 20V9"/><path d="M19 20V4"/>
-                  </svg>
+                  <iconify-icon icon="lucide:trending-up" width="24" height="24"></iconify-icon>
                 </span>
                 <strong>Better Decisions</strong>
                 <p>Real-time insights for smarter finance decisions.</p>
@@ -1219,7 +1086,7 @@
                   <aside class="hd-dash-sidebar">
                     <!-- Accounts Payable Header -->
                     <div class="hd-sb-head red-head">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m16 8-8 8"/><path d="M16 16V8H8"/></svg>
+                      <iconify-icon icon="lucide:building-2" width="16" height="16"></iconify-icon>
                       <span>Accounts Payable</span>
                       <span class="hd-toggle">▲</span>
                     </div>
@@ -1227,62 +1094,62 @@
                     <!-- Accounts Payable Menu -->
                     <ul class="hd-sb-menu">
                       <li class="active">
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg>
+                        <iconify-icon icon="lucide:file-check" width="15" height="15"></iconify-icon>
                         <span>Invoice Received</span>
                       </li>
                       <li>
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                        <iconify-icon icon="lucide:shopping-cart" width="15" height="15"></iconify-icon>
                         <span>Purchase Order</span>
                       </li>
                       <li>
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M12 18v-6"/><path d="M9 15h6"/></svg>
+                        <iconify-icon icon="lucide:receipt" width="15" height="15"></iconify-icon>
                         <span>Claims</span>
                       </li>
                       <li>
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M12 8v8"/><path d="M9.5 10.5h5a1.5 1.5 0 0 1 0 3h-5a1.5 1.5 0 0 0 0 3h5"/></svg>
+                        <iconify-icon icon="lucide:credit-card" width="15" height="15"></iconify-icon>
                         <span>Payments</span>
                       </li>
                       <li>
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/><path d="m9 14 2 2 4-4"/></svg>
+                        <iconify-icon icon="lucide:clipboard-list" width="15" height="15"></iconify-icon>
                         <span>Statement of Account</span>
                       </li>
                       <li>
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                        <iconify-icon icon="lucide:package-check" width="15" height="15"></iconify-icon>
                         <span>Good Receipt</span>
                       </li>
                       <li>
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                        <iconify-icon icon="lucide:file-text" width="15" height="15"></iconify-icon>
                         <span>Purchase Requisition</span>
                       </li>
                       <li>
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+                        <iconify-icon icon="lucide:file-signature" width="15" height="15"></iconify-icon>
                         <span>Contract</span>
                       </li>
                       <li>
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/></svg>
+                        <iconify-icon icon="lucide:piggy-bank" width="15" height="15"></iconify-icon>
                         <span>Budget</span>
                       </li>
                       <li>
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M18 20V10"/><path d="M12 20v-4"/><path d="M6 20v-6"/></svg>
+                        <iconify-icon icon="lucide:bar-chart-3" width="15" height="15"></iconify-icon>
                         <span>Reports</span>
                       </li>
                       <li>
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+                        <iconify-icon icon="lucide:bell" width="15" height="15"></iconify-icon>
                         <span>Notification</span>
                       </li>
                       <li>
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        <iconify-icon icon="lucide:clock" width="15" height="15"></iconify-icon>
                         <span>Timesheet</span>
                       </li>
                       <li>
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+                        <iconify-icon icon="lucide:file-badge" width="15" height="15"></iconify-icon>
                         <span>CN Received</span>
                       </li>
                     </ul>
 
                     <!-- Accounts Receivable Header -->
                     <div class="hd-sb-head teal-head">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m8 16 8-8"/><path d="M8 8h8v8"/></svg>
+                      <iconify-icon icon="lucide:arrow-up-right" width="16" height="16"></iconify-icon>
                       <span>Accounts Receivable</span>
                       <span class="hd-toggle">▲</span>
                     </div>
@@ -1378,11 +1245,11 @@
 
                           <!-- Right Control Bar -->
                           <div class="chart-tools-sidebar">
-                            <button class="tool-btn orange-btn" title="Refresh"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21.5 2v6h-6"/><path d="M2.5 22v-6h6"/><path d="M2 11.5a10 10 0 0 1 18.8-4.3L21.5 8"/><path d="M22 12.5a10 10 0 0 1-18.8 4.2L2.5 16"/></svg></button>
-                            <button class="tool-btn" title="Bar Chart"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></button>
-                            <button class="tool-btn" title="Line Chart"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></button>
-                            <button class="tool-btn" title="Info"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></button>
-                            <button class="tool-btn" title="Expand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
+                            <button class="tool-btn orange-btn" title="Refresh"><iconify-icon icon="lucide:refresh-cw" width="13" height="13"></iconify-icon></button>
+                            <button class="tool-btn" title="Bar Chart"><iconify-icon icon="lucide:bar-chart-2" width="13" height="13"></iconify-icon></button>
+                            <button class="tool-btn" title="Line Chart"><iconify-icon icon="lucide:line-chart" width="13" height="13"></iconify-icon></button>
+                            <button class="tool-btn" title="Info"><iconify-icon icon="lucide:info" width="13" height="13"></iconify-icon></button>
+                            <button class="tool-btn" title="Expand"><iconify-icon icon="lucide:maximize-2" width="13" height="13"></iconify-icon></button>
                           </div>
                         </div>
                       </div>
@@ -1434,11 +1301,11 @@
 
                           <!-- Right Control Bar -->
                           <div class="chart-tools-sidebar">
-                            <button class="tool-btn orange-btn" title="Refresh"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21.5 2v6h-6"/><path d="M2.5 22v-6h6"/><path d="M2 11.5a10 10 0 0 1 18.8-4.3L21.5 8"/><path d="M22 12.5a10 10 0 0 1-18.8 4.2L2.5 16"/></svg></button>
-                            <button class="tool-btn" title="Bar Chart"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></button>
-                            <button class="tool-btn" title="Line Chart"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></button>
-                            <button class="tool-btn" title="Info"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></button>
-                            <button class="tool-btn" title="Expand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
+                            <button class="tool-btn orange-btn" title="Refresh"><iconify-icon icon="lucide:refresh-cw" width="13" height="13"></iconify-icon></button>
+                            <button class="tool-btn" title="Bar Chart"><iconify-icon icon="lucide:bar-chart-2" width="13" height="13"></iconify-icon></button>
+                            <button class="tool-btn" title="Line Chart"><iconify-icon icon="lucide:line-chart" width="13" height="13"></iconify-icon></button>
+                            <button class="tool-btn" title="Info"><iconify-icon icon="lucide:info" width="13" height="13"></iconify-icon></button>
+                            <button class="tool-btn" title="Expand"><iconify-icon icon="lucide:maximize-2" width="13" height="13"></iconify-icon></button>
                           </div>
                         </div>
                       </div>
@@ -2324,7 +2191,6 @@
         <section id="cta-banner" class="cta-banner-section">
           <div class="cta-banner-container">
             <div class="cta-banner-left">
-              <span class="cta-badge">UNLOCK YOUR POTENTIAL</span>
               <h2>Experience Efficiency, Elevate Productivity</h2>
               <p>Transform your accounts payable and accounts receivable processes with AgileAP. Schedule a demo today and take the first step towards unlocking your business's full potential.</p>
               <div class="cta-btn-wrap">

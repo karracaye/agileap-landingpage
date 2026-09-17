@@ -96,7 +96,7 @@ body.page-mode-register #main-header {
   min-height: 20px;
   padding: 0 14px;
   margin-bottom: 3px;
-  border-radius: 999px;
+  border-radius: 6px;
   background: #ffe4d5;
   color: #e95a1a;
   font-size: 0.62rem;
@@ -542,4 +542,11 @@ body.page-mode-register #main-header {
 @media (max-width: 600px) {
   .reg-row { grid-template-columns: 1fr; gap: 8px; }
   .reg-invoicenow-box { padding: 10px; }
+}
+
+.reg-submit-btn,
+.reg-modal-close,
+.reg-plan-badge,
+button.reg-submit-btn {
+  border-radius: 8px !important;
 }
