@@ -543,18 +543,19 @@ window.addEventListener('DOMContentLoaded', () => {
     const usePinnedStory = window.matchMedia('(min-width: 1024px)').matches;
 
     if (usePinnedStory) {
-      gsap.set('.adoption-copy', { opacity: 0, x: 60 });
+      gsap.set('.adoption-copy', { opacity: 0, x: 50 });
       gsap.set('.adoption-benefit-card', { opacity: 0, y: 24, scale: 0.96 });
       gsap.set('.adoption-float-card', { opacity: 0, y: 24, scale: 0.9 });
+      gsap.set('.adoption-dashboard-main', { opacity: 1, y: 0 }); // ensure laptop screen shows content immediately
 
-      // Laptop starts centered & big — the cinematic reveal starts here
-      gsap.set('.adoption-laptop-base', { opacity: 0, scaleY: 0.2 });
+      // Laptop starts centered & prominent
+      gsap.set('.adoption-laptop-base', { opacity: 0.8, scaleY: 0.6 });
       gsap.set('.adoption-laptop', {
         opacity: 1,
-        xPercent: 54,   // centered on the full viewport
+        xPercent: 54,   // centered on the viewport
         y: 10,
-        scale: 1.35,    // big & prominent
-        rotateX: 3,
+        scale: 1.30,    // prominent centered view
+        rotateX: 2,
         transformOrigin: 'center center'
       });
 
@@ -562,76 +563,68 @@ window.addEventListener('DOMContentLoaded', () => {
         scrollTrigger: {
           trigger: '#adopt-invoicenow',
           start: 'top top',
-          end: '+=160%',
+          end: '+=110%',
           pin: true,
-          scrub: 0.65,
+          scrub: 0.5,
           anticipatePin: 1
         }
       });
 
       adoptionStory
-        // ── Step 1: Dashboard & charts reveal while laptop is still centered & big ──
-        .fromTo(
-          '.adoption-dashboard-main',
-          { opacity: 0, y: 30, scale: 0.92 },
-          { opacity: 1, y: 0, scale: 1, duration: 0.22, ease: 'power2.out' },
-          0
-        )
+        // ── Step 1: Chart bars & base fill smoothly as scroll starts ──
         .fromTo(
           '.adoption-bars span',
           { height: 0 },
           {
             height: (_, target) => (target as HTMLElement).style.getPropertyValue('--bar-height') || '50%',
-            duration: 0.26,
+            duration: 0.22,
             stagger: 0.02,
             ease: 'power3.out'
           },
-          0.06
+          0.02
         )
-
-        // ── Step 2: Laptop frame builds around the centered dashboard ──
         .to('.adoption-laptop-base', {
           opacity: 1,
           scaleY: 1,
-          duration: 0.24,
+          duration: 0.20,
           ease: 'power2.out'
-        }, 0.22)
+        }, 0.05)
         .to('.adoption-laptop', {
           rotateX: 0,
-          duration: 0.2,
+          duration: 0.18,
           ease: 'power1.out'
-        }, 0.24)
+        }, 0.10)
 
-        // ── Step 3: Laptop glides to the left & shrinks — right side content reveals ──
+        // ── Step 2: Around midpoint (~35-40% scroll), laptop glides left & right content reveals ──
         .to('.adoption-laptop', {
           xPercent: 0,
           y: 0,
           scale: 1,
-          duration: 0.44,
+          duration: 0.40,
           ease: 'power2.inOut'
-        }, 0.40)
+        }, 0.25)
+        .to('.adoption-copy', {
+          opacity: 1,
+          x: 0,
+          duration: 0.35,
+          ease: 'power2.out'
+        }, 0.35)
         .to('.adoption-float-card', {
           opacity: 1,
           y: 0,
           scale: 1,
           duration: 0.32,
           stagger: 0.04,
-          ease: 'back.out(1.5)'
-        }, 0.62)
-        .to('.adoption-copy', {
-          opacity: 1,
-          x: 0,
-          duration: 0.34,
-          ease: 'power2.out'
-        }, 0.68)
+          ease: 'back.out(1.4)'
+        }, 0.45)
         .to('.adoption-benefit-card', {
           opacity: 1,
           y: 0,
           scale: 1,
-          duration: 0.34,
-          stagger: 0.045,
+          duration: 0.32,
+          stagger: 0.04,
           ease: 'power2.out'
-        }, 0.74);
+        }, 0.55);
 
     } else {
       gsap.fromTo(
