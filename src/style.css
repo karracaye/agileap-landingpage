@@ -903,10 +903,10 @@ body.has-ads-bar .header {
 .sincra-sidebar {
   background: #FAFAFA;
   border-right: 1px solid #F1F5F9;
-  padding: 1.5rem 1rem;
+  padding: 1rem 1rem;
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
+  gap: 1.25rem;
   justify-content: flex-start;
 }
 
@@ -1024,10 +1024,10 @@ body.has-ads-bar .header {
 
 .sincra-main {
   background: #ffffff;
-  padding: 1.5rem 1.75rem 2rem;
+  padding: 1rem 1.5rem 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 1.35rem;
+  gap: 0.9rem;
   text-align: left;
 }
 
