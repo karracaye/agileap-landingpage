@@ -236,6 +236,24 @@ body.has-ads-bar .header {
   padding-right: 1.5rem;
 }
 
+.ads-bar-track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.ads-bar-item-group {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  justify-content: center;
+}
+
+.mobile-only-duplicate {
+  display: none !important;
+}
+
 .desktop-text,
 .desktop-btn-text {
   display: inline;
@@ -352,6 +370,15 @@ body.has-ads-bar .header {
   transform: translateY(-50%) scale(1.08);
 }
 
+@media (max-width: 1180px) {
+  .ads-desc .desktop-text {
+    display: none !important;
+  }
+  .ads-desc .mobile-text {
+    display: inline !important;
+  }
+}
+
 @media (max-width: 768px) {
   .top-ads-bar {
     height: 40px;
@@ -369,49 +396,23 @@ body.has-ads-bar .header {
   .mobile-btn-text {
     display: inline !important;
   }
-  .ads-title {
-    font-size: 0.74rem;
+  .ads-bar-logo {
+    height: 17px;
   }
   .ads-desc {
     font-size: 0.68rem;
   }
-  .ads-btn {
+  .ads-contact-pill {
+    padding: 0.15rem 0.45rem;
     font-size: 0.68rem;
-    padding: 0.18rem 0.55rem;
   }
 }
 
-@media (max-width: 1180px) {
-  .ads-desc.desktop-text {
-    display: none !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .top-ads-bar {
-    padding: 0.3rem 2.2rem 0.3rem 0.75rem;
-  }
-  .ads-bar-content {
-    gap: 0.4rem;
-    padding-right: 0;
-  }
-  .desktop-text,
-  .desktop-btn-text {
-    display: none !important;
-  }
-  .mobile-text,
-  .mobile-btn-text {
-    display: inline !important;
-  }
-  .ads-title {
-    font-size: 0.74rem;
-  }
-  .ads-desc {
-    font-size: 0.68rem;
-  }
-  .ads-btn {
-    font-size: 0.68rem;
-    padding: 0.18rem 0.55rem;
+@media (max-width: 640px) {
+  .ads-contact-group {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.3rem !important;
   }
 }
 
@@ -751,6 +752,8 @@ body.has-ads-bar .header {
 
 /* Dashboard Centered Intro Badge Showcase */
 .dashboard-intro-badge {
+  position: relative;
+  z-index: 50;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -769,7 +772,6 @@ body.has-ads-bar .header {
   text-align: center;
   opacity: 0;
   pointer-events: none;
-  z-index: 10;
 }
 
 
@@ -1318,37 +1320,294 @@ body.has-ads-bar .header {
 }
 
 /* Sincra Responsive Media Queries */
-@media (max-width: 960px) {
+@media (max-width: 1024px) {
+  .hero-hive-section {
+    padding: calc(40px + 64px + 1.75rem) 1.25rem 2rem;
+  }
+
+  .hive-browser-frame {
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 14px;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+  }
+
   .sincra-dash-layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+    border-radius: 14px;
+    min-height: auto;
+    width: 100% !important;
+    max-width: 100% !important;
   }
-  .sincra-sidebar {
-    display: none;
+
+  .sincra-sidebar,
+  .agileap-sidebar {
+    display: none !important;
   }
+
+  .sincra-main,
+  .agileap-main-panel {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 1rem !important;
+    gap: 0.9rem !important;
+  }
+
   .sincra-metrics-row {
     grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
   }
+
   .sincra-bottom-grid {
     grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .invoicenow-corner-badge {
+    bottom: -16px;
+    right: 0.5rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 12px;
+  }
+
+  .invoicenow-corner-img {
+    height: 34px;
+  }
+}
+
+@media (max-width: 768px) {
+  .desktop-only-br {
+    display: none !important;
+  }
+
+  .sincra-hero-title {
+    font-size: clamp(1.85rem, 6.8vw, 2.6rem);
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    margin-bottom: 0.85rem;
+  }
+
+  .sincra-hero-sub {
+    font-size: 0.96rem;
+    line-height: 1.55;
+    margin: 0 auto 1.6rem;
+    padding: 0 0.5rem;
+    max-width: 100%;
+  }
+
+  .sincra-hero-ctas {
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .invoicenow-corner-badge {
+    bottom: -16px;
+    right: 0.5rem;
+    padding: 0.4rem 0.85rem;
+    border-radius: 12px;
+  }
+
+  .invoicenow-corner-img {
+    height: 30px;
   }
 }
 
 @media (max-width: 640px) {
-  .sincra-metrics-row {
-    grid-template-columns: 1fr;
+  .hero-hive-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
   }
+
+  .hero-hive-section {
+    padding: calc(40px + 64px + 1.25rem) 0.75rem 1.5rem;
+  }
+
   .sincra-hero-title {
-    font-size: 2.2rem;
+    font-size: clamp(1.55rem, 6.8vw, 2.15rem);
+    line-height: 1.22;
+    margin-bottom: 0.75rem;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    width: 100% !important;
   }
+
+  .hero-title-gradient {
+    display: inline;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .sincra-hero-sub {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+    padding: 0 0.25rem;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    width: 100% !important;
+  }
+
   .sincra-hero-ctas {
     flex-direction: column;
     width: 100%;
-    max-width: 320px;
+    max-width: 290px;
+    margin: 0 auto 1.5rem;
+    gap: 0.65rem;
   }
+
   .btn-sincra-primary,
   .btn-sincra-secondary {
     width: 100%;
     text-align: center;
+    padding: 0.72rem 1.2rem;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dashboard-intro-badge {
+    position: relative;
+    z-index: 50;
+    margin: 0 auto 1.25rem;
+    padding: 0.65rem 1rem;
+    width: calc(100% - 1.5rem);
+    max-width: 100%;
+    border-radius: 12px;
+  }
+
+  .intro-badge-heading {
+    font-size: 1.15rem;
+    line-height: 1.35;
+  }
+
+  .intro-badge-sub {
+    font-size: 0.78rem;
+    line-height: 1.4;
+  }
+
+  .sincra-main {
+    padding: 0.75rem 0.85rem 0.95rem;
+    gap: 0.75rem;
+  }
+
+  .sincra-dash-header {
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .sincra-title-block h2 {
+    font-size: 1.05rem;
+  }
+
+  .sincra-title-block p {
+    display: none !important;
+  }
+
+  .sincra-icon-btn {
+    display: none !important;
+  }
+
+  .sincra-action-btn {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.72rem;
+    border-radius: 6px;
+  }
+
+  .sincra-metrics-row {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+
+  .sincra-kpi-card {
+    padding: 0.75rem 0.85rem;
+    border-radius: 10px;
+  }
+
+  .kpi-title {
+    font-size: 0.76rem;
+  }
+
+  .kpi-value-block {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .kpi-number {
+    font-size: clamp(0.95rem, 4.2vw, 1.12rem);
+    margin-bottom: 0.2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .trend-badge {
+    font-size: 0.62rem;
+    padding: 0.12rem 0.38rem;
+  }
+
+  .trend-note {
+    font-size: 0.62rem;
+    white-space: nowrap;
+  }
+
+  .sincra-panel {
+    padding: 0.75rem 0.85rem;
+    border-radius: 10px;
+    gap: 0.65rem;
+  }
+
+  .panel-header-flex h3 {
+    font-size: 0.85rem;
+  }
+
+  .sincra-wave-graphic {
+    height: 110px;
+  }
+
+  .sincra-tooltip-pill {
+    font-size: 0.62rem;
+    padding: 0.18rem 0.45rem;
+    top: 20px;
+  }
+
+  .balance-big-val {
+    font-size: 1.18rem;
+  }
+
+  .progress-title {
+    font-size: 0.68rem;
+  }
+
+  .bar-track {
+    height: 6px;
+  }
+
+  .invoicenow-panel-box {
+    padding: 0.5rem 0.75rem;
+    border-radius: 10px;
+  }
+
+  .invoicenow-box-img {
+    height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .invoicenow-corner-badge {
+    bottom: -14px;
+    right: 0.25rem;
+    padding: 0.35rem 0.7rem;
+    border-radius: 10px;
+  }
+
+  .invoicenow-corner-img {
+    height: 24px;
   }
 }
 
@@ -6184,8 +6443,14 @@ h1 {
 }
 
 @media (max-width: 960px) {
-  .header {
-    padding: 1rem 1.5rem;
+  .exact-agileap-header {
+    height: 64px;
+    top: 40px;
+    padding: 0 1.25rem;
+  }
+
+  .logo-img {
+    height: 30px;
   }
 
   .mobile-menu-toggle {
@@ -6199,15 +6464,15 @@ h1 {
   /* Hide desktop nav links (they reappear via mobile-open slide-in) */
   .nav-links {
     position: fixed;
-    top: 72px;
+    top: 64px;
     left: 0;
-    display: flex !important; /* override any display:none */
+    display: flex !important;
     width: 100%;
     background: #ffffff;
     backdrop-filter: blur(24px);
     flex-direction: column;
-    padding: 1.8rem 2rem;
-    gap: 1.4rem;
+    padding: 1.5rem 1.75rem;
+    gap: 1.2rem;
     border-bottom: 1px solid rgba(226, 232, 240, 0.9);
     box-shadow: 0 16px 32px rgba(15, 23, 42, 0.08);
     transform: translateY(-130%);
@@ -6221,6 +6486,20 @@ h1 {
     transform: translateY(0);
     opacity: 1;
     pointer-events: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .cta-actions {
+    gap: 0.5rem;
+  }
+  .btn-try-free {
+    display: none !important;
+  }
+  .btn-login-now {
+    padding: 0.45rem 0.95rem;
+    font-size: 0.82rem;
+    border-radius: 6px;
   }
 }
 
@@ -8805,25 +9084,67 @@ body.light-mode .screen-label {
     font-weight: 400 !important;
   }
 
-  /* Ultra-Sleek Single-Row Top Ads Banner (Mobile) */
+@keyframes mobileBannerMarquee {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+  /* Sleek Single-Row Automatic Infinite Loop Marquee Banner (Mobile) */
   .top-ads-bar {
     height: 38px !important;
     min-height: 38px !important;
-    padding: 0 1.8rem 0 0.5rem !important;
-    background: linear-gradient(90deg, #E55B1B 0%, #ff7328 100%) !important;
+    padding: 0 2rem 0 0 !important;
+    background: linear-gradient(90deg, #090e17 0%, #151d2a 50%, #090e17 100%) !important;
+    border-bottom: 1px solid rgba(229, 91, 27, 0.35) !important;
+    color: #ffffff !important;
     display: flex !important;
     align-items: center !important;
-    justify-content: center !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35) !important;
   }
 
   .ads-bar-content {
     display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
     align-items: center !important;
-    justify-content: center !important;
-    gap: 0.35rem !important;
     width: 100% !important;
+    overflow: hidden !important;
+    padding-right: 0 !important;
+  }
+
+  .ads-bar-track {
+    display: flex !important;
+    align-items: center !important;
+    width: max-content !important;
+    animation: mobileBannerMarquee 15s linear infinite !important;
+    will-change: transform !important;
+  }
+
+  .top-ads-bar:hover .ads-bar-track,
+  .top-ads-bar:active .ads-bar-track {
+    animation-play-state: paused !important;
+  }
+
+  .ads-bar-item-group {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.65rem !important;
+    padding-right: 1.5rem !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+
+  .mobile-only-duplicate {
+    display: flex !important;
+  }
+
+  .ads-bar-logo {
+    height: 16px !important;
+    width: auto !important;
+    flex-shrink: 0 !important;
   }
 
   .desktop-pill-text,
@@ -8838,57 +9159,87 @@ body.light-mode .screen-label {
     display: inline !important;
   }
 
-  .ads-pill {
-    font-size: 0.54rem !important;
-    padding: 0.08rem 0.4rem !important;
-    border-radius: 999px !important;
-    background: rgba(255, 255, 255, 0.22) !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.02em !important;
+  .ads-desc {
+    display: inline-flex !important;
+    align-items: center !important;
+    font-size: 0.72rem !important;
+    font-weight: 600 !important;
+    color: #f8fafc !important;
     white-space: nowrap !important;
     flex-shrink: 0 !important;
   }
 
-  .ads-text {
+  .ads-contact-group {
+    display: inline-flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 0.4rem !important;
+    flex-shrink: 0 !important;
+  }
+
+  .ads-contact-pill {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.25rem !important;
+    padding: 0.15rem 0.5rem !important;
     font-size: 0.65rem !important;
-    font-weight: 500 !important;
-    white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
+    font-weight: 600 !important;
+    border-radius: 6px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
     color: #ffffff !important;
-    max-width: clamp(140px, 46vw, 340px) !important;
-    text-align: center !important;
+    white-space: nowrap !important;
+    text-decoration: none !important;
+    flex-shrink: 0 !important;
   }
 
-  .ads-btn {
-    font-size: 0.6rem !important;
-    padding: 0.12rem 0.52rem !important;
-    border-radius: 999px !important;
+  .ads-contact-pill.email-pill iconify-icon {
+    color: #E55B1B !important;
+  }
+
+  .ads-contact-pill.phone-pill iconify-icon {
+    color: #38bdf8 !important;
+  }
+
+  .ads-btn-primary {
+    font-size: 0.65rem !important;
+    padding: 0.2rem 0.6rem !important;
+    border-radius: 6px !important;
     font-weight: 700 !important;
     white-space: nowrap !important;
-    background: #ffffff !important;
-    color: #E55B1B !important;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12) !important;
+    background: #E55B1B !important;
+    color: #ffffff !important;
     flex-shrink: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.25rem !important;
+    box-shadow: 0 2px 8px rgba(229, 91, 27, 0.35) !important;
   }
 
   .ads-close-btn {
+    position: absolute !important;
     right: 0.35rem !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
-    padding: 0.15rem !important;
+    padding: 0.2rem !important;
+    color: rgba(255, 255, 255, 0.75) !important;
+    background: rgba(9, 14, 23, 0.9) !important;
+    border-radius: 4px !important;
+    z-index: 10 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
   }
 
   .ads-close-btn svg {
-    width: 11px !important;
-    height: 11px !important;
+    width: 12px !important;
+    height: 12px !important;
   }
 
   body.has-ads-bar .header {
     top: 38px !important;
   }
 
-  /* 1. Mobile Hero Buttons: Modern, compact pill design inline row */
+  /* 1. Mobile Hero Buttons: Modern, compact rectangular design inline row */
   .hero-ctas {
     flex-direction: row !important;
     flex-wrap: wrap;
@@ -8904,7 +9255,7 @@ body.light-mode .screen-label {
     padding: 0.65rem 1.4rem !important;
     min-height: 42px !important;
     font-size: 0.88rem !important;
-    border-radius: 9999px !important;
+    border-radius: 8px !important;
     justify-content: center;
   }
 

@@ -34,29 +34,59 @@
       <!-- Top Promotional Announcement Ads Banner Bar -->
       <div id="top-ads-bar" class="top-ads-bar" role="region" aria-label="Promotional banner">
         <div class="ads-bar-content">
-          <img src="/logo-icon.png" alt="AgileAP" class="ads-bar-logo" />
+          <div class="ads-bar-track">
+            <!-- Set 1 -->
+            <div class="ads-bar-item-group">
+              <img src="/logo-icon.png" alt="AgileAP" class="ads-bar-logo" />
 
-          <span class="ads-desc">
-            <span class="desktop-text">Enjoy FREE access until 31 March 2031 for GST-registered businesses in Singapore.</span>
-            <span class="mobile-text">Singapore GST InvoiceNow Compliant</span>
-          </span>
+              <span class="ads-desc">
+                <span class="desktop-text">Enjoy FREE access until 31 March 2031 for GST-registered businesses in Singapore.</span>
+                <span class="mobile-text">Singapore GST InvoiceNow Compliant</span>
+              </span>
 
-          <div class="ads-contact-group">
-            <a href="mailto:sales@agileap.com" class="ads-contact-pill email-pill" title="Email Us">
-              <iconify-icon icon="lucide:mail" width="13" height="13"></iconify-icon>
-              <span>sales@agileap.com</span>
-            </a>
-            <a href="tel:+6580880170" class="ads-contact-pill phone-pill" title="Call Us">
-              <iconify-icon icon="lucide:phone" width="13" height="13"></iconify-icon>
-              <span>+65 8088 0170</span>
-            </a>
+              <div class="ads-contact-group">
+                <a href="mailto:sales@agileap.com" class="ads-contact-pill email-pill" title="Email Us">
+                  <iconify-icon icon="lucide:mail" width="13" height="13"></iconify-icon>
+                  <span>sales@agileap.com</span>
+                </a>
+                <a href="tel:+6580880170" class="ads-contact-pill phone-pill" title="Call Us">
+                  <iconify-icon icon="lucide:phone" width="13" height="13"></iconify-icon>
+                  <span>+65 8088 0170</span>
+                </a>
+              </div>
+
+              <a href="#foc-package" class="ads-btn-primary">
+                <span class="desktop-btn-text">Sign Up Now</span>
+                <span class="mobile-btn-text">Sign Up</span>
+                <iconify-icon icon="lucide:arrow-right" width="12" height="12"></iconify-icon>
+              </a>
+            </div>
+
+            <!-- Set 2 (Mobile Duplicate for Seamless Infinite Marquee Loop) -->
+            <div class="ads-bar-item-group mobile-only-duplicate" aria-hidden="true">
+              <img src="/logo-icon.png" alt="AgileAP" class="ads-bar-logo" />
+
+              <span class="ads-desc">
+                <span class="mobile-text">Singapore GST InvoiceNow Compliant</span>
+              </span>
+
+              <div class="ads-contact-group">
+                <a href="mailto:sales@agileap.com" class="ads-contact-pill email-pill" title="Email Us" tabindex="-1">
+                  <iconify-icon icon="lucide:mail" width="13" height="13"></iconify-icon>
+                  <span>sales@agileap.com</span>
+                </a>
+                <a href="tel:+6580880170" class="ads-contact-pill phone-pill" title="Call Us" tabindex="-1">
+                  <iconify-icon icon="lucide:phone" width="13" height="13"></iconify-icon>
+                  <span>+65 8088 0170</span>
+                </a>
+              </div>
+
+              <a href="#foc-package" class="ads-btn-primary" tabindex="-1">
+                <span class="mobile-btn-text">Sign Up</span>
+                <iconify-icon icon="lucide:arrow-right" width="12" height="12"></iconify-icon>
+              </a>
+            </div>
           </div>
-
-          <a href="#foc-package" class="ads-btn-primary">
-            <span class="desktop-btn-text">Sign Up Now</span>
-            <span class="mobile-btn-text">Sign Up</span>
-            <iconify-icon icon="lucide:arrow-right" width="12" height="12"></iconify-icon>
-          </a>
         </div>
         <button type="button" class="ads-close-btn" id="close-ads-btn" aria-label="Dismiss banner">
           <iconify-icon icon="lucide:x" width="14" height="14"></iconify-icon>
@@ -98,7 +128,7 @@
             
             <!-- Main Headline -->
             <h1 class="sincra-hero-title">
-              Automate Finance.<br><span class="hero-title-gradient">Simplify Every Transaction.</span>
+              Automate Finance.<br class="desktop-only-br"><span class="hero-title-gradient">Simplify Every Transaction.</span>
             </h1>
 
             <!-- Subtitle -->

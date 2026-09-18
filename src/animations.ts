@@ -27,31 +27,46 @@ export function initAnimations() {
     const heroTitle = document.querySelector<HTMLElement>('.sincra-hero-title');
     const heroSub = document.querySelector<HTMLElement>('.sincra-hero-sub');
     const heroIntroBadge = document.getElementById('dashboard-intro-badge');
-    const finalElements = [topAdsBar, mainHeader, heroTitle, heroSub, heroCtas].filter(Boolean);
+    const finalElements = [topAdsBar, mainHeader, heroTitle, heroSub, heroCtas].filter(
+      (el): el is HTMLElement => Boolean(el)
+    );
 
-    // Calculate combined Y offset so the ENTIRE group (Intro Badge + Dashboard) is centered in the viewport
+    const isMobile = window.innerWidth <= 768;
+
+    // Calculate initial Y offset for the intro state (Step 2):
+    // On mobile screens, hide finalElements during Step 2 so Intro Badge & Dashboard sit at top of viewport without overflow.
+    // On desktop screens, center the group (Intro Badge + Dashboard) in the viewport.
     let initialYOffset = 0;
-    if (heroIntroBadge) {
-      const badgeRect = heroIntroBadge.getBoundingClientRect();
-      const dashRect = browserFrame.getBoundingClientRect();
-      const groupTop = badgeRect.top;
-      const groupBottom = dashRect.bottom;
-      const groupCenterY = (groupTop + groupBottom) / 2;
-      const viewportCenterY = window.innerHeight / 2;
-      initialYOffset = viewportCenterY - groupCenterY;
+    if (isMobile) {
+      finalElements.forEach(el => {
+        el.style.display = 'none';
+      });
+      initialYOffset = 0;
     } else {
-      const dashRect = browserFrame.getBoundingClientRect();
-      const dashCenterY = dashRect.top + dashRect.height / 2;
-      initialYOffset = window.innerHeight / 2 - dashCenterY;
+      if (heroIntroBadge) {
+        const badgeRect = heroIntroBadge.getBoundingClientRect();
+        const dashRect = browserFrame.getBoundingClientRect();
+        const groupTop = badgeRect.top;
+        const groupBottom = dashRect.bottom;
+        const groupCenterY = (groupTop + groupBottom) / 2;
+        const viewportCenterY = window.innerHeight / 2;
+        initialYOffset = viewportCenterY - groupCenterY;
+      } else {
+        const dashRect = browserFrame.getBoundingClientRect();
+        const dashCenterY = dashRect.top + dashRect.height / 2;
+        initialYOffset = window.innerHeight / 2 - dashCenterY;
+      }
     }
 
-    // Initial state: Final header & hero elements invisible and offset up
-    gsap.set(finalElements, {
-      opacity: 0,
-      y: -40
-    });
+    // Initial state: Final header & hero elements invisible
+    if (!isMobile) {
+      gsap.set(finalElements, {
+        opacity: 0,
+        y: -40
+      });
+    }
 
-    // Intro badge starts invisible at exact group center offset
+    // Intro badge starts invisible at target position
     if (heroIntroBadge) {
       gsap.set(heroIntroBadge, {
         opacity: 0,
@@ -60,7 +75,7 @@ export function initAnimations() {
       });
     }
 
-    // Dashboard starts invisible at exact group center offset
+    // Dashboard starts invisible at target position
     gsap.set(browserFrame, {
       opacity: 0,
       y: initialYOffset,
@@ -71,7 +86,7 @@ export function initAnimations() {
     setTimeout(() => {
       splashEl.classList.add('splash-hidden');
 
-      // Step 2: Reveal Intro Badge & Dashboard together in exact vertical middle of screen
+      // Step 2: Reveal Intro Badge & Dashboard together in exact vertical position
       if (heroIntroBadge) {
         gsap.to(heroIntroBadge, {
           opacity: 1,
@@ -97,7 +112,7 @@ export function initAnimations() {
         if (heroIntroBadge) {
           gsap.to(heroIntroBadge, {
             opacity: 0,
-            y: initialYOffset - 25,
+            y: isMobile ? -10 : initialYOffset - 25,
             scale: 0.9,
             duration: 0.45,
             ease: 'power2.in',
@@ -108,13 +123,29 @@ export function initAnimations() {
         }
 
         // Reveal Top Ads Bar, Main Header, Main Hero Title ("Automate Finance..."), Subtitle, and CTAs
-        gsap.to(finalElements, {
-          opacity: 1,
-          y: 0,
-          duration: 0.85,
-          stagger: 0.08,
-          ease: 'power3.out'
-        });
+        if (isMobile) {
+          finalElements.forEach(el => {
+            el.style.display = '';
+          });
+          gsap.fromTo(finalElements, {
+            opacity: 0,
+            y: -15
+          }, {
+            opacity: 1,
+            y: 0,
+            duration: 0.85,
+            stagger: 0.08,
+            ease: 'power3.out'
+          });
+        } else {
+          gsap.to(finalElements, {
+            opacity: 1,
+            y: 0,
+            duration: 0.85,
+            stagger: 0.08,
+            ease: 'power3.out'
+          });
+        }
 
         // Move Dashboard down to natural layout position below hero headline
         gsap.to(browserFrame, {
