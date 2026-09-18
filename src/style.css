@@ -37,6 +37,10 @@ html, body, button, input, select, textarea {
   overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Scroll Smoothing */
 html.lenis {
   height: auto;
@@ -221,8 +225,9 @@ html.lenis {
   display: none !important;
 }
 
+body.has-ads-bar .exact-agileap-header,
 body.has-ads-bar .header {
-  top: var(--ads-bar-height, 44px);
+  top: var(--ads-bar-height, 44px) !important;
   transition: top 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -272,9 +277,9 @@ body.has-ads-bar .header {
 }
 
 .ads-desc {
-  font-size: 0.78rem;
-  color: #cbd5e1;
-  font-weight: 400;
+  font-size: 0.88rem;
+  color: #f8fafc;
+  font-weight: 500;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -292,9 +297,9 @@ body.has-ads-bar .header {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  padding: 0.2rem 0.65rem;
+  padding: 0.25rem 0.75rem;
   border-radius: 6px;
-  font-size: 0.74rem;
+  font-size: 0.82rem;
   font-weight: 600;
   text-decoration: none;
   background: rgba(255, 255, 255, 0.08);
@@ -322,11 +327,11 @@ body.has-ads-bar .header {
 /* Primary Action CTA Button */
 .ads-btn-primary {
   font-family: var(--font-heading);
-  font-size: 0.74rem;
+  font-size: 0.82rem;
   font-weight: 700;
   background: #E55B1B;
   color: #ffffff;
-  padding: 0.26rem 0.85rem;
+  padding: 0.3rem 0.9rem;
   border-radius: 6px;
   text-decoration: none;
   display: inline-flex;
@@ -587,7 +592,7 @@ body.has-ads-bar .header {
 
 .exact-agileap-header {
   position: fixed;
-  top: 42px;
+  top: 0;
   left: 0;
   width: 100%;
   height: 72px;
@@ -598,6 +603,7 @@ body.has-ads-bar .header {
   padding: 0 clamp(1.5rem, 4vw, 3.5rem);
   display: flex;
   align-items: center;
+  transition: top 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .header-container {
@@ -1297,7 +1303,7 @@ body.has-ads-bar .header {
 }
 
 .invoicenow-box-img {
-  height: 36px;
+  height: 48px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -1373,7 +1379,7 @@ body.has-ads-bar .header {
   }
 
   .invoicenow-corner-img {
-    height: 34px;
+    height: 48px;
   }
 }
 
@@ -1410,7 +1416,7 @@ body.has-ads-bar .header {
   }
 
   .invoicenow-corner-img {
-    height: 30px;
+    height: 48px;
   }
 }
 
@@ -1594,7 +1600,7 @@ body.has-ads-bar .header {
   }
 
   .invoicenow-box-img {
-    height: 30px;
+    height: 48px;
   }
 }
 
@@ -3048,8 +3054,8 @@ body.has-ads-bar .header {
 
 .hero-tag-pill .badge-label {
   color: #E55B1B !important;
-  font-weight: 700 !important;
-  font-size: 0.68rem !important;
+  font-weight: 800 !important;
+  font-size: 0.88rem !important;
   letter-spacing: 0.05em !important;
 }
 
@@ -3151,11 +3157,12 @@ body.has-ads-bar .header {
 
 .trust-strip-title {
   font-family: var(--font-heading);
-  font-size: clamp(0.95rem, 1.25vw, 1.1rem);
-  font-weight: 700;
+  font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+  font-weight: 800;
   color: #E85D04;
   letter-spacing: -0.01em;
   margin: 0;
+  text-align: center;
 }
 
 /* Row 1: ERP Logos Row */
@@ -3215,20 +3222,23 @@ body.has-ads-bar .header {
 .trust-badge-item {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: clamp(0.78rem, 1vw, 0.85rem);
+  gap: 0.6rem;
+  font-size: clamp(0.9rem, 1.1vw, 1rem);
   color: #1e293b;
 }
 
 .badge-country-name {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  font-weight: 700;
+  gap: 0.4rem;
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  font-weight: 800;
   color: #0f172a;
 }
 
 .trust-flag {
+  width: 24px;
+  height: 16px;
   border-radius: 2px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
   flex-shrink: 0;
@@ -3240,10 +3250,10 @@ body.has-ads-bar .header {
   background: #f1f5f9;
   border: 1px solid #e2e8f0;
   border-radius: 50px;
-  padding: 0.18rem 0.6rem;
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: #475569;
+  padding: 0.25rem 0.75rem;
+  font-size: clamp(0.85rem, 1.1vw, 0.95rem);
+  font-weight: 700;
+  color: #E55B1B;
 }
 
 .trust-divider {
@@ -4527,9 +4537,9 @@ h1 {
 
 @media (max-width: 768px) {
   /* nav-links uses the transform-based slide-in via .mobile-open; do NOT use display:none */
-  .hero-text-container h1 { font-size: 2.6rem; }
-  .text-reveal-item { font-size: 2.35rem; }
-  .subheadline { font-size: 0.95rem; }
+  .hero-text-container h1 { font-size: 1.875rem !important; line-height: 1.25 !important; }
+  .text-reveal-item { font-size: 1.875rem !important; line-height: 1.25 !important; }
+  .subheadline { font-size: 0.9375rem !important; line-height: 1.5 !important; }
   .hero-proof-row { grid-template-columns: 1fr; }
   .footer { flex-direction: column; gap: 1.25rem; text-align: center; padding: 2.5rem 1.5rem; }
   .dash-grid { grid-template-columns: 1fr; }
@@ -6445,7 +6455,7 @@ h1 {
 @media (max-width: 960px) {
   .exact-agileap-header {
     height: 64px;
-    top: 40px;
+    top: 0;
     padding: 0 1.25rem;
   }
 
@@ -6478,8 +6488,12 @@ h1 {
     transform: translateY(-130%);
     opacity: 0;
     pointer-events: none;
-    transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.38s ease;
+    transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.38s ease, top 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 1050;
+  }
+
+  body.has-ads-bar .nav-links {
+    top: calc(64px + var(--ads-bar-height, 38px));
   }
 
   .nav-links.mobile-open {
@@ -8989,7 +9003,7 @@ body.light-mode .screen-label {
 
 @media (max-width: 640px) {
   html, body {
-    font-size: 14px;
+    font-size: 16px;
     width: 100%;
     overflow-x: hidden;
   }
@@ -9029,7 +9043,7 @@ body.light-mode .screen-label {
 
   .btn-try-free {
     padding: 0.45rem 0.85rem;
-    font-size: 0.78rem;
+    font-size: 0.875rem;
     border-radius: 9999px;
   }
 
@@ -9065,17 +9079,18 @@ body.light-mode .screen-label {
   }
 
   .hero-tag-pill .badge-label {
-    font-size: 0.62rem !important;
+    font-size: 0.88rem !important;
+    font-weight: 800 !important;
   }
 
   .text-reveal-item {
-    font-size: 1.85rem !important;
-    line-height: 1.2 !important;
+    font-size: 1.875rem !important;
+    line-height: 1.25 !important;
     text-align: center !important;
   }
 
   .subheadline {
-    font-size: 0.84rem !important;
+    font-size: 0.9375rem !important;
     line-height: 1.5 !important;
     margin: 0 auto 1rem auto !important;
     text-align: center !important;
@@ -9095,8 +9110,8 @@ body.light-mode .screen-label {
 
   /* Sleek Single-Row Automatic Infinite Loop Marquee Banner (Mobile) */
   .top-ads-bar {
-    height: 38px !important;
-    min-height: 38px !important;
+    height: 42px !important;
+    min-height: 42px !important;
     padding: 0 2rem 0 0 !important;
     background: linear-gradient(90deg, #090e17 0%, #151d2a 50%, #090e17 100%) !important;
     border-bottom: 1px solid rgba(229, 91, 27, 0.35) !important;
@@ -9131,8 +9146,8 @@ body.light-mode .screen-label {
   .ads-bar-item-group {
     display: flex !important;
     align-items: center !important;
-    gap: 0.65rem !important;
-    padding-right: 1.5rem !important;
+    gap: 0.75rem !important;
+    padding-right: 1.75rem !important;
     white-space: nowrap !important;
     flex-shrink: 0 !important;
   }
@@ -9142,7 +9157,7 @@ body.light-mode .screen-label {
   }
 
   .ads-bar-logo {
-    height: 16px !important;
+    height: 20px !important;
     width: auto !important;
     flex-shrink: 0 !important;
   }
@@ -9162,8 +9177,8 @@ body.light-mode .screen-label {
   .ads-desc {
     display: inline-flex !important;
     align-items: center !important;
-    font-size: 0.72rem !important;
-    font-weight: 600 !important;
+    font-size: 0.85rem !important;
+    font-weight: 700 !important;
     color: #f8fafc !important;
     white-space: nowrap !important;
     flex-shrink: 0 !important;
@@ -9174,17 +9189,17 @@ body.light-mode .screen-label {
     flex-direction: row !important;
     flex-wrap: nowrap !important;
     align-items: center !important;
-    gap: 0.4rem !important;
+    gap: 0.45rem !important;
     flex-shrink: 0 !important;
   }
 
   .ads-contact-pill {
     display: inline-flex !important;
     align-items: center !important;
-    gap: 0.25rem !important;
-    padding: 0.15rem 0.5rem !important;
-    font-size: 0.65rem !important;
-    font-weight: 600 !important;
+    gap: 0.3rem !important;
+    padding: 0.22rem 0.65rem !important;
+    font-size: 0.82rem !important;
+    font-weight: 700 !important;
     border-radius: 6px !important;
     background: rgba(255, 255, 255, 0.08) !important;
     border: 1px solid rgba(255, 255, 255, 0.18) !important;
@@ -9203,17 +9218,17 @@ body.light-mode .screen-label {
   }
 
   .ads-btn-primary {
-    font-size: 0.65rem !important;
-    padding: 0.2rem 0.6rem !important;
+    font-size: 0.82rem !important;
+    padding: 0.25rem 0.75rem !important;
     border-radius: 6px !important;
-    font-weight: 700 !important;
+    font-weight: 800 !important;
     white-space: nowrap !important;
     background: #E55B1B !important;
     color: #ffffff !important;
     flex-shrink: 0 !important;
     display: inline-flex !important;
     align-items: center !important;
-    gap: 0.25rem !important;
+    gap: 0.3rem !important;
     box-shadow: 0 2px 8px rgba(229, 91, 27, 0.35) !important;
   }
 
@@ -9231,12 +9246,13 @@ body.light-mode .screen-label {
   }
 
   .ads-close-btn svg {
-    width: 12px !important;
-    height: 12px !important;
+    width: 14px !important;
+    height: 14px !important;
   }
 
+  body.has-ads-bar .exact-agileap-header,
   body.has-ads-bar .header {
-    top: 38px !important;
+    top: var(--ads-bar-height, 42px) !important;
   }
 
   /* 1. Mobile Hero Buttons: Modern, compact rectangular design inline row */
@@ -9254,7 +9270,7 @@ body.light-mode .screen-label {
     min-width: 140px;
     padding: 0.65rem 1.4rem !important;
     min-height: 42px !important;
-    font-size: 0.88rem !important;
+    font-size: 0.9375rem !important;
     border-radius: 8px !important;
     justify-content: center;
   }
@@ -9275,12 +9291,12 @@ body.light-mode .screen-label {
   }
 
   .proof-card strong {
-    font-size: 0.95rem !important;
+    font-size: 1rem !important;
     line-height: 1.15 !important;
   }
 
   .proof-card span {
-    font-size: 0.62rem !important;
+    font-size: 0.75rem !important;
     line-height: 1.25 !important;
     margin-top: 0.2rem !important;
   }
@@ -9339,19 +9355,26 @@ body.light-mode .screen-label {
   }
 
   .explanation-title {
-    font-size: 0.95rem !important;
+    font-size: 1rem !important;
     margin-bottom: 0.2rem !important;
   }
 
   .explanation-desc {
-    font-size: 0.72rem !important;
-    line-height: 1.4 !important;
+    font-size: 0.875rem !important;
+    line-height: 1.5 !important;
     margin-bottom: 0.25rem !important;
   }
 
   /* Hide cluttering floating cards on mobile so main dashboard mockup is the primary centerpiece */
   .float-card {
     display: none !important;
+  }
+
+  .trust-strip-title {
+    font-size: 1.25rem !important;
+    font-weight: 800 !important;
+    line-height: 1.35 !important;
+    text-align: center !important;
   }
 
   /* Mobile Compliance & Integrations Cards */
@@ -9407,7 +9430,7 @@ body.light-mode .screen-label {
   }
 
   .mandate-header h2 {
-    font-size: 1.75rem;
+    font-size: 1.5rem !important;
   }
 
   .roadmap-3d-stage {
@@ -9520,11 +9543,11 @@ body.light-mode .screen-label {
   }
 
   .adoption-kpi-row span {
-    font-size: 0.55rem !important;
+    font-size: 0.75rem !important;
   }
 
   .adoption-kpi-row strong {
-    font-size: 0.65rem !important;
+    font-size: 0.875rem !important;
   }
 
   .adoption-chart-area {
@@ -9545,7 +9568,7 @@ body.light-mode .screen-label {
 
   .adoption-copy-center h2,
   .adoption-header-center h2 {
-    font-size: 1.7rem;
+    font-size: 1.5rem !important;
   }
 
   .benefits-section {
@@ -9553,7 +9576,7 @@ body.light-mode .screen-label {
   }
 
   .benefits-header h2 {
-    font-size: 1.75rem;
+    font-size: 1.5rem !important;
   }
 
   .cta-banner-container {
@@ -9563,7 +9586,7 @@ body.light-mode .screen-label {
   }
 
   .cta-banner-left h2 {
-    font-size: 1.6rem;
+    font-size: 1.5rem !important;
   }
 
   .cta-banner-actions {
@@ -11399,7 +11422,7 @@ body.page-mode-invoicenow .invoicenow-dashboard-mockup {
 }
 
 .invoicenow-official-logo {
-  height: clamp(30px, 3.5vw, 42px);
+  height: clamp(42px, 5vw, 58px);
   width: auto;
   vertical-align: middle;
   display: inline-block;

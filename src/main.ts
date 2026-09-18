@@ -901,6 +901,87 @@ window.addEventListener('DOMContentLoaded', () => {
 
   initMobileMenu();
 
+  // Smooth Autoscroll Navigation Handler
+  const initSmoothAutoScroll = () => {
+    // Map navigation anchor hashes to exact target DOM elements
+    const resolveTargetElement = (hash: string): HTMLElement | null => {
+      const cleanHash = hash.replace('#', '').trim();
+      if (!cleanHash) return null;
+
+      // Direct ID match
+      let el = document.getElementById(cleanHash);
+      if (el) return el;
+
+      // Sitemap section aliases
+      if (cleanHash === 'pricing') {
+        return document.getElementById('pricing') || document.getElementById('pricing-plans') || document.getElementById('adopt-invoicenow');
+      }
+      if (cleanHash === 'invoicenow') {
+        return document.getElementById('invoicenow') || document.getElementById('invoicenow-hub') || document.getElementById('gst-mandate');
+      }
+      if (cleanHash === 'news') {
+        return document.getElementById('news') || document.getElementById('news-hub');
+      }
+      if (cleanHash === 'foc-package') {
+        return document.getElementById('foc-package') || document.getElementById('foc-package-section') || document.getElementById('government-funding');
+      }
+      if (cleanHash === 'faq') {
+        return document.getElementById('faq') || document.getElementById('faq-section');
+      }
+      if (cleanHash === 'cta-banner' || cleanHash === 'hero') {
+        return document.getElementById('hero') || document.body;
+      }
+      return null;
+    };
+
+    const handleAnchorClick = (e: MouseEvent) => {
+      const targetAnchor = (e.target as HTMLElement).closest('a[href*="#"]');
+      if (!targetAnchor) return;
+
+      const href = targetAnchor.getAttribute('href');
+      if (!href || href === '#' || href === 'javascript:void(0)') return;
+
+      const hashIndex = href.indexOf('#');
+      if (hashIndex === -1) return;
+
+      const hash = href.substring(hashIndex);
+      const targetElement = resolveTargetElement(hash);
+
+      if (targetElement) {
+        e.preventDefault();
+
+        // Calculate offset for fixed main header and top ads bar
+        const mainHeader = document.getElementById('main-header');
+        const topAdsBar = document.getElementById('top-ads-bar');
+        
+        let headerOffset = 65;
+        if (mainHeader) {
+          headerOffset = mainHeader.offsetHeight;
+        }
+        if (topAdsBar && !topAdsBar.classList.contains('dismissed')) {
+          headerOffset += topAdsBar.offsetHeight;
+        }
+
+        const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = Math.max(0, elementPosition - headerOffset - 12);
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+
+        // Update browser URL hash without causing instant page jump
+        if (window.history.pushState) {
+          window.history.pushState(null, '', hash);
+        }
+      }
+    };
+
+    document.body.addEventListener('click', handleAnchorClick);
+  };
+
+  initSmoothAutoScroll();
+
   // Save plan info to sessionStorage when a plan button is clicked
   document.querySelectorAll<HTMLAnchorElement>('a[data-plan]').forEach(btn => {
     btn.addEventListener('click', () => {
