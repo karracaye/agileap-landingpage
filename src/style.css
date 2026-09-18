@@ -9814,7 +9814,6 @@ body.light-mode .screen-label {
    Upgraded Modern Executive News & Announcements Hub Section (#news-hub)
    ========================================================================== */
 .news-hub-section {
-  display: none !important;
   width: 100%;
   padding: 6rem clamp(1.5rem, 5vw, 5rem);
   background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
@@ -10252,16 +10251,28 @@ body.light-mode .screen-label {
 
 /* 1. HOMEPAGE MODE (Default / #home) */
 /* Hide dedicated tab pages from homepage flow */
+body:not([class*="page-mode-"]) #news,
 body:not([class*="page-mode-"]) #news-hub,
+body.page-mode-home #news,
 body.page-mode-home #news-hub,
+body:not([class*="page-mode-"]) #pricing,
 body:not([class*="page-mode-"]) #pricing-plans,
+body.page-mode-home #pricing,
 body.page-mode-home #pricing-plans,
+body:not([class*="page-mode-"]) #foc-package,
 body:not([class*="page-mode-"]) #foc-package-section,
+body.page-mode-home #foc-package,
 body.page-mode-home #foc-package-section,
+body:not([class*="page-mode-"]) #faq,
 body:not([class*="page-mode-"]) #faq-section,
+body.page-mode-home #faq,
 body.page-mode-home #faq-section,
+body:not([class*="page-mode-"]) #invoicenow,
 body:not([class*="page-mode-"]) #invoicenow-hub,
-body.page-mode-home #invoicenow-hub {
+body.page-mode-home #invoicenow,
+body.page-mode-home #invoicenow-hub,
+body:not([class*="page-mode-"]) #register-page,
+body.page-mode-home #register-page {
   display: none !important;
 }
 
@@ -10293,9 +10304,10 @@ body[class*="page-mode-"]:not(.page-mode-home) main > section {
 }
 
 /* --- Dedicated Pricing Page (#pricing) --- */
-body.page-mode-pricing main > section:not(#pricing-plans) {
+body.page-mode-pricing main > section:not(#pricing):not(#pricing-plans) {
   display: none !important;
 }
+body.page-mode-pricing #pricing,
 body.page-mode-pricing #pricing-plans {
   display: block !important;
   opacity: 1 !important;
@@ -10304,9 +10316,10 @@ body.page-mode-pricing #pricing-plans {
 }
 
 /* --- Dedicated InvoiceNow Page (#invoicenow) --- */
-body.page-mode-invoicenow main > section:not(#invoicenow-hub) {
+body.page-mode-invoicenow main > section:not(#invoicenow):not(#invoicenow-hub) {
   display: none !important;
 }
+body.page-mode-invoicenow #invoicenow,
 body.page-mode-invoicenow #invoicenow-hub {
   display: block !important;
   opacity: 1 !important;
@@ -10315,9 +10328,10 @@ body.page-mode-invoicenow #invoicenow-hub {
 }
 
 /* --- Dedicated FAQ Page (#faq) --- */
-body.page-mode-faq main > section:not(#faq-section) {
+body.page-mode-faq main > section:not(#faq):not(#faq-section) {
   display: none !important;
 }
+body.page-mode-faq #faq,
 body.page-mode-faq #faq-section {
   display: block !important;
   opacity: 1 !important;
@@ -10326,9 +10340,10 @@ body.page-mode-faq #faq-section {
 }
 
 /* --- Dedicated GST InvoiceNow FOC Package Page (#foc-package) --- */
-body.page-mode-foc main > section:not(#foc-package-section) {
+body.page-mode-foc main > section:not(#foc-package):not(#foc-package-section) {
   display: none !important;
 }
+body.page-mode-foc #foc-package,
 body.page-mode-foc #foc-package-section {
   display: block !important;
   opacity: 1 !important;
@@ -10337,9 +10352,10 @@ body.page-mode-foc #foc-package-section {
 }
 
 /* --- Dedicated News Page (#news) --- */
-body.page-mode-news main > section:not(#news-hub) {
+body.page-mode-news main > section:not(#news):not(#news-hub) {
   display: none !important;
 }
+body.page-mode-news #news,
 body.page-mode-news #news-hub {
   display: block !important;
   opacity: 1 !important;
@@ -10355,12 +10371,14 @@ body:not([class*="page-mode-"]) #hero {
   visibility: visible !important;
 }
 
+body.page-mode-home #enterprise-ecosystem,
 body.page-mode-home #product-highlights,
 body.page-mode-home #gst-mandate,
 body.page-mode-home #adopt-invoicenow,
 body.page-mode-home #invoicenow-benefits,
 body.page-mode-home #government-funding,
 body.page-mode-home #cta-banner,
+body:not([class*="page-mode-"]) #enterprise-ecosystem,
 body:not([class*="page-mode-"]) #product-highlights,
 body:not([class*="page-mode-"]) #gst-mandate,
 body:not([class*="page-mode-"]) #adopt-invoicenow,
@@ -10372,16 +10390,26 @@ body:not([class*="page-mode-"]) #cta-banner {
   visibility: visible !important;
 }
 
+body.page-mode-home #invoicenow,
 body.page-mode-home #invoicenow-hub,
+body.page-mode-home #pricing,
 body.page-mode-home #pricing-plans,
+body.page-mode-home #foc-package,
 body.page-mode-home #foc-package-section,
+body.page-mode-home #faq,
 body.page-mode-home #faq-section,
+body.page-mode-home #news,
 body.page-mode-home #news-hub,
 body.page-mode-home #register-page,
+body:not([class*="page-mode-"]) #invoicenow,
 body:not([class*="page-mode-"]) #invoicenow-hub,
+body:not([class*="page-mode-"]) #pricing,
 body:not([class*="page-mode-"]) #pricing-plans,
+body:not([class*="page-mode-"]) #foc-package,
 body:not([class*="page-mode-"]) #foc-package-section,
+body:not([class*="page-mode-"]) #faq,
 body:not([class*="page-mode-"]) #faq-section,
+body:not([class*="page-mode-"]) #news,
 body:not([class*="page-mode-"]) #news-hub,
 body:not([class*="page-mode-"]) #register-page {
   display: none !important;

@@ -945,6 +945,24 @@ window.addEventListener('DOMContentLoaded', () => {
       if (hashIndex === -1) return;
 
       const hash = href.substring(hashIndex);
+
+      // Standalone Tab Page Routes switch page mode cleanly
+      const tabRoutes = ['#pricing', '#invoicenow', '#news', '#foc-package', '#faq', '#register', '#terms', '#privacy', '#home'];
+      if (tabRoutes.includes(hash)) {
+        e.preventDefault();
+        window.location.hash = hash;
+        window.scrollTo(0, 0);
+
+        // Close mobile dropdown if open
+        const navLinksEl = document.getElementById('main-nav');
+        const toggleBtn = document.getElementById('mobile-menu-toggle');
+        if (navLinksEl && navLinksEl.classList.contains('mobile-open')) {
+          navLinksEl.classList.remove('mobile-open');
+          if (toggleBtn) toggleBtn.classList.remove('active');
+        }
+        return;
+      }
+
       const targetElement = resolveTargetElement(hash);
 
       if (targetElement) {
