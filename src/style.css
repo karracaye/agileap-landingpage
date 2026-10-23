@@ -4710,9 +4710,13 @@ h1 {
   align-items: center;
 }
 
+.product-highlights-section .badge-pill {
+  font-size: calc(1rem + 2pt);
+}
+
 .product-highlights-section .section-header h2 {
   font-family: var(--font-heading);
-  font-size: clamp(1.6rem, 2.6vw, 2.05rem);
+  font-size: clamp(calc(1.6rem + 2pt), calc(2.6vw + 2pt), calc(2.05rem + 2pt));
   font-weight: 700;
   color: #0f172a;
   margin-top: 0.6rem;
@@ -4722,7 +4726,7 @@ h1 {
 
 .product-highlights-section .section-header p {
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: calc(0.95rem + 2pt);
   color: #475569;
   line-height: 1.6;
   margin: 0;
@@ -4766,7 +4770,7 @@ h1 {
 .main-tab-btn {
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 0.82rem;
+  font-size: calc(0.82rem + 2pt);
   padding: 0.55rem 1.25rem;
   border-radius: 8px;
   border: none;
@@ -4806,7 +4810,7 @@ h1 {
 
 .main-tab-desc {
   font-family: var(--font-body);
-  font-size: 0.88rem;
+  font-size: calc(0.88rem + 2pt);
   line-height: 1.6;
   color: #475569;
   text-align: center;
@@ -4850,7 +4854,7 @@ h1 {
 
 .sub-menu-num {
   font-family: var(--font-heading);
-  font-size: 0.75rem;
+  font-size: calc(0.75rem + 2pt);
   font-weight: 700;
   color: #ff6b00;
   background: rgba(255, 107, 0, 0.08);
@@ -4862,7 +4866,7 @@ h1 {
 .sub-menu-title {
   font-family: var(--font-heading);
   font-weight: 600;
-  font-size: 0.94rem;
+  font-size: calc(0.94rem + 2pt);
   color: #334155;
   transition: color 0.2s ease;
 }
@@ -4874,7 +4878,7 @@ h1 {
 
 .sub-menu-desc {
   font-family: var(--font-body);
-  font-size: 0.82rem;
+  font-size: calc(0.82rem + 2pt);
   line-height: 1.55;
   color: #64748b;
   margin: 0.45rem 0 0 2.2rem;
@@ -4909,7 +4913,7 @@ h1 {
 }
 
 .window-title-badge {
-  font-size: 0.68rem;
+  font-size: calc(0.68rem + 2pt);
   font-weight: 600;
   color: #475569;
   display: flex;
@@ -4983,9 +4987,13 @@ h1 {
   margin: 0 auto 2.5rem auto;
 }
 
+.mandate-header-center .badge-pill {
+  font-size: calc(1rem + 2pt);
+}
+
 .mandate-header-center h2 {
   font-family: var(--font-heading);
-  font-size: clamp(1.6rem, 2.6vw, 2.05rem);
+  font-size: clamp(calc(1.6rem + 2pt), calc(2.6vw + 2pt), calc(2.05rem + 2pt));
   font-weight: 700;
   color: #0f172a;
   margin-top: 0.6rem;
@@ -4994,7 +5002,7 @@ h1 {
 
 .mandate-header-center p {
   color: #475569;
-  font-size: 0.92rem;
+  font-size: calc(0.92rem + 2pt);
   line-height: 1.6;
   margin-top: 0.6rem;
 }
@@ -5015,7 +5023,7 @@ h1 {
   background: #E55B1B;
   color: #ffffff;
   font-family: var(--font-heading);
-  font-size: 0.84rem;
+  font-size: calc(0.84rem + 2pt);
   font-weight: 600;
   text-decoration: none;
   box-shadow: 0 4px 14px rgba(229, 91, 27, 0.22);
@@ -5230,7 +5238,7 @@ h1 {
 
 .card-tag {
   font-family: var(--font-heading);
-  font-size: 0.64rem;
+  font-size: calc(0.64rem + 2pt);
   font-weight: 700;
   padding: 0.2rem 0.55rem;
   border-radius: 999px;
@@ -5259,7 +5267,7 @@ h1 {
 
 .card-year {
   font-family: var(--font-heading);
-  font-size: 0.8rem;
+  font-size: calc(0.8rem + 2pt);
   font-weight: 700;
   color: #0f172a !important;
   margin-bottom: 0.25rem;
@@ -5268,7 +5276,7 @@ h1 {
 
 .roadmap-3d-card h4 {
   font-family: var(--font-heading);
-  font-size: 1rem;
+  font-size: calc(1rem + 2pt);
   font-weight: 700;
   color: #0f172a !important;
   margin: 0 0 0.3rem 0;
@@ -5277,7 +5285,7 @@ h1 {
 }
 
 .roadmap-3d-card p {
-  font-size: 0.8rem;
+  font-size: calc(0.8rem + 2pt);
   color: #475569 !important;
   line-height: 1.45;
   margin: 0;
@@ -5350,7 +5358,7 @@ h1 {
 
 .slab-step {
   font-family: var(--font-heading);
-  font-size: 0.72rem;
+  font-size: calc(0.72rem + 2pt);
   font-weight: 700;
   width: 22px;
   height: 22px;
@@ -5375,7 +5383,7 @@ h1 {
 
 .slab-tag-text {
   font-family: var(--font-heading);
-  font-size: 0.64rem;
+  font-size: calc(0.64rem + 2pt);
   font-weight: 700;
 }
 
@@ -5393,7 +5401,7 @@ h1 {
 
 .slab-year {
   font-family: var(--font-heading);
-  font-size: 0.82rem;
+  font-size: calc(0.82rem + 2pt);
   font-weight: 700;
   color: #0f172a;
   margin-bottom: 0.3rem;
@@ -5401,7 +5409,7 @@ h1 {
 
 .slab-content h4 {
   font-family: var(--font-heading);
-  font-size: 1.05rem;
+  font-size: calc(1.05rem + 2pt);
   font-weight: 700;
   color: #0f172a;
   margin: 0 0 0.35rem 0;
@@ -5409,7 +5417,7 @@ h1 {
 }
 
 .slab-content p {
-  font-size: 0.82rem;
+  font-size: calc(0.82rem + 2pt);
   color: #475569;
   line-height: 1.5;
   margin: 0;
@@ -5447,7 +5455,7 @@ h1 {
 
 .slab-footer-text {
   font-family: var(--font-heading);
-  font-size: 0.72rem;
+  font-size: calc(0.72rem + 2pt);
   font-weight: 600;
   color: #64748b;
 }
@@ -5544,7 +5552,7 @@ h1 {
 
 .insight-status-tag {
   font-family: var(--font-heading);
-  font-size: 0.72rem;
+  font-size: calc(0.72rem + 2pt);
   font-weight: 700;
   color: #E55B1B;
   background: #fff7ed;
@@ -5556,7 +5564,7 @@ h1 {
 }
 
 .insight-phase-pill {
-  font-size: 0.82rem;
+  font-size: calc(0.82rem + 2pt);
   font-weight: 600;
   color: #334155;
 }
@@ -5566,7 +5574,7 @@ h1 {
 }
 
 .insight-kicker {
-  font-size: 0.72rem;
+  font-size: calc(0.72rem + 2pt);
   font-weight: 600;
   color: #0066ff;
   text-transform: uppercase;
@@ -5577,14 +5585,14 @@ h1 {
 
 .insight-title {
   font-family: var(--font-heading);
-  font-size: 1.15rem;
+  font-size: calc(1.15rem + 2pt);
   font-weight: 700;
   color: #0f172a;
   margin: 0 0 0.35rem 0;
 }
 
 .insight-copy {
-  font-size: 0.84rem;
+  font-size: calc(0.84rem + 2pt);
   color: #475569;
   line-height: 1.55;
   margin: 0;
@@ -5618,13 +5626,13 @@ h1 {
 
 .mandate-visual-top span {
   color: rgba(71, 85, 105, 0.75);
-  font-size: 0.7rem;
+  font-size: calc(0.7rem + 2pt);
   font-weight: 600;
 }
 
 .mandate-visual-top strong {
   color: #0f172a;
-  font-size: 0.76rem;
+  font-size: calc(0.76rem + 2pt);
   font-weight: 700;
 }
 
@@ -5741,7 +5749,7 @@ h1 {
 .roadmap-card strong {
   display: block;
   color: #07111f;
-  font-size: 0.98rem;
+  font-size: calc(0.98rem + 2pt);
   font-weight: 650;
   line-height: 1.2;
   margin-bottom: 0.45rem;
@@ -5750,7 +5758,7 @@ h1 {
 .roadmap-card span {
   display: block;
   color: rgba(71, 85, 105, 0.78);
-  font-size: 0.72rem;
+  font-size: calc(0.72rem + 2pt);
   font-weight: 400;
   line-height: 1.42;
 }
@@ -5796,7 +5804,7 @@ h1 {
   display: block;
   margin-bottom: 0.3rem;
   color: var(--color-brand-blue);
-  font-size: 0.66rem;
+  font-size: calc(0.66rem + 2pt);
   font-weight: 750;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -5805,7 +5813,7 @@ h1 {
 .mandate-insight strong {
   display: block;
   color: #0f172a;
-  font-size: 0.92rem;
+  font-size: calc(0.92rem + 2pt);
   font-weight: 700;
   line-height: 1.25;
 }
@@ -5813,7 +5821,7 @@ h1 {
 .mandate-insight p {
   margin: 0.38rem 0 0;
   color: rgba(71, 85, 105, 0.78);
-  font-size: 0.76rem;
+  font-size: calc(0.76rem + 2pt);
   line-height: 1.5;
 }
 
@@ -5839,7 +5847,7 @@ h1 {
   }
 
   .mandate-copy h2 {
-    font-size: 2rem;
+    font-size: calc(2rem + 2pt);
   }
 
   .mandate-step {
@@ -6035,7 +6043,7 @@ h1 {
   border-radius: 999px;
   background: rgba(0, 102, 255, 0.07);
   color: var(--color-brand-blue);
-  font-size: 0.52rem;
+  font-size: calc(0.52rem + 2pt);
   font-weight: 700;
 }
 
@@ -6061,7 +6069,7 @@ h1 {
 .adoption-dashboard-bottom span {
   display: block;
   color: #64748b;
-  font-size: 0.48rem;
+  font-size: calc(0.48rem + 2pt);
   font-weight: 650;
 }
 
@@ -6069,7 +6077,7 @@ h1 {
   display: block;
   margin-top: 0.18rem;
   color: #07111f;
-  font-size: 0.72rem;
+  font-size: calc(0.72rem + 2pt);
   font-weight: 750;
 }
 
@@ -6151,14 +6159,14 @@ h1 {
   display: block;
   margin-top: 0.12rem;
   color: #07111f;
-  font-size: 0.62rem;
+  font-size: calc(0.62rem + 2pt);
   font-weight: 750;
 }
 
 .adoption-dashboard-bottom p {
   margin: 0.18rem 0 0;
   color: rgba(71, 85, 105, 0.78);
-  font-size: 0.5rem;
+  font-size: calc(0.5rem + 2pt);
   line-height: 1.35;
 }
 
@@ -6239,7 +6247,7 @@ h1 {
 .adoption-float-card strong {
   display: block;
   color: #07111f;
-  font-size: 0.86rem;
+  font-size: calc(0.86rem + 2pt);
   font-weight: 750;
   line-height: 1.22;
 }
@@ -6247,7 +6255,7 @@ h1 {
 .adoption-float-card p {
   margin: 0.42rem 0 0;
   color: rgba(15, 23, 42, 0.68);
-  font-size: 0.68rem;
+  font-size: calc(0.68rem + 2pt);
   line-height: 1.45;
 }
 
@@ -6256,10 +6264,14 @@ h1 {
   z-index: 2;
 }
 
+.adoption-copy .badge-pill {
+  font-size: calc(1rem + 2pt);
+}
+
 .adoption-copy h2 {
   font-family: var(--font-heading);
   color: #07111f;
-  font-size: 2.05rem;
+  font-size: calc(2.05rem + 2pt);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: 0;
@@ -6275,7 +6287,7 @@ h1 {
 .adoption-copy > p {
   max-width: 660px;
   color: rgba(71, 85, 105, 0.78);
-  font-size: 0.94rem;
+  font-size: calc(0.94rem + 2pt);
   font-weight: 400;
   line-height: 1.68;
   margin: 0 0 1.8rem;
@@ -6315,7 +6327,7 @@ h1 {
 
 .adoption-benefit-card strong {
   display: block;
-  font-size: 0.88rem;
+  font-size: calc(0.88rem + 2pt);
   font-weight: 700;
   color: #07111f;
   line-height: 1.28;
@@ -6325,7 +6337,7 @@ h1 {
   display: block;
   margin-top: 0.45rem;
   color: rgba(71, 85, 105, 0.78);
-  font-size: 0.74rem;
+  font-size: calc(0.74rem + 2pt);
   line-height: 1.48;
 }
 
@@ -6405,7 +6417,7 @@ h1 {
   }
 
   .adoption-copy h2 {
-    font-size: 1.78rem;
+    font-size: calc(1.78rem + 2pt);
   }
 
   .adoption-benefit-grid {
@@ -7477,9 +7489,13 @@ input:checked + .slider:before {
   margin: 0 auto 3.5rem auto;
 }
 
+.benefits-header .badge-pill {
+  font-size: calc(1rem + 2pt);
+}
+
 .benefits-header h2 {
   font-family: var(--font-heading);
-  font-size: 2.1rem;
+  font-size: calc(2.1rem + 2pt);
   font-weight: 700;
   color: #0f172a;
   margin-top: 1rem;
@@ -7489,7 +7505,7 @@ input:checked + .slider:before {
 
 .benefits-header p {
   color: #475569;
-  font-size: 0.92rem;
+  font-size: calc(0.92rem + 2pt);
   line-height: 1.6;
   margin-top: 0.75rem;
   font-weight: 400;
@@ -7552,7 +7568,7 @@ input:checked + .slider:before {
 
 .minimal-stat-pill {
   font-family: var(--font-heading);
-  font-size: 0.68rem;
+  font-size: calc(0.68rem + 2pt);
   font-weight: 700;
   color: #E55B1B;
   background: #fff7ed;
@@ -7570,7 +7586,7 @@ input:checked + .slider:before {
 
 .minimal-card h3 {
   font-family: var(--font-heading);
-  font-size: 1.05rem;
+  font-size: calc(1.05rem + 2pt);
   font-weight: 700;
   color: #0f172a;
   margin-bottom: 0.4rem;
@@ -7578,7 +7594,7 @@ input:checked + .slider:before {
 }
 
 .minimal-card p {
-  font-size: 0.81rem;
+  font-size: calc(0.81rem + 2pt);
   color: #475569;
   line-height: 1.5;
   margin: 0 0 1.2rem 0;
@@ -7595,13 +7611,13 @@ input:checked + .slider:before {
 
 .minimal-metric-foot strong {
   font-family: var(--font-heading);
-  font-size: 1.05rem;
+  font-size: calc(1.05rem + 2pt);
   font-weight: 750;
   color: #0f172a;
 }
 
 .minimal-metric-foot span {
-  font-size: 0.7rem;
+  font-size: calc(0.7rem + 2pt);
   font-weight: 500;
   color: #64748b;
 }
@@ -7746,9 +7762,13 @@ input:checked + .slider:before {
   z-index: 2;
 }
 
+.funding-header .badge-pill {
+  font-size: calc(1rem + 2pt);
+}
+
 .funding-header h2 {
   font-family: var(--font-heading);
-  font-size: 1.95rem;
+  font-size: calc(1.95rem + 2pt);
   font-weight: 800;
   color: #0f172a;
   margin-top: 1rem;
@@ -7758,7 +7778,7 @@ input:checked + .slider:before {
 
 .funding-header p {
   color: #475569;
-  font-size: 0.92rem;
+  font-size: calc(0.92rem + 2pt);
   line-height: 1.6;
   margin-top: 0.75rem;
   font-weight: 400;
@@ -7857,7 +7877,7 @@ input:checked + .slider:before {
 }
 
 .grant-track-tag {
-  font-size: 0.7rem;
+  font-size: calc(0.7rem + 2pt);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -7874,7 +7894,7 @@ input:checked + .slider:before {
 
 .grant-row-title {
   font-family: var(--font-heading);
-  font-size: 1.05rem;
+  font-size: calc(1.05rem + 2pt);
   font-weight: 600;
   color: #0f172a;
   margin-top: 0.15rem;
@@ -7886,7 +7906,7 @@ input:checked + .slider:before {
 }
 
 .grant-row-desc {
-  font-size: 0.88rem;
+  font-size: calc(0.88rem + 2pt);
   color: #475569;
   line-height: 1.6;
   margin: 0;
@@ -7923,14 +7943,14 @@ input:checked + .slider:before {
 }
 
 .amount-label {
-  font-size: 0.68rem;
+  font-size: calc(0.68rem + 2pt);
   color: #64748b;
   font-weight: 500;
 }
 
 .amount-val {
   font-family: var(--font-heading);
-  font-size: 1.02rem;
+  font-size: calc(1.02rem + 2pt);
   font-weight: 700;
   margin-top: 0.1rem;
 }
@@ -7967,7 +7987,7 @@ input:checked + .slider:before {
     padding: 4.5rem 1.5rem;
   }
   .funding-header h2 {
-    font-size: 2rem;
+    font-size: calc(2rem + 2pt);
   }
   .glass-grant-card {
     padding: 2.2rem 1.8rem;
@@ -9430,7 +9450,7 @@ body.light-mode .screen-label {
   }
 
   .mandate-header h2 {
-    font-size: 1.5rem !important;
+    font-size: calc(1.5rem + 2pt) !important;
   }
 
   .roadmap-3d-stage {
@@ -9543,11 +9563,11 @@ body.light-mode .screen-label {
   }
 
   .adoption-kpi-row span {
-    font-size: 0.75rem !important;
+    font-size: calc(0.75rem + 2pt) !important;
   }
 
   .adoption-kpi-row strong {
-    font-size: 0.875rem !important;
+    font-size: calc(0.875rem + 2pt) !important;
   }
 
   .adoption-chart-area {
@@ -9568,7 +9588,7 @@ body.light-mode .screen-label {
 
   .adoption-copy-center h2,
   .adoption-header-center h2 {
-    font-size: 1.5rem !important;
+    font-size: calc(1.5rem + 2pt) !important;
   }
 
   .benefits-section {
@@ -9576,7 +9596,7 @@ body.light-mode .screen-label {
   }
 
   .benefits-header h2 {
-    font-size: 1.5rem !important;
+    font-size: calc(1.5rem + 2pt) !important;
   }
 
   .cta-banner-container {
@@ -9655,7 +9675,7 @@ body.light-mode .screen-label {
 
 .footer-address-link {
   font-family: var(--font-body);
-  font-size: 0.85rem;
+  font-size: calc(0.85rem + 2pt);
   font-weight: 400;
   color: rgba(255, 255, 255, 0.92) !important;
   text-decoration: none;
@@ -9678,7 +9698,7 @@ body.light-mode .screen-label {
   align-items: center;
   gap: 0.65rem;
   font-family: var(--font-body);
-  font-size: 0.85rem;
+  font-size: calc(0.85rem + 2pt);
   font-weight: 600;
 }
 
@@ -9741,7 +9761,7 @@ body.light-mode .screen-label {
   background: #ffffff !important;
   color: #D44D0F !important;
   font-family: var(--font-heading);
-  font-size: 0.9rem;
+  font-size: calc(0.9rem + 2pt);
   font-weight: 700;
   text-decoration: none;
   box-shadow: none !important;
@@ -9766,12 +9786,12 @@ body.light-mode .screen-label {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 0.82rem;
+  font-size: calc(0.82rem + 2pt);
 }
 
 .footer-copyright-text {
   font-family: var(--font-heading);
-  font-size: 0.82rem;
+  font-size: calc(0.82rem + 2pt);
   font-weight: 400;
   color: rgba(255, 255, 255, 0.9) !important;
   margin: 0;
@@ -9785,7 +9805,7 @@ body.light-mode .screen-label {
 
 .legal-link {
   font-family: var(--font-heading);
-  font-size: 0.82rem;
+  font-size: calc(0.82rem + 2pt);
   font-weight: 500;
   color: #ffffff !important;
   text-decoration: none;
