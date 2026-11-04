@@ -1,5 +1,6 @@
 import './style.css';
 import './reg.css';
+import './contact.css';
 import { Benefits3D } from './benefits-3d';
 import { initAnimations } from './animations';
 import gsap from 'gsap';
@@ -947,7 +948,7 @@ window.addEventListener('DOMContentLoaded', () => {
       const hash = href.substring(hashIndex);
 
       // Standalone Tab Page Routes switch page mode cleanly
-      const tabRoutes = ['#pricing', '#invoicenow', '#news', '#foc-package', '#faq', '#register', '#terms', '#privacy', '#home'];
+      const tabRoutes = ['#pricing', '#invoicenow', '#news', '#foc-package', '#faq', '#contact', '#contact-us', '#register', '#terms', '#privacy', '#home'];
       if (tabRoutes.includes(hash)) {
         e.preventDefault();
         window.location.hash = hash;
@@ -1279,6 +1280,7 @@ window.addEventListener('DOMContentLoaded', () => {
         'page-mode-news',
         'page-mode-foc',
         'page-mode-faq',
+        'page-mode-contact',
         'page-mode-register',
         'page-mode-terms',
         'page-mode-privacy',
@@ -1321,6 +1323,10 @@ window.addEventListener('DOMContentLoaded', () => {
         document.body.classList.add('page-mode-faq');
         window.scrollTo(0, 0);
         setActiveNavLink('#faq');
+      } else if (hash === '#contact' || hash === '#contact-us') {
+        document.body.classList.add('page-mode-contact');
+        window.scrollTo(0, 0);
+        setActiveNavLink('#contact');
       } else if (hash === '#register') {
         document.body.classList.add('page-mode-register');
         window.scrollTo(0, 0);
@@ -1498,6 +1504,82 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  // Contact Us Form Handler
+  const initContactForm = () => {
+    const contactForm = document.getElementById('contact-form') as HTMLFormElement | null;
+    const successCard = document.getElementById('contact-success-card');
+    const resetBtn = document.getElementById('contact-reset-btn');
+    const submitBtn = document.getElementById('contact-submit-btn') as HTMLButtonElement | null;
+    const nameInput = document.getElementById('contact-name') as HTMLInputElement | null;
+    const emailInput = document.getElementById('contact-email') as HTMLInputElement | null;
+    const messageInput = document.getElementById('contact-message') as HTMLTextAreaElement | null;
+    const emailTarget = document.getElementById('success-email-target');
+
+    if (!contactForm || !submitBtn) return;
+
+    // Real-time error clearing
+    [nameInput, emailInput, messageInput].forEach(input => {
+      if (!input) return;
+      input.addEventListener('input', () => {
+        const group = input.closest('.contact-simple-group') || input.closest('.contact-form-group');
+        if (group) group.classList.remove('has-error');
+      });
+    });
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      let hasError = false;
+
+      // Validate Name
+      if (!nameInput || !nameInput.value.trim()) {
+        const group = nameInput?.closest('.contact-simple-group') || nameInput?.closest('.contact-form-group');
+        if (group) group.classList.add('has-error');
+        hasError = true;
+      }
+
+      // Validate Email
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailInput || !emailRegex.test(emailInput.value.trim())) {
+        const group = emailInput?.closest('.contact-simple-group') || emailInput?.closest('.contact-form-group');
+        if (group) group.classList.add('has-error');
+        hasError = true;
+      }
+
+      if (hasError) return;
+
+      // Submission State
+      submitBtn.disabled = true;
+      const originalBtnHTML = submitBtn.innerHTML;
+      submitBtn.innerHTML = `<span>Sending message...</span>`;
+
+      setTimeout(() => {
+        // Show success state
+        if (emailTarget && emailInput) {
+          emailTarget.textContent = emailInput.value.trim();
+        }
+        contactForm.style.display = 'none';
+        if (successCard) {
+          successCard.style.display = 'block';
+        }
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHTML;
+      }, 600);
+    });
+
+    // Reset button
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        contactForm.reset();
+        contactForm.style.display = 'flex';
+        if (successCard) successCard.style.display = 'none';
+        const errorGroups = contactForm.querySelectorAll('.contact-simple-group.has-error, .contact-form-group.has-error');
+        errorGroups.forEach(g => g.classList.remove('has-error'));
+      });
+    }
+  };
+
   initPageRouter();
   initLegalLinks();
+  initContactForm();
 });

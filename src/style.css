@@ -10292,7 +10292,9 @@ body:not([class*="page-mode-"]) #invoicenow-hub,
 body.page-mode-home #invoicenow,
 body.page-mode-home #invoicenow-hub,
 body:not([class*="page-mode-"]) #register-page,
-body.page-mode-home #register-page {
+body.page-mode-home #register-page,
+body:not([class*="page-mode-"]) #contact,
+body.page-mode-home #contact {
   display: none !important;
 }
 
@@ -10383,6 +10385,18 @@ body.page-mode-news #news-hub {
   background: #f8fafc !important;
 }
 
+/* --- Dedicated Contact Page (#contact) --- */
+body.page-mode-contact main > section:not(#contact):not(#contact-section) {
+  display: none !important;
+}
+body.page-mode-contact #contact,
+body.page-mode-contact #contact-section {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  background: #f8fafc !important;
+}
+
 /* --- Homepage Mode (#home & Default Root) --- */
 body.page-mode-home #hero,
 body:not([class*="page-mode-"]) #hero {
@@ -10421,6 +10435,7 @@ body.page-mode-home #faq-section,
 body.page-mode-home #news,
 body.page-mode-home #news-hub,
 body.page-mode-home #register-page,
+body.page-mode-home #contact,
 body:not([class*="page-mode-"]) #invoicenow,
 body:not([class*="page-mode-"]) #invoicenow-hub,
 body:not([class*="page-mode-"]) #pricing,
@@ -10431,7 +10446,8 @@ body:not([class*="page-mode-"]) #faq,
 body:not([class*="page-mode-"]) #faq-section,
 body:not([class*="page-mode-"]) #news,
 body:not([class*="page-mode-"]) #news-hub,
-body:not([class*="page-mode-"]) #register-page {
+body:not([class*="page-mode-"]) #register-page,
+body:not([class*="page-mode-"]) #contact {
   display: none !important;
 }
 
@@ -10452,6 +10468,7 @@ body.page-mode-register #foc-package-section,
 body.page-mode-register #faq-section,
 body.page-mode-register #news-hub,
 body.page-mode-register #invoicenow-hub,
+body.page-mode-register #contact,
 body.page-mode-register #main-footer,
 body.page-mode-register .footer-minimal {
   display: none !important;
@@ -12492,6 +12509,7 @@ body.page-mode-terms #faq-section,
 body.page-mode-terms #news-hub,
 body.page-mode-terms #invoicenow-hub,
 body.page-mode-terms #register-page,
+body.page-mode-terms #contact,
 body.page-mode-privacy #top-ads-bar,
 body.page-mode-privacy .header,
 body.page-mode-privacy #hero,
@@ -12506,6 +12524,7 @@ body.page-mode-privacy #foc-package-section,
 body.page-mode-privacy #faq-section,
 body.page-mode-privacy #news-hub,
 body.page-mode-privacy #invoicenow-hub,
+body.page-mode-privacy #contact,
 body.page-mode-terms #main-footer,
 body.page-mode-terms .footer-minimal,
 body.page-mode-privacy #main-footer,
