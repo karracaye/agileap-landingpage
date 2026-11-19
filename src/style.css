@@ -11066,8 +11066,10 @@ body.page-mode-foc #foc-package-section {
   font-size: 0.95rem;
   font-weight: 700;
   padding: 0.95rem 1.85rem;
+  border: none;
   border-radius: 999px;
   text-decoration: none;
+  cursor: pointer;
   box-shadow: 0 8px 20px -4px rgba(229, 91, 27, 0.4);
   transition: all 0.25s ease;
 }
@@ -11250,10 +11252,53 @@ body.page-mode-foc #foc-package-section {
   padding: 0;
 }
 
-.pill-addon {
+/* Simple Add-ons Grid */
+.foc-addons-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.65rem;
+}
+
+.foc-addon-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.8rem 1.1rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.foc-addon-item:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.foc-addon-item .addon-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
   background: #f1f5f9;
   color: #475569;
-  border: 1px solid #cbd5e1;
+  font-size: 0.85rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.foc-addon-item .addon-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+@media (max-width: 600px) {
+  .foc-addons-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .foc-footnote-text {
