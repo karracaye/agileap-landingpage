@@ -135,7 +135,8 @@ export function initAnimations() {
             y: 0,
             duration: 0.85,
             stagger: 0.08,
-            ease: 'power3.out'
+            ease: 'power3.out',
+            clearProps: 'transform'
           });
         } else {
           gsap.to(finalElements, {
@@ -143,7 +144,8 @@ export function initAnimations() {
             y: 0,
             duration: 0.85,
             stagger: 0.08,
-            ease: 'power3.out'
+            ease: 'power3.out',
+            clearProps: 'transform'
           });
         }
 

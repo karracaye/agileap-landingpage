@@ -108,6 +108,12 @@
             <a href="#news" id="nav-news">News</a>
             <a href="#foc-package" id="nav-foc">GST InvoiceNow FOC Package</a>
             <a href="#faq" id="nav-faq">FAQ</a>
+            
+            <!-- Mobile-only CTA Buttons in Nav Menu -->
+            <div class="mobile-nav-cta">
+              <a href="#cta-banner" class="btn-mobile-nav btn-mobile-try-free">Try For Free</a>
+              <a href="#login" class="btn-mobile-nav btn-mobile-login">Login Now</a>
+            </div>
           </nav>
 
           <div class="cta-actions">
@@ -1797,9 +1803,9 @@
           </div>
         </section>
 
-        <!-- GST InvoiceNow FOC Package Comparison Section (Dedicated FOC Page) -->
-        <section id="foc-package" class="foc-pricing-section modern-foc-pricing">
-          <div class="foc-container">
+        <!-- GST InvoiceNow FOC Package Section (Dedicated FOC Page) -->
+        <section id="foc-package" class="foc-pricing-section modern-foc-clean">
+          <div class="foc-clean-container">
             
             <!-- Page Header -->
             <div class="foc-header">
@@ -1812,213 +1818,191 @@
               <p class="foc-subtitle-sub">The GST InvoiceNow FOC Package, available exclusively for GST-registered businesses, is offered in alignment with IMDA's initiative. Eligible businesses can sign up and enjoy free access to AgileAP under the FOC Package from now until <strong class="text-dark">31 March 2031</strong>.</p>
             </div>
 
-            <!-- FOC Matrix Table Wrapper -->
-            <div class="foc-table-wrapper">
-              <table class="foc-matrix-table">
-                <thead>
-                  <tr class="foc-header-row">
-                    <th class="col-feature-title">
-                      <div class="table-corner-header">
-                        <h3>Choose Your Plan</h3>
-                        <p>Find the best plan for your organisation</p>
-                      </div>
-                    </th>
+            <!-- Single Unified Modern Plan Card -->
+            <div class="foc-unified-card">
+              
+              <!-- Card Header / Hero Pricing Area -->
+              <div class="foc-card-hero">
+                <div class="foc-hero-badge-wrap">
+                  <span class="foc-validity-tag">Free until 31 March 2031</span>
+                </div>
 
-                    <!-- FOC Package (Highlighted Featured Column) -->
-                    <th class="col-foc-head highlight-foc-col">
-                      <div class="foc-plan-card featured-foc-card">
-                        <span class="foc-plan-name">FOC Package</span>
-                        <div class="foc-price-wrap">
-                          <span class="foc-price-val">SGD 0 <span class="period">/ Month</span></span>
-                        </div>
-                        <span class="foc-up-price">U.P. SGD 150.00 / Billed Monthly</span>
-                        <a href="#register" data-plan="FOC Package" data-price="SGD 0" class="btn-foc-action btn-foc-orange">Sign Up and Choose This Plan</a>
-                      </div>
-                    </th>
+                <h2 class="foc-hero-title">FOC Package</h2>
+                
+                <div class="foc-hero-price">
+                  <span class="currency">SGD</span>
+                  <span class="amount">0</span>
+                  <span class="period">/ Month</span>
+                </div>
+                <div class="foc-hero-up">U.P. SGD 150.00 / Billed Monthly</div>
 
-                    <!-- Starter Column -->
-                    <th class="col-foc-head">
-                      <div class="foc-plan-card">
-                        <span class="foc-plan-name">Starter</span>
-                        <div class="foc-price-wrap">
-                          <span class="foc-price-val">SGD 20 <span class="period">/ Month</span></span>
-                        </div>
-                        <span class="foc-billing-sub">Billed Monthly</span>
-                        <a href="#register" data-plan="Starter" data-price="SGD 20" class="btn-foc-action btn-foc-gray">Sign Up and Choose This Plan</a>
-                      </div>
-                    </th>
+                <div class="foc-hero-action">
+                  <a href="#register" data-plan="FOC Package" data-price="SGD 0" class="btn-foc-hero-cta">
+                    <span>Sign Up and Choose This Plan</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </a>
+                </div>
+              </div>
 
-                    <!-- Basic Column -->
-                    <th class="col-foc-head">
-                      <div class="foc-plan-card">
-                        <span class="foc-plan-name">Basic</span>
-                        <div class="foc-price-wrap">
-                          <span class="foc-price-val">SGD 55 <span class="period">/ Month</span></span>
-                        </div>
-                        <span class="foc-billing-sub">Billed Monthly</span>
-                        <a href="#register" data-plan="Basic" data-price="SGD 55" class="btn-foc-action btn-foc-gray">Sign Up and Choose This Plan</a>
-                      </div>
-                    </th>
+              <!-- Specifications Strip -->
+              <div class="foc-specs-bar">
+                <div class="spec-bar-item">
+                  <span class="spec-bar-label">Number of User</span>
+                  <strong class="spec-bar-val">1 User</strong>
+                </div>
+                <div class="spec-bar-sep" aria-hidden="true"></div>
+                <div class="spec-bar-item">
+                  <span class="spec-bar-label">Entity</span>
+                  <strong class="spec-bar-val">1 Entity</strong>
+                </div>
+              </div>
 
-                    <!-- Standard Column -->
-                    <th class="col-foc-head">
-                      <div class="foc-plan-card">
-                        <span class="foc-plan-name">Standard</span>
-                        <div class="foc-price-wrap">
-                          <span class="foc-price-val">SGD 90 <span class="period">/ Month</span></span>
-                        </div>
-                        <span class="foc-billing-sub">Billed Monthly</span>
-                        <a href="#register" data-plan="Standard" data-price="SGD 90" class="btn-foc-action btn-foc-gray">Sign Up and Choose This Plan</a>
-                      </div>
-                    </th>
-                  </tr>
+              <!-- Features Section: Modules Included -->
+              <div class="foc-section-block">
+                <div class="foc-section-label">
+                  <span>MODULES INCLUDED</span>
+                </div>
 
-                  <!-- Specification Rows -->
-                  <tr class="foc-spec-row">
-                    <td class="col-feature-title">Number of User</td>
-                    <td class="col-val highlight-foc-col">1 User</td>
-                    <td class="col-val">1 User</td>
-                    <td class="col-val">1 User</td>
-                    <td class="col-val">5 Users</td>
-                  </tr>
+                <div class="foc-items-list">
+                  <div class="foc-item-row">
+                    <div class="foc-item-left">
+                      <span class="item-icon-check">✓</span>
+                      <span class="item-name">Send and Receive Documents via InvoiceNow (Include both B2B, POS/STI InvoiceNow transactions)</span>
+                    </div>
+                    <span class="item-pill pill-orange">1000 Documents</span>
+                  </div>
 
-                  <tr class="foc-spec-row">
-                    <td class="col-feature-title">Entity</td>
-                    <td class="col-val highlight-foc-col">1 Entity</td>
-                    <td class="col-val">1 Entity</td>
-                    <td class="col-val">1 Entity</td>
-                    <td class="col-val">1 Entity</td>
-                  </tr>
+                  <div class="foc-item-row">
+                    <div class="foc-item-left">
+                      <span class="item-icon-check">✓</span>
+                      <span class="item-name">Send Documents (Invoice, CN) via Email</span>
+                    </div>
+                    <span class="item-pill pill-orange">1000 Documents</span>
+                  </div>
 
-                  <!-- Category Header: Module -->
-                  <tr class="foc-cat-row">
-                    <td colspan="5" class="foc-cat-cell">Module</td>
-                  </tr>
-                </thead>
+                  <div class="foc-item-row">
+                    <div class="foc-item-left">
+                      <span class="item-icon-check">✓</span>
+                      <span class="item-name">GST InvoiceNow Submission (Invoice, CN)</span>
+                    </div>
+                    <span class="item-pill pill-green">Unlimited</span>
+                  </div>
 
-                <tbody>
-                  <tr>
-                    <td class="col-feature-title">Send and Receive Documents via InvoiceNow (Include both B2B, POS/STI InvoiceNow transactions)</td>
-                    <td class="col-val highlight-foc-col">1000 Documents</td>
-                    <td class="col-val">20 Documents</td>
-                    <td class="col-val">50 Documents</td>
-                    <td class="col-val">90 Documents</td>
-                  </tr>
+                  <div class="foc-item-row">
+                    <div class="foc-item-left">
+                      <span class="item-icon-check">✓</span>
+                      <span class="item-name">Invoice</span>
+                    </div>
+                    <span class="item-pill pill-neutral">✓</span>
+                  </div>
 
-                  <tr>
-                    <td class="col-feature-title">Send Documents (Invoice, CN) via Email</td>
-                    <td class="col-val highlight-foc-col">1000 Documents</td>
-                    <td class="col-val">20 Documents</td>
-                    <td class="col-val">50 Documents</td>
-                    <td class="col-val">90 Documents</td>
-                  </tr>
+                  <div class="foc-item-row">
+                    <div class="foc-item-left">
+                      <span class="item-icon-check">✓</span>
+                      <span class="item-name">Credit Note</span>
+                    </div>
+                    <span class="item-pill pill-neutral">✓</span>
+                  </div>
 
-                  <tr>
-                    <td class="col-feature-title">GST InvoiceNow Submission (Invoice, CN)</td>
-                    <td class="col-val highlight-foc-col">Unlimited</td>
-                    <td class="col-val"><span class="foc-check">✓</span></td>
-                    <td class="col-val"><span class="foc-check">✓</span></td>
-                    <td class="col-val"><span class="foc-check">✓</span></td>
-                  </tr>
+                  <div class="foc-item-row">
+                    <div class="foc-item-left">
+                      <span class="item-icon-check">✓</span>
+                      <span class="item-name">Vendor / Customer Management</span>
+                    </div>
+                    <span class="item-pill pill-neutral">✓</span>
+                  </div>
 
-                  <tr>
-                    <td class="col-feature-title">Invoice</td>
-                    <td class="col-val highlight-foc-col"><span class="foc-check">✓</span></td>
-                    <td class="col-val"><span class="foc-check">✓</span></td>
-                    <td class="col-val"><span class="foc-check">✓</span></td>
-                    <td class="col-val"><span class="foc-check">✓</span></td>
-                  </tr>
+                  <div class="foc-item-row">
+                    <div class="foc-item-left">
+                      <span class="item-icon-check">✓</span>
+                      <span class="item-name">System Administration</span>
+                    </div>
+                    <span class="item-pill pill-neutral">✓</span>
+                  </div>
 
-                  <tr>
-                    <td class="col-feature-title">Credit Note</td>
-                    <td class="col-val highlight-foc-col"><span class="foc-check">✓</span></td>
-                    <td class="col-val"><span class="foc-check">✓</span></td>
-                    <td class="col-val"><span class="foc-check">✓</span></td>
-                    <td class="col-val"><span class="foc-check">✓</span></td>
-                  </tr>
+                  <div class="foc-item-row">
+                    <div class="foc-item-left">
+                      <span class="item-icon-check">✓</span>
+                      <span class="item-name">Dashboard and Analytics</span>
+                    </div>
+                    <span class="item-pill pill-neutral">✓</span>
+                  </div>
 
-                  <tr>
-                    <td class="col-feature-title">Vendor / Customer Management</td>
-                    <td class="col-val highlight-foc-col"><span class="foc-check">✓</span></td>
-                    <td class="col-val"><span class="foc-check">✓</span></td>
-                    <td class="col-val"><span class="foc-check">✓</span></td>
-                    <td class="col-val"><span class="foc-check">✓</span></td>
-                  </tr>
+                  <div class="foc-item-row">
+                    <div class="foc-item-left">
+                      <span class="item-icon-check">✓</span>
+                      <span class="item-name">Products and Services</span>
+                    </div>
+                    <span class="item-pill pill-neutral">✓</span>
+                  </div>
 
-                  <tr>
-                    <td class="col-feature-title">System Administration</td>
-                    <td class="col-val highlight-foc-col"><span class="foc-check">✓</span></td>
-                    <td class="col-val"><span class="foc-check">✓</span></td>
-                    <td class="col-val"><span class="foc-check">✓</span></td>
-                    <td class="col-val"><span class="foc-check">✓</span></td>
-                  </tr>
+                  <div class="foc-item-row">
+                    <div class="foc-item-left">
+                      <span class="item-icon-check">✓</span>
+                      <span class="item-name">Claims / Petty Cash Purchase</span>
+                    </div>
+                    <span class="item-pill pill-neutral">✓</span>
+                  </div>
+                </div>
+              </div>
 
-                  <tr>
-                    <td class="col-feature-title">Dashboard and Analytics</td>
-                    <td class="col-val highlight-foc-col"><span class="foc-check">✓</span></td>
-                    <td class="col-val"><span class="foc-check">✓</span></td>
-                    <td class="col-val"><span class="foc-check">✓</span></td>
-                    <td class="col-val"><span class="foc-check">✓</span></td>
-                  </tr>
+              <!-- Features Section: Optional Add-ons -->
+              <div class="foc-section-block add-ons-block">
+                <div class="foc-section-label">
+                  <span>OPTIONAL ADD-ONS</span>
+                </div>
 
-                  <tr>
-                    <td class="col-feature-title">Products and Services</td>
-                    <td class="col-val highlight-foc-col"><span class="foc-check">✓</span></td>
-                    <td class="col-val"><span class="foc-dash">—</span></td>
-                    <td class="col-val"><span class="foc-dash">—</span></td>
-                    <td class="col-val"><span class="foc-check">✓</span></td>
-                  </tr>
+                <div class="foc-items-list">
+                  <div class="foc-item-row">
+                    <div class="foc-item-left">
+                      <span class="item-icon-plus">+</span>
+                      <span class="item-name">Quotation</span>
+                    </div>
+                    <span class="item-pill pill-addon">Add-ons</span>
+                  </div>
 
-                  <tr>
-                    <td class="col-feature-title">Claims / Petty Cash Purchase</td>
-                    <td class="col-val highlight-foc-col"><span class="foc-check">✓</span></td>
-                    <td class="col-val"><span class="foc-dash">—</span></td>
-                    <td class="col-val"><span class="foc-dash">—</span></td>
-                    <td class="col-val"><span class="foc-dash">—</span></td>
-                  </tr>
+                  <div class="foc-item-row">
+                    <div class="foc-item-left">
+                      <span class="item-icon-plus">+</span>
+                      <span class="item-name">Purchase Order</span>
+                    </div>
+                    <span class="item-pill pill-addon">Add-ons</span>
+                  </div>
 
-                  <tr>
-                    <td class="col-feature-title">Quotation</td>
-                    <td class="col-val highlight-foc-col">Add-ons</td>
-                    <td class="col-val">20</td>
-                    <td class="col-val">50</td>
-                    <td class="col-val">90</td>
-                  </tr>
+                  <div class="foc-item-row">
+                    <div class="foc-item-left">
+                      <span class="item-icon-plus">+</span>
+                      <span class="item-name">Purchase Requisition</span>
+                    </div>
+                    <span class="item-pill pill-addon">Add-ons</span>
+                  </div>
 
-                  <tr>
-                    <td class="col-feature-title">Purchase Order</td>
-                    <td class="col-val highlight-foc-col">Add-ons</td>
-                    <td class="col-val"><span class="foc-check">✓</span></td>
-                    <td class="col-val"><span class="foc-dash">—</span></td>
-                    <td class="col-val"><span class="foc-check">✓</span></td>
-                  </tr>
+                  <div class="foc-item-row">
+                    <div class="foc-item-left">
+                      <span class="item-icon-plus">+</span>
+                      <span class="item-name">Delivery & Goods Receipt</span>
+                    </div>
+                    <span class="item-pill pill-addon">Add-ons</span>
+                  </div>
+                </div>
 
-                  <tr>
-                    <td class="col-feature-title">Purchase Requisition</td>
-                    <td class="col-val highlight-foc-col">Add-ons</td>
-                    <td class="col-val"><span class="foc-dash">—</span></td>
-                    <td class="col-val"><span class="foc-dash">—</span></td>
-                    <td class="col-val">90</td>
-                  </tr>
+                <!-- Footnote Note Inside Card -->
+                <p class="foc-footnote-text">Enhance your subscription with our optional add-ons, available for an additional charge. Tailor your experience to fit your needs. Contact us for more details.</p>
+              </div>
 
-                  <tr>
-                    <td class="col-feature-title">Delivery & Goods Receipt</td>
-                    <td class="col-val highlight-foc-col">Add-ons</td>
-                    <td class="col-val"><span class="foc-dash">—</span></td>
-                    <td class="col-val"><span class="foc-dash">—</span></td>
-                    <td class="col-val">90</td>
-                  </tr>
-                </tbody>
-              </table>
             </div>
-
-            <!-- Footnote Note -->
-            <p class="foc-footnote-text">Enhance your subscription with our optional add-ons, available for an additional charge. Tailor your experience to fit your needs. Contact us for more details.</p>
 
             <!-- Subscription Changes Block -->
             <div class="foc-sub-changes-block">
-              <h3>Subscription Changes?</h3>
-              <p>We're here to help. If you're an existing customer looking to upgrade, downgrade, or make other changes to your subscription, please reach out to us. We're happy to assist with any questions or requests you may have.</p>
+              <div class="sub-changes-inner">
+                <div class="sub-changes-text">
+                  <h3>Subscription Changes?</h3>
+                  <p>We're here to help. If you're an existing customer looking to upgrade, downgrade, or make other changes to your subscription, please reach out to us. We're happy to assist with any questions or requests you may have.</p>
+                </div>
+                <div class="sub-changes-action">
+                  <a href="#contact" class="btn-sub-contact">Contact Us</a>
+                </div>
+              </div>
             </div>
 
           </div>
